@@ -17,6 +17,7 @@ const categoryImages: Record<string, { src: string; alt: string }> = {
   creator: { src: "/images/creator_art_box_0.png", alt: "Creator art box" },
   exhibition: { src: "/images/exhibition_booth_0.png", alt: "Exhibition booth" },
   pharma: { src: "/images/pharma_carton_0.png", alt: "Pharma carton" },
+  fb_packaging: { src: "/images/fb_packaging_0.png", alt: "F&B packaging" },
 };
 
 export default function PlaceholderImage({

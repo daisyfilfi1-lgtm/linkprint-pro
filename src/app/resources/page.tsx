@@ -35,6 +35,24 @@ const guides = [
     format: "PDF · 16 Pages",
     description: "Regulatory requirements for pharmaceutical and medical device packaging in the EU market. Covers materials, labelling, documentation, and audit readiness.",
   },
+  {
+    title: "Seasonal Packaging for Craft Breweries: A Cost & Timeline Guide",
+    subtitle: "Plan your seasonal F&B packaging runs with confidence",
+    format: "PDF · 20 Pages",
+    description: "A practical guide for craft breweries, artisan chocolate makers, and coffee roasters. Covers design timelines, cost comparisons across volumes, and material recommendations for seasonal editions.",
+  },
+  {
+    title: "Quick Commerce Packaging Compliance: EU Food Contact & Tamper Evidence Checklist",
+    subtitle: "Stay compliant with quick commerce platform requirements",
+    format: "PDF · 14 Pages",
+    description: "EU food contact material regulations and tamper-evidence requirements for quick commerce packaging. Includes a compliance checklist, material declarations, and audit preparation tips.",
+  },
+  {
+    title: "Variable Data Printing for City-Specific F&B Labels",
+    subtitle: "One print run, unlimited city editions",
+    format: "PDF · 16 Pages",
+    description: "How variable data printing enables city-specific beer labels, seasonal QR codes, and batch-numbered F&B packaging without additional plate costs. Includes technical specs and workflow examples.",
+  },
 ];
 
 const blogPosts = [
@@ -67,6 +85,30 @@ const blogPosts = [
     category: "Compliance",
     date: "Dec 2024",
     excerpt: "Navigating EU Medical Device Regulation for packaging doesn't have to be overwhelming. A practical guide to documentation, labelling, and audit preparation.",
+  },
+  {
+    title: "Why Your Craft Brewery Needs 500-Unit Label Runs, Not 5,000",
+    category: "F&B",
+    date: "May 2026",
+    excerpt: "Most local label printers demand 5,000+ unit MOQs for beer labels. Here's why 500-unit digital runs let craft breweries launch seasonal editions faster, cheaper, and with less risk.",
+  },
+  {
+    title: "City-Specific Beer Labels: How Variable Data Printing Works for Small Brewers",
+    category: "F&B",
+    date: "Apr 2026",
+    excerpt: "Variable data printing lets breweries produce Berlin, Munich, and Hamburg labels in a single run. No plate changes, no separate orders, no minimum per city.",
+  },
+  {
+    title: "Paper Tamper Evidence for Quick Commerce: Compliant, Brandable, Affordable",
+    category: "F&B",
+    date: "Mar 2026",
+    excerpt: "Quick commerce platforms increasingly require tamper-evident packaging. Paper-based frangible strips offer a compliant, brandable alternative to plastic seals at a fraction of the cost.",
+  },
+  {
+    title: "From Valentine's to Christmas: How Artisan Chocolate Brands Use Seasonal Packaging",
+    category: "F&B",
+    date: "Feb 2026",
+    excerpt: "Seasonal packaging drives 40% of annual revenue for artisan chocolate brands. Learn how small-batch folding cartons with foil detailing create urgency and justify premium pricing.",
   },
 ];
 

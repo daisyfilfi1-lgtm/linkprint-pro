@@ -46,6 +46,15 @@ const scenes = [{
     href: "/solutions/pharma-healthcare",
     category: "pharma",
   },
+  {
+    title: "F&B",
+    subtitle: "Craft Food & Beverage",
+    description:
+      "Seasonal labels, city-specific editions, tamper-evident paper for craft breweries and quick commerce. 500 units.",
+    imageLabel: "F&B PACKAGING — Craft Beer Label Close-up with Foil Detail",
+    href: "/solutions/food-beverage-packaging",
+    category: "hero_paper",
+  },
 ];
 
 const testimonials = [
@@ -166,7 +175,7 @@ export default function HomePage() {
                 Solutions for brands <span className="italic">that move fast</span>
               </h2>
               <p className="mt-6 text-text-secondary text-sm leading-relaxed">
-                Five specialized packaging verticals, one paper-first philosophy.
+                Six specialized packaging verticals, one paper-first philosophy.
                 Every solution starts with a material consultation and ends with
                 delivery to your doorstep.
               </p>

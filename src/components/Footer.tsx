@@ -34,6 +34,7 @@ export default function Footer() {
                 { href: "/solutions/creator-packaging", label: "Creator" },
                 { href: "/solutions/exhibition-collateral", label: "Exhibition" },
                 { href: "/solutions/pharma-healthcare", label: "Pharma" },
+                { href: "/solutions/food-beverage-packaging", label: "F&B Packaging" },
                 { href: "/sample-kit", label: "Sample Kit" },
                 { href: "/contact", label: "Get a Quote" },
               ].map((link) => (
@@ -73,7 +74,7 @@ export default function Footer() {
           <div className="flex gap-6 text-xs text-off-white/40">
             <span>Privacy Policy</span>
             <span>Terms of Service</span>
-            <span>Compliance</span>
+            <Link href="/compliance" className="hover:text-mint transition-colors duration-200">Compliance</Link>
           </div>
         </div>
       </div>

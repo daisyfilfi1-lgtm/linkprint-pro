@@ -19,6 +19,7 @@ const solutionLinks = [
   { href: "/solutions/creator-packaging", label: "Creator" },
   { href: "/solutions/exhibition-collateral", label: "Exhibition" },
   { href: "/solutions/pharma-healthcare", label: "Pharma" },
+  { href: "/solutions/food-beverage-packaging", label: "F&B Packaging" },
 ];
 
 export default function Nav() {

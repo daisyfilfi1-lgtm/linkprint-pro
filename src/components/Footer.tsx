@@ -30,6 +30,10 @@ export default function Footer() {
               {[
                 { href: "/", label: "Home" },
                 { href: "/solutions/dtc-packaging", label: "DTC Solutions" },
+                { href: "/solutions/sustainable-packaging", label: "Sustainable" },
+                { href: "/solutions/creator-packaging", label: "Creator" },
+                { href: "/solutions/exhibition-collateral", label: "Exhibition" },
+                { href: "/solutions/pharma-healthcare", label: "Pharma" },
                 { href: "/sample-kit", label: "Sample Kit" },
                 { href: "/contact", label: "Get a Quote" },
               ].map((link) => (

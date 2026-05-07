@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { createClient } from "@/lib/supabase";
 
 export async function POST(request: NextRequest) {
   try {
@@ -13,22 +14,40 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Mock save — log to console
-    console.log("[Quote Request]", {
-      scene,
-      product_type,
-      specs,
-      file_url,
-      name,
-      email,
-      company,
-      country,
-      created_at: new Date().toISOString(),
-    });
+    const supabase = createClient();
+    if (supabase) {
+      const { error } = await supabase.from("quote_requests").insert({
+        scene,
+        product_type,
+        specs: specs ? JSON.parse(specs) : {},
+        file_url: file_url || "",
+        name,
+        email,
+        company,
+        country,
+      });
 
-    // In production, save to Supabase:
-    // const supabase = createClient();
-    // await supabase.from('quote_requests').insert({ ... });
+      if (error) {
+        console.error("[Supabase] Insert error:", error);
+        return NextResponse.json(
+          { error: "Failed to save request" },
+          { status: 500 }
+        );
+      }
+    } else {
+      // Fallback: log to console
+      console.log("[Quote Request - Mock]", {
+        scene,
+        product_type,
+        specs,
+        file_url,
+        name,
+        email,
+        company,
+        country,
+        created_at: new Date().toISOString(),
+      });
+    }
 
     return NextResponse.json(
       {

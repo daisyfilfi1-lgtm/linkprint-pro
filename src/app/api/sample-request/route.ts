@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { createClient } from "@/lib/supabase";
 
 export async function POST(request: NextRequest) {
   try {
@@ -13,21 +14,38 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Mock save — log to console
-    console.log("[Sample Request]", {
-      name,
-      email,
-      company,
-      country,
-      address,
-      scene,
-      volume,
-      created_at: new Date().toISOString(),
-    });
+    const supabase = createClient();
+    if (supabase) {
+      const { error } = await supabase.from("sample_requests").insert({
+        name,
+        email,
+        company,
+        country,
+        address,
+        scene: scene || [],
+        volume,
+      });
 
-    // In production, save to Supabase:
-    // const supabase = createClient();
-    // await supabase.from('sample_requests').insert({ ... });
+      if (error) {
+        console.error("[Supabase] Insert error:", error);
+        return NextResponse.json(
+          { error: "Failed to save request" },
+          { status: 500 }
+        );
+      }
+    } else {
+      // Fallback: log to console
+      console.log("[Sample Request - Mock]", {
+        name,
+        email,
+        company,
+        country,
+        address,
+        scene,
+        volume,
+        created_at: new Date().toISOString(),
+      });
+    }
 
     return NextResponse.json(
       { success: true, message: "Sample kit request submitted successfully" },

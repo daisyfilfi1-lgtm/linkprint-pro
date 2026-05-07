@@ -1,13 +1,14 @@
 import Link from "next/link";
 import PlaceholderImage from "@/components/PlaceholderImage";
 
-const scenes = [
-  {
+const scenes = [{
     title: "DTC",
     subtitle: "Direct-to-Consumer Brands",
     description:
       "Custom mailer boxes, subscription packaging, and unboxing experiences built for e-commerce conversion. MOQ from 500 units.",
     imageLabel: "DTC MAILER BOX — Unboxing Scene with Branded Tissue Paper",
+    href: "/solutions/dtc-packaging",
+    category: "dtc_mailer",
   },
   {
     title: "Sustainable",
@@ -15,6 +16,8 @@ const scenes = [
     description:
       "Replace plastic and rigid packaging with premium FSC-certified paper. Full carbon footprint audit included with every order.",
     imageLabel: "SUSTAINABLE PACKAGING — Recycled Kraft Box with Soy-Based Ink Print",
+    href: "/solutions/sustainable-packaging",
+    category: "sustainable",
   },
   {
     title: "Creator",
@@ -22,6 +25,8 @@ const scenes = [
     description:
       "Limited drops, merch packaging, and seasonal collections. We match your timeline — 72-hour prototyping, 10-day production.",
     imageLabel: "CREATOR MERCH — Limited Edition Drop Box with Foil Accent",
+    href: "/solutions/creator-packaging",
+    category: "creator",
   },
   {
     title: "Exhibition",
@@ -29,6 +34,8 @@ const scenes = [
     description:
       "Presentation kits, product sample boxes, and trade show materials that communicate craftsmanship before a handshake.",
     imageLabel: "EXHIBITION KIT — A5 Presentation Folder with Embossed Logo",
+    href: "/solutions/exhibition-collateral",
+    category: "exhibition",
   },
   {
     title: "Pharma",
@@ -36,6 +43,8 @@ const scenes = [
     description:
       "GMP-compliant paper packaging for supplements, medical devices, and health products. EU MDR ready documentation.",
     imageLabel: "PHARMA BOX — Clinical White Paperboard with Tamper-Evident Seal",
+    href: "/solutions/pharma-healthcare",
+    category: "pharma",
   },
 ];
 
@@ -166,9 +175,10 @@ export default function HomePage() {
             {/* Right scene list */}
             <div className="lg:w-[60%] space-y-0">
               {scenes.map((scene, i) => (
-                <div
+                <Link
                   key={scene.title}
-                  className="group border-t border-black/5 py-10 last:border-b last:border-black/5 cursor-default"
+                  href={scene.href}
+                  className="group border-t border-black/5 py-10 last:border-b last:border-black/5 block"
                 >
                   <div className="flex flex-col lg:flex-row gap-8 items-start">
                     <div className="flex-1 transition-all duration-300 lg:group-hover:pl-8">
@@ -192,10 +202,11 @@ export default function HomePage() {
                         label={scene.imageLabel}
                         aspectRatio="1/1"
                         className="w-48 h-48"
+                        category={scene.category}
                       />
                     </div>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>

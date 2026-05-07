@@ -13,6 +13,14 @@ const navLinks = [
   { href: "/contact", label: "Quote" },
 ];
 
+const solutionLinks = [
+  { href: "/solutions/dtc-packaging", label: "DTC" },
+  { href: "/solutions/sustainable-packaging", label: "Sustainable" },
+  { href: "/solutions/creator-packaging", label: "Creator" },
+  { href: "/solutions/exhibition-collateral", label: "Exhibition" },
+  { href: "/solutions/pharma-healthcare", label: "Pharma" },
+];
+
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -54,21 +62,59 @@ export default function Nav() {
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`text-sm font-body font-medium tracking-wide transition-colors duration-200 ${
-                  pathname === link.href
-                    ? "text-mint"
-                    : isTransparent
-                    ? "text-text-primary hover:text-mint"
-                    : "text-text-secondary hover:text-text-primary"
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              if (link.label === "Solutions") {
+                return (
+                  <div key={link.href} className="relative group">
+                    <Link
+                      href={link.href}
+                      className={`text-sm font-body font-medium tracking-wide transition-colors duration-200 ${
+                        pathname.startsWith("/solutions")
+                          ? "text-mint"
+                          : isTransparent
+                          ? "text-text-primary hover:text-mint"
+                          : "text-text-secondary hover:text-text-primary"
+                      }`}
+                    >
+                      {link.label}
+                    </Link>
+                    {/* Dropdown */}
+                    <div className="absolute top-full left-0 pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-1 group-hover:translate-y-0">
+                      <div className="bg-warm border border-black/5 shadow-lg py-3 min-w-[180px]">
+                        {solutionLinks.map((sl) => (
+                          <Link
+                            key={sl.href}
+                            href={sl.href}
+                            className={`block px-5 py-2.5 text-sm font-body font-medium tracking-wide transition-colors duration-200 ${
+                              pathname === sl.href
+                                ? "text-mint"
+                                : "text-text-secondary hover:text-text-primary hover:bg-black/5"
+                            }`}
+                          >
+                            {sl.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`text-sm font-body font-medium tracking-wide transition-colors duration-200 ${
+                    pathname === link.href
+                      ? "text-mint"
+                      : isTransparent
+                      ? "text-text-primary hover:text-mint"
+                      : "text-text-secondary hover:text-text-primary"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
           </nav>
 
           {/* Mobile Toggle */}
@@ -103,17 +149,46 @@ export default function Nav() {
         }`}
       >
         <nav className="flex flex-col px-6 pb-6 pt-2 bg-warm border-t border-black/5">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={`py-3 text-sm font-body font-medium border-b border-black/5 last:border-0 ${
-                pathname === link.href ? "text-mint" : "text-text-primary"
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            if (link.label === "Solutions") {
+              return (
+                <div key={link.href}>
+                  <Link
+                    href={link.href}
+                    className={`block py-3 text-sm font-body font-medium border-b border-black/5 ${
+                      pathname.startsWith("/solutions") ? "text-mint" : "text-text-primary"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                  <div className="pl-4 pb-2">
+                    {solutionLinks.map((sl) => (
+                      <Link
+                        key={sl.href}
+                        href={sl.href}
+                        className={`block py-2 text-sm font-body border-b border-black/5 last:border-0 ${
+                          pathname === sl.href ? "text-mint" : "text-text-secondary"
+                        }`}
+                      >
+                        {sl.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              );
+            }
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`block py-3 text-sm font-body font-medium border-b border-black/5 last:border-0 ${
+                  pathname === link.href ? "text-mint" : "text-text-primary"
+                }`}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
         </nav>
       </div>
     </header>

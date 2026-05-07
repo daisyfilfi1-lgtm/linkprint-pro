@@ -124,6 +124,7 @@ export default function SampleKitPage() {
                 label="SAMPLE KIT — Open Box with Papers, Swatches, and Compliance Card"
                 aspectRatio="4/3"
                 className="w-full mb-10"
+                category="dtc_mailer"
               />
               <h3 className="font-display text-2xl text-text-primary mb-6">
                 What&apos;s inside

@@ -124,6 +124,7 @@ export default function DtcPackagingPage() {
             label="DTC PACKAGING HERO — Assembled Mailer Boxes on White Background"
             aspectRatio="1/1"
             className="w-full h-full"
+            category="dtc_mailer"
           />
         </div>
       </section>
@@ -236,6 +237,7 @@ export default function DtcPackagingPage() {
                 label="CASE STUDY — Onda Wellness Unboxing Series"
                 aspectRatio="4/3"
                 className="w-full"
+                category="dtc_mailer"
               />
             </div>
             <div className="lg:w-1/2 max-w-lg">

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -7,13 +8,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <span className="text-xl font-display italic text-off-white">
-                Top
-              </span>
-              <span className="text-[10px] font-mono text-mint tracking-[0.2em] uppercase mt-1">
-                PRINTING
-              </span>
+            <div className="flex items-center mb-4">
+              <Image
+                src="/images/logo.png"
+                alt="Top Printing"
+                width={120}
+                height={36}
+                className="h-8 w-auto object-contain brightness-0 invert"
+              />
             </div>
             <p className="text-sm text-off-white/60 leading-relaxed max-w-xs">
               Premium paper packaging and printing for growing brands. Small batches, fast

@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import PlaceholderImage from "@/components/PlaceholderImage";
+import { useState } from "react";
 
 const seasonalProducts = [
   {
@@ -10,6 +13,14 @@ const seasonalProducts = [
     material: "FSC White Card + gold/red spot colors + ribbon handle",
     category: "hero_paper",
     imageLabel: "SEASONAL — Luxury Advent Calendar with 24 Drawers and Gold Foil Accents",
+    aiPrompt: `A luxury advent calendar box with 12 small drawers partially pulled out,
+each drawer front has a blind embossed snowflake pattern,
+matte gold foil numbering (1-12) on each drawer,
+deep forest green paper with subtle metallic sheen,
+one drawer reveals a tiny wrapped chocolate inside,
+beside the box: a pine branch and a cinnamon stick,
+seasonal warmth without garishness, desaturated holiday palette,
+[通用基底 with dark charcoal background, single spotlight]`,
   },
   {
     name: "Heart-Shaped Gift Box",
@@ -19,6 +30,13 @@ const seasonalProducts = [
     material: "Pearlescent paper / cotton paper + velvet ribbon",
     category: "creator",
     imageLabel: "SEASONAL — Heart-Shaped Rigid Box with Rose Gold Foil and Velvet Ribbon",
+    aiPrompt: `A heart-shaped rigid box with magnetic closure,
+exterior in dusty rose paper with velvet-touch lamination,
+matte rose gold foil heart pattern subtly reflecting light,
+lid slightly open revealing cream satin interior,
+beside the box: a single dried red rose and a raw marble slab,
+romantic yet restrained, no cliche hearts,
+[通用基底]`,
   },
   {
     name: "Floral Message Box",
@@ -28,6 +46,13 @@ const seasonalProducts = [
     material: "Recycled art paper + linen texture paper",
     category: "dtc_mailer",
     imageLabel: "SEASONAL — Mother's Day Box with Pop-Up Floral Interior and Foil Greeting",
+    aiPrompt: `A book-style box with pop-up paper flower mechanism emerging as lid opens,
+cream linen-textured paper with blind embossed floral vines,
+soft sage green accents,
+matte gold foil "Thank You" in elegant serif,
+beside the box: dried lavender stems and a handwritten note card,
+botanical and tender,
+[通用基底]`,
   },
   {
     name: "Black Friday Limited Box",
@@ -37,6 +62,13 @@ const seasonalProducts = [
     material: "Black card stock + metallic ink",
     category: "creator",
     imageLabel: "SEASONAL — Black Friday Limited Box with Holographic Foil and Serial Number",
+    aiPrompt: `A matte black rigid box with holographic foil logo shifting between teal and gold,
+limited edition number "047/500" embossed in matte gold,
+surface has soft-touch lamination with fingerprint-resistant quality,
+lid slightly ajar revealing dark grey tissue paper inside,
+beside the box: a black obsidian stone and a dried black dahlia,
+mysterious and exclusive,
+[通用基底 with dark charcoal background]`,
   },
   {
     name: "Multi-Tier Gift Set",
@@ -46,6 +78,14 @@ const seasonalProducts = [
     material: "FSC art paper + metallized paper + satin ribbon",
     category: "exhibition",
     imageLabel: "SEASONAL — 3-Tier Mid-Autumn Gift Box with Ribbon Seal and Embossed Details",
+    aiPrompt: `A three-tier drawer box with cream and terracotta paper bands,
+each tier has a different blind embossed pattern: clouds, harvest wheat, full moon,
+matte gold foil border on each drawer front,
+silk ribbon pull in ochre color,
+top tier slightly pulled out revealing mooncake-shaped insert,
+beside the box: a ceramic tea cup and dried osmanthus flowers,
+East-meets-West elegance,
+[通用基底]`,
   },
   {
     name: "Summer Cool Edition",
@@ -55,6 +95,13 @@ const seasonalProducts = [
     material: "Translucent paper window + white card",
     category: "hero_paper",
     imageLabel: "SEASONAL — Summer Limited Box with Window Cut-Out and Silver Foil Details",
+    aiPrompt: `A window-cut box with translucent glassine paper revealing product inside,
+exterior in cool grey-blue paper with water-spot UV pattern mimicking ripples,
+matte silver foil accents,
+perforated easy-open tab,
+beside the box: a clear quartz crystal and a dried palm leaf,
+airy and refreshing,
+[通用基底]`,
   },
   {
     name: "Corporate Holiday Gift Set",
@@ -64,6 +111,14 @@ const seasonalProducts = [
     material: "Recycled board + FSC certified + satin ribbon",
     category: "exhibition",
     imageLabel: "SEASONAL — Corporate Gift Box with Multi-Cell Insert and Custom Logo Foil",
+    aiPrompt: `A multi-cell rigid box with branded belly band wrapper,
+exterior in deep navy paper with blind embossed geometric grid,
+matte gold foil company monogram,
+interior reveals four compartments with different gifts: notebook, pen, candle, chocolate,
+each item wrapped in cream tissue with gold sticker seal,
+beside the box: a leather desk pad corner and a brass paperweight,
+executive and thoughtful,
+[通用基底]`,
   },
   {
     name: "Wedding Favor Box",
@@ -73,10 +128,24 @@ const seasonalProducts = [
     material: "Cotton paper / pearlescent paper + velvet ribbon",
     category: "creator",
     imageLabel: "SEASONAL — Wedding Favor Box with Personalized Names and Edge Gilding",
+    aiPrompt: `A small rigid box with hinged lid,
+exterior in handmade cotton paper with visible flower petal inclusions,
+blind embossed couple initials with matte gold foil,
+edge gilding catching soft light,
+inside: macarons wrapped in glassine with personalized sticker,
+beside the box: a dried hydrangea and a silk ribbon in dusty pink,
+intimate and artisanal,
+[通用基底]`,
   },
 ];
 
 export default function SeasonalHolidayPage() {
+  const [openPrompt, setOpenPrompt] = useState<number | null>(null);
+
+  const togglePrompt = (i: number) => {
+    setOpenPrompt(openPrompt === i ? null : i);
+  };
+
   return (
     <>
       {/* Section 1: Hero */}
@@ -206,6 +275,30 @@ export default function SeasonalHolidayPage() {
                     className="w-full"
                     category={p.category}
                   />
+                  {/* AI Prompt Accordion */}
+                  <div className="mt-4">
+                    <button
+                      onClick={() => togglePrompt(i)}
+                      className="w-full flex items-center justify-between px-4 py-2.5 bg-charcoal/5 border border-black/5 text-xs font-mono tracking-[0.1em] text-text-secondary hover:bg-charcoal/10 transition-colors duration-200"
+                    >
+                      <span className="flex items-center gap-2">
+                        <span className="text-mint">AI</span>
+                        Image Prompt
+                      </span>
+                      <span className={`transition-transform duration-200 ${openPrompt === i ? 'rotate-180' : ''}`}>
+                        ▼
+                      </span>
+                    </button>
+                    <div
+                      className={`overflow-hidden transition-all duration-300 ${
+                        openPrompt === i ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'
+                      }`}
+                    >
+                      <pre className="bg-charcoal text-off-white/80 text-xs leading-relaxed p-4 overflow-x-auto font-mono whitespace-pre-wrap">
+                        {p.aiPrompt}
+                      </pre>
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}

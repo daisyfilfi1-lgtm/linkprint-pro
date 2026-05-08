@@ -68,7 +68,7 @@ export default function AboutPage() {
                 label="TOP PRINTING FACILITY — Clean Production Floor with Heidelberg Press in Operation"
                 aspectRatio="4/3"
                 className="w-full"
-                category="hero_paper"
+                category="exhibition"
               />
             </div>
             <div className="lg:w-1/2 max-w-lg">
@@ -188,7 +188,7 @@ export default function AboutPage() {
                 label="SHOWROOM — Material Swatches and Finish Samples Displayed on Walnut Table"
                 aspectRatio="4/3"
                 className="w-full"
-                category="hero_paper"
+                category="creator"
               />
             </div>
             <div className="lg:w-1/2 max-w-lg">

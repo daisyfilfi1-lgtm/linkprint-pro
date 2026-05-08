@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const navLinks = [
@@ -53,13 +54,15 @@ export default function Nav() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <span className="text-lg font-display italic tracking-wide" style={{color: "#C9A962"}}>
-              Top
-            </span>
-            <span className="text-[10px] font-mono tracking-[0.2em] uppercase mt-1" style={{color: "#C9A962"}}>
-              PRINTING
-            </span>
+          <Link href="/" className="flex items-center group">
+            <Image
+              src="/images/logo.png"
+              alt="Top Printing"
+              width={120}
+              height={40}
+              className="h-8 w-auto object-contain"
+              priority
+            />
           </Link>
 
           {/* Desktop Nav */}

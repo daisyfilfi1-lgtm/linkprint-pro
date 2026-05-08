@@ -181,20 +181,20 @@ export default function CapabilitiesMaterialsPage() {
           </div>
           <div className="space-y-0">
             {classicFinishes.map((finish, i) => (
-              <div key={finish.name} className="grid grid-cols-1 lg:grid-cols-4 gap-6 py-10 border-t border-black/5 last:border-b last:border-black/5 items-start">
-                <div className="lg:col-span-1">
+              <div key={finish.name} className="grid grid-cols-1 lg:grid-cols-12 gap-6 py-10 border-t border-black/5 last:border-b last:border-black/5 items-start">
+                <div className="lg:col-span-3">
                   <span className="font-mono text-xs text-text-secondary/40">{String(i + 1).padStart(2, "0")}</span>
                   <h3 className="mt-2 font-display text-2xl text-text-primary">{finish.name}</h3>
                   <span className="font-mono text-[10px] tracking-[0.15em] text-text-secondary/40 uppercase">{finish.english}</span>
                 </div>
-                <div className="lg:col-span-1">
+                <div className="lg:col-span-2">
                   <span className="font-mono text-[10px] tracking-[0.15em] text-text-secondary/40 uppercase">Best for</span>
                   <p className="mt-2 font-mono text-xs text-text-primary">{finish.bestFor}</p>
                 </div>
-                <div className="lg:col-span-1">
+                <div className="lg:col-span-4">
                   <p className="text-sm text-text-secondary leading-relaxed">{finish.definition}</p>
                 </div>
-                <div className="lg:col-span-1">
+                <div className="lg:col-span-3">
                   <PlaceholderImage
                     label={finish.imageLabel}
                     aspectRatio="4/3"
@@ -226,17 +226,17 @@ export default function CapabilitiesMaterialsPage() {
           </div>
           <div className="space-y-0">
             {digitalInnovations.map((di, i) => (
-              <div key={di.name} className="grid grid-cols-1 lg:grid-cols-4 gap-6 py-10 border-t border-white/10 last:border-b last:border-white/10 items-start">
-                <div className="lg:col-span-1">
+              <div key={di.name} className="grid grid-cols-1 lg:grid-cols-12 gap-6 py-10 border-t border-white/10 last:border-b last:border-white/10 items-start">
+                <div className="lg:col-span-3">
                   <span className="font-mono text-xs text-off-white/30">{String(i + 1).padStart(2, "0")}</span>
                   <h3 className="mt-2 font-display text-2xl text-off-white">{di.name}</h3>
                   <span className="font-mono text-[10px] tracking-[0.15em] text-off-white/30 uppercase">{di.english}</span>
                 </div>
-                <div className="lg:col-span-1">
+                <div className="lg:col-span-3">
                   <span className="font-mono text-[10px] tracking-[0.15em] text-mint uppercase">Best for</span>
                   <p className="mt-2 font-mono text-xs text-off-white/70">{di.bestFor}</p>
                 </div>
-                <div className="lg:col-span-2">
+                <div className="lg:col-span-6">
                   <p className="text-sm text-off-white/60 leading-relaxed">{di.definition}</p>
                 </div>
               </div>

@@ -1,8 +1,5 @@
-"use client";
-
 import Link from "next/link";
 import PlaceholderImage from "@/components/PlaceholderImage";
-import { useState } from "react";
 
 const seasonalProducts = [
   {
@@ -148,12 +145,6 @@ intimate and artisanal,
 ];
 
 export default function SeasonalHolidayPage() {
-  const [openPrompt, setOpenPrompt] = useState<number | null>(null);
-
-  const togglePrompt = (i: number) => {
-    setOpenPrompt(openPrompt === i ? null : i);
-  };
-
   return (
     <>
       {/* Section 1: Hero */}
@@ -284,30 +275,6 @@ export default function SeasonalHolidayPage() {
                     category={p.category}
                     variant={i}
                   />
-                  {/* AI Prompt Accordion */}
-                  <div className="mt-4">
-                    <button
-                      onClick={() => togglePrompt(i)}
-                      className="w-full flex items-center justify-between px-4 py-2.5 bg-charcoal/5 border border-black/5 text-xs font-mono tracking-[0.1em] text-text-secondary hover:bg-charcoal/10 transition-colors duration-200"
-                    >
-                      <span className="flex items-center gap-2">
-                        <span className="text-mint">AI</span>
-                        Image Prompt
-                      </span>
-                      <span className={`transition-transform duration-200 ${openPrompt === i ? 'rotate-180' : ''}`}>
-                        ▼
-                      </span>
-                    </button>
-                    <div
-                      className={`overflow-hidden transition-all duration-300 ${
-                        openPrompt === i ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'
-                      }`}
-                    >
-                      <pre className="bg-charcoal text-off-white/80 text-xs leading-relaxed p-4 overflow-x-auto font-mono whitespace-pre-wrap">
-                        {p.aiPrompt}
-                      </pre>
-                    </div>
-                  </div>
                 </div>
               </div>
             ))}

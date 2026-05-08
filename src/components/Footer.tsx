@@ -5,9 +5,9 @@ export default function Footer() {
   return (
     <footer className="bg-charcoal text-off-white/80">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          {/* Brand */}
-          <div>
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-12">
+          {/* Brand - spans 2 cols */}
+          <div className="md:col-span-2">
             <div className="flex items-center mb-4">
               <Image
                 src="/images/logo.png"
@@ -23,22 +23,42 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Links */}
+          {/* Solutions */}
           <div>
             <h4 className="text-xs font-mono tracking-[0.15em] uppercase text-off-white/50 mb-6">
-              Explore
+              Solutions
             </h4>
             <ul className="space-y-3">
               {[
-                { href: "/", label: "Home" },
-                { href: "/solutions/dtc-packaging", label: "DTC Solutions" },
+                { href: "/solutions/dtc-packaging", label: "DTC Packaging" },
                 { href: "/solutions/seasonal-holiday", label: "Seasonal & Holiday" },
-                { href: "/solutions/creator-packaging", label: "Creator" },
+                { href: "/solutions/creator-packaging", label: "Creator Economy" },
+                { href: "/solutions/food-beverage-packaging", label: "F&B Packaging" },
                 { href: "/solutions/exhibition-collateral", label: "Exhibition" },
                 { href: "/solutions/pharma-healthcare", label: "Pharma" },
-                { href: "/solutions/food-beverage-packaging", label: "F&B Packaging" },
-                { href: "/capabilities-materials", label: "Craft & Materials" },
+              ].map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-off-white/70 hover:text-mint transition-colors duration-200"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Company */}
+          <div>
+            <h4 className="text-xs font-mono tracking-[0.15em] uppercase text-off-white/50 mb-6">
+              Company
+            </h4>
+            <ul className="space-y-3">
+              {[
                 { href: "/about", label: "About Us" },
+                { href: "/capabilities-materials", label: "Craft & Materials" },
+                { href: "/blog", label: "Blog" },
                 { href: "/sample-kit", label: "Sample Kit" },
                 { href: "/contact", label: "Get a Quote" },
               ].map((link) => (

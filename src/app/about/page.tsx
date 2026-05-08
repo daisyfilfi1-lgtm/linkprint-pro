@@ -69,6 +69,7 @@ export default function AboutPage() {
                 aspectRatio="4/3"
                 className="w-full"
                 category="exhibition"
+                variant={0}
               />
             </div>
             <div className="lg:w-1/2 max-w-lg">
@@ -189,6 +190,7 @@ export default function AboutPage() {
                 aspectRatio="4/3"
                 className="w-full"
                 category="creator"
+                variant={0}
               />
             </div>
             <div className="lg:w-1/2 max-w-lg">

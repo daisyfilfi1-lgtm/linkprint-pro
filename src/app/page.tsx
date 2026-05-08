@@ -110,9 +110,9 @@ export default function HomePage() {
   return (
     <>
       {/* Section 1: Hero */}
-      <section className="relative min-h-screen flex items-center bg-warm paper-texture overflow-hidden">
+      <section className="relative min-h-screen flex items-center bg-charcoal paper-texture overflow-hidden">
         {/* Hero Background Image */}
-        <div className="absolute right-0 top-0 w-1/2 h-full opacity-20 lg:opacity-30 pointer-events-none">
+        <div className="absolute right-0 top-0 w-1/2 h-full opacity-40 lg:opacity-50 pointer-events-none">
           <Image
             src="/images/hero-main-image.png"
             alt="Premium printing and packaging showcase"
@@ -123,45 +123,45 @@ export default function HomePage() {
         </div>
         <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-40 pb-32 w-full relative z-10">
           <div className="max-w-3xl">
-            <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.1] tracking-tight text-text-primary">
-              专注于精品包装的印刷制造。
+            <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.1] tracking-tight text-off-white">
+              Precision Print & Premium Packaging.
             </h1>
-            <p className="mt-6 text-base text-text-secondary leading-loose max-w-2xl">
-              小到食品、化妆品、药品、烟酒，大到汽车配件、电器产品，我们都能为您的业务需求提供包装解决方案。
+            <p className="mt-6 text-base text-off-white/60 leading-loose max-w-2xl">
+              From food, cosmetics, pharma and spirits to automotive parts and electronics — we deliver packaging solutions for every industry need.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
-              <span className="font-mono text-xs sm:text-sm tracking-[0.2em] text-text-secondary">
-                ISO 9001/FSC-COC认证
+              <span className="font-mono text-xs sm:text-sm tracking-[0.2em] text-off-white/70">
+                ISO 9001 · FSC-COC
               </span>
               <span className="font-mono text-xs sm:text-sm tracking-[0.2em] text-text-secondary/50">
                 ·
               </span>
-              <span className="font-mono text-xs sm:text-sm tracking-[0.2em] text-text-secondary">
+              <span className="font-mono text-xs sm:text-sm tracking-[0.2em] text-off-white/70">
                 MOQ 500
               </span>
               <span className="font-mono text-xs sm:text-sm tracking-[0.2em] text-text-secondary/50">
                 ·
               </span>
-              <span className="font-mono text-xs sm:text-sm tracking-[0.2em] text-text-secondary">
+              <span className="font-mono text-xs sm:text-sm tracking-[0.2em] text-off-white/70">
                 72H PROTOTYPING
               </span>
               <span className="font-mono text-xs sm:text-sm tracking-[0.2em] text-text-secondary/50">
                 ·
               </span>
-              <span className="font-mono text-xs sm:text-sm tracking-[0.2em] text-text-secondary">
+              <span className="font-mono text-xs sm:text-sm tracking-[0.2em] text-off-white/70">
                 15-DAY DELIVERY
               </span>
             </div>
             <div className="mt-12 flex flex-wrap gap-6">
               <Link
                 href="/sample-kit"
-                className="inline-flex items-center px-8 py-3 border-2 border-text-primary text-text-primary text-sm font-body font-medium tracking-wide hover:bg-text-primary hover:text-warm transition-all duration-300"
+                className="inline-flex items-center px-8 py-3 border-2 border-[#C9A962] text-[#C9A962] text-sm font-body font-medium tracking-wide hover:bg-[#C9A962] hover:text-charcoal transition-all duration-300"
               >
                 Get a Free Sample Kit
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center px-8 py-3 text-text-secondary text-sm font-body font-medium tracking-wide hover:text-text-primary transition-colors duration-300"
+                className="inline-flex items-center px-8 py-3 text-off-white/60 text-sm font-body font-medium tracking-wide hover:text-text-primary transition-colors duration-300"
               >
                 Request a Quote →
               </Link>
@@ -169,7 +169,7 @@ export default function HomePage() {
           </div>
         </div>
         {/* Decorative line */}
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-black/5" />
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-white/10" />
       </section>
 
       {/* Section 2: Five Scene Cards */}

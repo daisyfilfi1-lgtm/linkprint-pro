@@ -8,17 +8,28 @@ interface PlaceholderImageProps {
   className?: string;
   aspectRatio?: string;
   category?: string;
+  /** Optional index to cycle through variants of the same category for visual diversity */
+  variant?: number;
 }
 
-const categoryImages: Record<string, { src: string; alt: string }> = {
-  hero_paper: { src: "/images/hero_paper_texture_0.png", alt: "Hero paper texture background" },
-  dtc_mailer: { src: "/images/mailer_box_dtc_0.png", alt: "DTC mailer box" },
-  sustainable: { src: "/images/sustainable_paper_0.png", alt: "Sustainable paper packaging" },
-  creator: { src: "/images/creator_art_box_0.png", alt: "Creator art box" },
-  exhibition: { src: "/images/exhibition_booth_0.png", alt: "Exhibition booth" },
-  pharma: { src: "/images/pharma_carton_0.png", alt: "Pharma carton" },
-  seasonal: { src: "/images/hero_paper_texture_0.png", alt: "Seasonal packaging" },
-  fb_packaging: { src: "/images/fb_packaging_0.png", alt: "F&B packaging" },
+const categoryImages: Record<string, string[]> = {
+  hero_paper: ["/images/hero_paper_texture_0.png", "/images/hero_paper_texture_1.png", "/images/hero_paper_texture_2.png", "/images/hero_paper_texture_3.png"],
+  dtc_mailer: ["/images/mailer_box_dtc_0.png", "/images/mailer_box_dtc_1.png", "/images/mailer_box_dtc_2.png", "/images/mailer_box_dtc_3.png"],
+  sustainable: ["/images/sustainable_paper_0.png", "/images/sustainable_paper_1.png", "/images/sustainable_paper_2.png", "/images/sustainable_paper_3.png"],
+  creator: ["/images/creator_art_box_0.png", "/images/creator_art_box_1.png", "/images/creator_art_box_2.png", "/images/creator_art_box_3.png"],
+  exhibition: ["/images/exhibition_booth_0.png", "/images/exhibition_booth_1.png", "/images/exhibition_booth_2.png", "/images/exhibition_booth_3.png"],
+  pharma: ["/images/pharma_carton_0.png", "/images/pharma_carton_1.png", "/images/pharma_carton_2.png", "/images/pharma_carton_3.png"],
+  fb_packaging: ["/images/fb_packaging_0.png"],
+};
+
+const categoryAlts: Record<string, string> = {
+  hero_paper: "Paper texture macro detail",
+  dtc_mailer: "DTC mailer box",
+  sustainable: "Sustainable paper packaging",
+  creator: "Creator art box",
+  exhibition: "Exhibition booth",
+  pharma: "Pharma carton",
+  fb_packaging: "F&B packaging",
 };
 
 export default function PlaceholderImage({
@@ -26,12 +37,30 @@ export default function PlaceholderImage({
   className = "",
   aspectRatio = "4/3",
   category,
+  variant,
 }: PlaceholderImageProps) {
   const [imgError, setImgError] = useState(false);
-  const imageDef = category ? categoryImages[category] : null;
-  const showImage = imageDef && !imgError;
+  const images = category ? categoryImages[category] : null;
+  
+  // Pick image: use variant index if provided, otherwise hash the label to distribute
+  let imageIndex = 0;
+  if (images && images.length > 0) {
+    if (variant !== undefined) {
+      imageIndex = variant % images.length;
+    } else {
+      // Deterministic distribution based on label text
+      let hash = 0;
+      for (let i = 0; i < label.length; i++) {
+        hash = ((hash << 5) - hash) + label.charCodeAt(i);
+        hash |= 0;
+      }
+      imageIndex = Math.abs(hash) % images.length;
+    }
+  }
 
-  if (showImage) {
+  const imageDef = images && !imgError ? { src: images[imageIndex], alt: categoryAlts[category!] || label } : null;
+
+  if (imageDef) {
     return (
       <div
         className={`relative overflow-hidden ${className}`}
@@ -50,10 +79,10 @@ export default function PlaceholderImage({
     );
   }
 
-  // Fallback: gray placeholder
+  // Fallback: label-based placeholder with more visual info
   return (
     <div
-      className={`bg-gray-200 flex items-center justify-center overflow-hidden ${className}`}
+      className={`bg-gradient-to-br from-warm to-off-white flex items-center justify-center overflow-hidden border border-black/5 ${className}`}
       style={{ aspectRatio }}
       data-placeholder={label}
     >
@@ -62,7 +91,7 @@ export default function PlaceholderImage({
           {label}
         </span>
         <span className="text-[10px] font-mono text-text-secondary/40 mt-1 block">
-          Placeholder
+          Image Coming
         </span>
       </div>
     </div>

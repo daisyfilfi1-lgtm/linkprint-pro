@@ -11,7 +11,8 @@ const seasonalProducts = [
     structure: "12/24-grid drawers, magnetic flip lid, layered nesting",
     finishing: "Foil snowflakes, embossed reindeer, soft-touch, metallic ink illustrations",
     material: "FSC White Card + gold/red spot colors + ribbon handle",
-    category: "hero_paper",
+    category: "creator",
+    variant: 0,
     imageLabel: "SEASONAL — Luxury Advent Calendar with 24 Drawers and Gold Foil Accents",
     aiPrompt: `A luxury advent calendar box with 12 small drawers partially pulled out,
 each drawer front has a blind embossed snowflake pattern,
@@ -28,7 +29,8 @@ seasonal warmth without garishness, desaturated holiday palette,
     structure: "Heart-shaped rigid box, magnetic snap, internal divider",
     finishing: "Rose gold foil, embossed rose, soft-touch, inside love letter print",
     material: "Pearlescent paper / cotton paper + velvet ribbon",
-    category: "creator",
+    category: "dtc_mailer",
+    variant: 1,
     imageLabel: "SEASONAL — Heart-Shaped Rigid Box with Rose Gold Foil and Velvet Ribbon",
     aiPrompt: `A heart-shaped rigid box with magnetic closure,
 exterior in dusty rose paper with velvet-touch lamination,
@@ -44,7 +46,8 @@ romantic yet restrained, no cliche hearts,
     structure: "Book-style magnetic lid, pop-up 3D flower",
     finishing: "Debossed petal texture, spot UV dew drops, foil greeting",
     material: "Recycled art paper + linen texture paper",
-    category: "dtc_mailer",
+    category: "hero_paper",
+    variant: 0,
     imageLabel: "SEASONAL — Mother's Day Box with Pop-Up Floral Interior and Foil Greeting",
     aiPrompt: `A book-style box with pop-up paper flower mechanism emerging as lid opens,
 cream linen-textured paper with blind embossed floral vines,
@@ -61,6 +64,7 @@ botanical and tender,
     finishing: "Holographic foil, soft-touch, spot UV, serialized numbering",
     material: "Black card stock + metallic ink",
     category: "creator",
+    variant: 2,
     imageLabel: "SEASONAL — Black Friday Limited Box with Holographic Foil and Serial Number",
     aiPrompt: `A matte black rigid box with holographic foil logo shifting between teal and gold,
 limited edition number "047/500" embossed in matte gold,
@@ -77,6 +81,7 @@ mysterious and exclusive,
     finishing: "Foil illustration, debossed cloud pattern, soft-touch, ribbon seal",
     material: "FSC art paper + metallized paper + satin ribbon",
     category: "exhibition",
+    variant: 1,
     imageLabel: "SEASONAL — 3-Tier Mid-Autumn Gift Box with Ribbon Seal and Embossed Details",
     aiPrompt: `A three-tier drawer box with cream and terracotta paper bands,
 each tier has a different blind embossed pattern: clouds, harvest wheat, full moon,
@@ -94,6 +99,7 @@ East-meets-West elegance,
     finishing: "Spot UV water ripple, silver foil, soft-touch",
     material: "Translucent paper window + white card",
     category: "hero_paper",
+    variant: 2,
     imageLabel: "SEASONAL — Summer Limited Box with Window Cut-Out and Silver Foil Details",
     aiPrompt: `A window-cut box with translucent glassine paper revealing product inside,
 exterior in cool grey-blue paper with water-spot UV pattern mimicking ripples,
@@ -110,6 +116,7 @@ airy and refreshing,
     finishing: "Foil company branding, embossing, soft-touch, inside brand story print",
     material: "Recycled board + FSC certified + satin ribbon",
     category: "exhibition",
+    variant: 2,
     imageLabel: "SEASONAL — Corporate Gift Box with Multi-Cell Insert and Custom Logo Foil",
     aiPrompt: `A multi-cell rigid box with branded belly band wrapper,
 exterior in deep navy paper with blind embossed geometric grid,
@@ -127,6 +134,7 @@ executive and thoughtful,
     finishing: "Foil couple names, 3D embossed motif, soft-touch, edge gilding",
     material: "Cotton paper / pearlescent paper + velvet ribbon",
     category: "creator",
+    variant: 3,
     imageLabel: "SEASONAL — Wedding Favor Box with Personalized Names and Edge Gilding",
     aiPrompt: `A small rigid box with hinged lid,
 exterior in handmade cotton paper with visible flower petal inclusions,
@@ -264,7 +272,7 @@ export default function SeasonalHolidayPage() {
                 </div>
                 {/* Description + Image */}
                 <div className="lg:col-span-3">
-                  <p className="text-sm text-text-secondary italic leading-relaxed">
+                  <p className="font-mono text-xs text-text-secondary leading-relaxed">
                     {p.holiday} edition. Short-run ready. Available from 500 units.
                   </p>
                 </div>
@@ -274,6 +282,7 @@ export default function SeasonalHolidayPage() {
                     aspectRatio="4/3"
                     className="w-full"
                     category={p.category}
+                    variant={i}
                   />
                   {/* AI Prompt Accordion */}
                   <div className="mt-4">

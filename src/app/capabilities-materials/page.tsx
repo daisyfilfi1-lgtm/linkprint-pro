@@ -8,6 +8,7 @@ const classicFinishes = [
     definition: "Heat-pressed metallic foil transfers onto paper, creating mirror-like reflection and precious metal质感.",
     bestFor: "Luxury logos, wine labels, beauty boxes",
     category: "dtc_mailer",
+    variant: 0,
     imageLabel: "FOIL STAMPING — Macro Detail of Gold Foil on Textured Paper Surface",
   },
   {
@@ -16,6 +17,7 @@ const classicFinishes = [
     definition: "Metal dies press the paper surface upward, creating three-dimensional tactile memory.",
     bestFor: "Brand crests, certificates, premium gift boxes",
     category: "dtc_mailer",
+    variant: 1,
     imageLabel: "EMBOSSING — Raised Brand Mark on Uncoated Stock with Side Lighting",
   },
   {
@@ -24,6 +26,7 @@ const classicFinishes = [
     definition: "The reverse of embossing — patterns are pressed into the paper surface creating recessed impressions.",
     bestFor: "Minimalist packaging, combined with soft-touch lamination",
     category: "dtc_mailer",
+    variant: 2,
     imageLabel: "DEBOSSING — Recessed Pattern on Soft-Touch Coated Paper",
   },
   {
@@ -32,6 +35,7 @@ const classicFinishes = [
     definition: "Selective high-gloss coating creates mirror-like contrast on matte paper surfaces.",
     bestFor: "Tech brands, modern beauty, lifestyle products",
     category: "creator",
+    variant: 0,
     imageLabel: "SPOT UV — Glossy Logo Detail Against Matte Paper Background",
   },
   {
@@ -40,6 +44,7 @@ const classicFinishes = [
     definition: "Film lamination that delivers a velvety, peach-skin matte tactile experience.",
     bestFor: "Electronics, perfumes, luxury mailer boxes",
     category: "dtc_mailer",
+    variant: 3,
     imageLabel: "SOFT-TOUCH — Velvet Matte Surface Macro with Light Absorption",
   },
   {
@@ -48,6 +53,7 @@ const classicFinishes = [
     definition: "Transparent coating embedded with texture simulating leather, linen, or wood grain.",
     bestFor: "Wine gift boxes, premium food packaging",
     category: "hero_paper",
+    variant: 1,
     imageLabel: "TEXTURED VARNISH — Linen Grain Pattern Macro on Paper Surface",
   },
   {
@@ -56,6 +62,7 @@ const classicFinishes = [
     definition: "Heat-transferred holographic foil creating rainbow refraction and anti-counterfeiting effects.",
     bestFor: "Limited drops, anti-counterfeit packaging, young brands",
     category: "creator",
+    variant: 1,
     imageLabel: "HOLOGRAPHIC FOIL — Rainbow Refraction on Die-Cut Logo",
   },
   {
@@ -64,6 +71,7 @@ const classicFinishes = [
     definition: "Ink infused with mica or metal particles delivering subtle shimmer without foil.",
     bestFor: "Cosmetics, chocolate, seasonal limited editions",
     category: "hero_paper",
+    variant: 2,
     imageLabel: "PEARLESCENT INK — Shimmer Finish on Folding Carton Surface",
   },
 ];
@@ -200,6 +208,7 @@ export default function CapabilitiesMaterialsPage() {
                     aspectRatio="4/3"
                     className="w-full"
                     category={finish.category}
+                    variant={finish.variant}
                   />
                 </div>
               </div>

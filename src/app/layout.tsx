@@ -24,11 +24,13 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "LinkPrint Pro — Precision Paper Packaging for Growing Brands",
+  title: "Top Printing — Premium Paper Packaging for Growing Brands",
   description:
-    "Small-batch paper packaging for DTC brands, sustainable switch, creator economy, exhibition collateral, and pharma. MOQ 500, 72H prototyping, 15-day EU delivery.",
+    "Premium paper packaging for DTC brands, sustainable switch, creator economy, exhibition collateral, and pharma. MOQ 500, 72H prototyping, 15-day delivery.",
   keywords: [
     "paper packaging",
+    "printing",
+    "luxury printing",
     "small batch packaging",
     "DTC packaging",
     "sustainable packaging",
@@ -36,9 +38,9 @@ export const metadata: Metadata = {
     "MOQ 500",
   ],
   openGraph: {
-    title: "LinkPrint Pro — Precision Paper Packaging for Growing Brands",
+    title: "Top Printing — Premium Paper Packaging for Growing Brands",
     description:
-      "Small-batch paper packaging for DTC brands. MOQ 500, 72H prototyping, 15-day EU delivery.",
+      "Premium paper packaging for DTC brands. MOQ 500, 72H prototyping, 15-day delivery.",
     type: "website",
     locale: "en_US",
   },

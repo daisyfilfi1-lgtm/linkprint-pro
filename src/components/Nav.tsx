@@ -7,15 +7,16 @@ import { usePathname } from "next/navigation";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/solutions/dtc-packaging", label: "Solutions" },
-  { href: "/case-studies", label: "Case Studies" },
-  { href: "/resources", label: "Resources" },
+  { href: "/capabilities-materials", label: "Craft & Materials" },
+  { href: "/blog", label: "Blog" },
+  { href: "/about", label: "About" },
   { href: "/sample-kit", label: "Sample Kit" },
   { href: "/contact", label: "Quote" },
 ];
 
 const solutionLinks = [
   { href: "/solutions/dtc-packaging", label: "DTC" },
-  { href: "/solutions/sustainable-packaging", label: "Sustainable" },
+  { href: "/solutions/seasonal-holiday", label: "Seasonal & Holiday" },
   { href: "/solutions/creator-packaging", label: "Creator" },
   { href: "/solutions/exhibition-collateral", label: "Exhibition" },
   { href: "/solutions/pharma-healthcare", label: "Pharma" },
@@ -53,11 +54,11 @@ export default function Nav() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
-            <span className="text-lg font-display italic tracking-wide text-text-primary">
-              LinkPrint
+            <span className="text-lg font-display italic tracking-wide" style={{color: "#C9A962"}}>
+              Top
             </span>
-            <span className="text-[10px] font-mono text-mint tracking-[0.2em] uppercase mt-1">
-              Pro
+            <span className="text-[10px] font-mono tracking-[0.2em] uppercase mt-1" style={{color: "#C9A962"}}>
+              PRINTING
             </span>
           </Link>
 

@@ -9,14 +9,14 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <span className="text-xl font-display italic text-off-white">
-                LinkPrint
+                Top
               </span>
               <span className="text-[10px] font-mono text-mint tracking-[0.2em] uppercase mt-1">
-                Pro
+                PRINTING
               </span>
             </div>
             <p className="text-sm text-off-white/60 leading-relaxed max-w-xs">
-              Precision paper packaging for growing brands. Small batches, fast
+              Premium paper packaging and printing for growing brands. Small batches, fast
               turnaround, uncompromising quality.
             </p>
           </div>
@@ -30,11 +30,13 @@ export default function Footer() {
               {[
                 { href: "/", label: "Home" },
                 { href: "/solutions/dtc-packaging", label: "DTC Solutions" },
-                { href: "/solutions/sustainable-packaging", label: "Sustainable" },
+                { href: "/solutions/seasonal-holiday", label: "Seasonal & Holiday" },
                 { href: "/solutions/creator-packaging", label: "Creator" },
                 { href: "/solutions/exhibition-collateral", label: "Exhibition" },
                 { href: "/solutions/pharma-healthcare", label: "Pharma" },
                 { href: "/solutions/food-beverage-packaging", label: "F&B Packaging" },
+                { href: "/capabilities-materials", label: "Craft & Materials" },
+                { href: "/about", label: "About Us" },
                 { href: "/sample-kit", label: "Sample Kit" },
                 { href: "/contact", label: "Get a Quote" },
               ].map((link) => (
@@ -58,7 +60,7 @@ export default function Footer() {
             <ul className="space-y-3 text-sm text-off-white/70">
               <li>EU: +44 20 1234 5678</li>
               <li>US: +1 212 555 0198</li>
-              <li>hello@linkprint.pro</li>
+              <li>hello@topprinting.com</li>
               <li className="pt-2 text-off-white/50 font-mono text-xs">
                 MOQ 500 · 72H Prototyping · 15-Day Delivery
               </li>
@@ -68,7 +70,7 @@ export default function Footer() {
 
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-off-white/40">
-            &copy; {new Date().getFullYear()} LinkPrint Pro. All rights
+            &copy; {new Date().getFullYear()} Top Printing. All rights
             reserved.
           </p>
           <div className="flex gap-6 text-xs text-off-white/40">

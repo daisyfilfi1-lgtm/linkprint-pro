@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import PlaceholderImage from "@/components/PlaceholderImage";
 
 const scenes = [{
@@ -11,13 +12,13 @@ const scenes = [{
     category: "dtc_mailer",
   },
   {
-    title: "Sustainable",
-    subtitle: "Sustainable Switchovers",
+    title: "Seasonal",
+    subtitle: "Seasonal & Holiday",
     description:
-      "Replace plastic and rigid packaging with premium FSC-certified paper. Full carbon footprint audit included with every order.",
-    imageLabel: "SUSTAINABLE PACKAGING — Recycled Kraft Box with Soy-Based Ink Print",
-    href: "/solutions/sustainable-packaging",
-    category: "sustainable",
+      "18 days from concept to shelf. Christmas, Valentine's, Black Friday — 500 units per design.",
+    imageLabel: "SEASONAL PACKAGING — Luxury Advent Calendar with Foil Accents and Drawers",
+    href: "/solutions/seasonal-holiday",
+    category: "seasonal",
   },
   {
     title: "Creator",
@@ -60,7 +61,7 @@ const scenes = [{
 const testimonials = [
   {
     quote:
-      "Switching from plastic to LinkPrint's paper packaging reduced our packaging carbon footprint by 73%. Our customers noticed — and told us.",
+      "Switching from plastic to Top Printing\u2019s paper packaging reduced our packaging carbon footprint by 73%. Our customers noticed \u2014 and told us.",
     author: "Sarah Chen",
     role: "Head of Product, Onda Wellness",
   },
@@ -109,19 +110,29 @@ export default function HomePage() {
   return (
     <>
       {/* Section 1: Hero */}
-      <section className="relative min-h-screen flex items-center bg-warm paper-texture">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-32 pb-24 w-full">
+      <section className="relative min-h-screen flex items-center bg-warm paper-texture overflow-hidden">
+        {/* Hero Background Image */}
+        <div className="absolute right-0 top-0 w-1/2 h-full opacity-30 lg:opacity-40 pointer-events-none">
+          <Image
+            src="/images/hero-main-image.png"
+            alt="Premium printing and packaging showcase"
+            fill
+            className="object-cover object-center"
+            priority
+          />
+        </div>
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-32 pb-24 w-full relative z-10">
           <div className="max-w-4xl">
             <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.1] tracking-tight text-text-primary">
-              Precision Paper.
+              专注于精品包装的印刷制造。
               <br />
-              Small Batches.
+              小到食品、化妆品、药品、烟酒，
               <br />
-              <span className="italic">Big Brand Impact.</span>
+              大到汽车配件、电器产品，我们都能为您的业务需求提供包装解决方案。
             </h1>
             <div className="mt-8 flex flex-wrap gap-4">
               <span className="font-mono text-xs sm:text-sm tracking-[0.2em] text-text-secondary">
-                EU/US
+                ISO 9001/FSC-COC认证
               </span>
               <span className="font-mono text-xs sm:text-sm tracking-[0.2em] text-text-secondary/50">
                 ·
@@ -175,7 +186,7 @@ export default function HomePage() {
                 Solutions for brands <span className="italic">that move fast</span>
               </h2>
               <p className="mt-6 text-text-secondary text-sm leading-relaxed">
-                Six specialized packaging verticals, one paper-first philosophy.
+                Six specialized packaging verticals — DTC, Seasonal & Holiday, Creator, F&B, Exhibition, Pharma — one paper-first philosophy.
                 Every solution starts with a material consultation and ends with
                 delivery to your doorstep.
               </p>
@@ -227,7 +238,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-20">
             <blockquote className="font-display text-4xl lg:text-6xl text-off-white leading-tight">
-              &ldquo;500+ small-batch orders monthly.&rdquo;
+              &ldquo;500+ small-batch orders monthly. 10M+ annual revenue.&rdquo;
             </blockquote>
             <div className="mt-8 flex justify-center flex-wrap gap-8 font-mono text-xs tracking-[0.15em] text-off-white/50">
               <span>12K+ BOXES DELIVERED</span>
@@ -266,7 +277,7 @@ export default function HomePage() {
                 Craft
               </span>
               <h2 className="mt-6 font-display text-4xl lg:text-5xl leading-tight text-text-primary">
-                Paper-First <span className="italic">Expertise</span>
+                Paper-First <span className="italic">Craft</span>
               </h2>
               <p className="mt-6 text-text-secondary text-sm leading-relaxed">
                 Six core processes that define our craft. Every technique is

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import PlaceholderImage from "@/components/PlaceholderImage";
-import ProductGallery from "@/components/ProductGallery";
 
 export const metadata: Metadata = {
   title: "F&B Packaging Solutions — LinkPrint Pro",
@@ -35,48 +34,56 @@ const painPoints = [
 const products = [
   {
     name: "Craft Beer Labels",
+    image: "/images/desktop/啤酒.png",
     moq: "500 labels",
     leadTime: "7-10 days",
     processes: "Wet-strength / coated paper, foil stamping, emboss, condensation-resistant",
   },
   {
     name: "6-Pack Carrier Boxes",
+    image: "/images/desktop/健康零食邮寄盒.png",
     moq: "500 units",
     leadTime: "10-15 days",
     processes: "FSC kraft paper, handle die-cut, dual-side print",
   },
   {
     name: "Chocolate Folding Cartons",
+    image: "/images/desktop/巧克力.png",
     moq: "500 units",
     leadTime: "10-15 days",
     processes: "Food-grade grease-resistant coating, foil / emboss, inner card insert",
   },
   {
     name: "Snack Mailer Boxes",
+    image: "/images/desktop/健康零食邮寄盒.png",
     moq: "500 units",
     leadTime: "10-15 days",
     processes: "Water-resistant coating, easy-tear strip, branded insert card",
   },
   {
     name: "Coffee Gift Sets",
+    image: "/images/desktop/咖啡订阅盒.png",
     moq: "500 units",
     leadTime: "12-18 days",
     processes: "Magnetic-closure rigid box, variable origin labels, ribbon closure",
   },
   {
     name: "Tamper-Evident Paper Strips",
+    image: "/images/desktop/防篡改.png",
     moq: "1,000 strips",
     leadTime: "5-7 days",
     processes: "Food-grade adhesive, frangible fiber, one-tear destruction, serialised",
   },
   {
     name: "Quick Commerce Paper Bags",
+    image: "/images/desktop/城市限定.png",
     moq: "1,000 bags",
     leadTime: "7-10 days",
     processes: "Grease-proof lining, twisted paper handles, brand single/duotone print",
   },
   {
     name: "Seasonal Sleeves / Belly Bands",
+    image: "/images/desktop/季节酒款限定.png",
     moq: "500 sleeves",
     leadTime: "5-7 days",
     processes: "Variable data ready, fits existing packaging, quick seasonal refresh",
@@ -135,14 +142,6 @@ const complianceItems = [
   { name: "FSC Chain of Custody", description: "Sustainable sourcing for food brands' ESG reporting" },
 ];
 
-const galleryImages = [
-  "/images/desktop/啤酒.png",
-  "/images/desktop/巧克力.png",
-  "/images/desktop/咖啡订阅盒.png",
-  "/images/desktop/健康零食邮寄盒.png",
-  "/images/desktop/城市限定.png",
-  "/images/desktop/季节酒款限定.png",
-];
 
 export default function FoodBeveragePackagingPage() {
   return (
@@ -272,6 +271,14 @@ export default function FoodBeveragePackagingPage() {
                   <span className="font-mono text-xs text-text-secondary/40">
                     {String(i + 1).padStart(2, "0")}
                   </span>
+                  <div className="mb-3 w-16 h-16 overflow-hidden">
+                    <PlaceholderImage
+                      label={p.name}
+                      aspectRatio="1/1"
+                      src={p.image}
+                      className="w-full h-full"
+                    />
+                  </div>
                   <h3 className="mt-2 font-display text-2xl text-text-primary">
                     {p.name}
                   </h3>
@@ -442,7 +449,6 @@ export default function FoodBeveragePackagingPage() {
       </section>
 
       {/* Product Gallery */}
-      <ProductGallery images={galleryImages} title="Food & Beverage Packaging" />
 
       {/* Section 8: Bottom CTA */}
       <section className="bg-charcoal py-24 lg:py-32">

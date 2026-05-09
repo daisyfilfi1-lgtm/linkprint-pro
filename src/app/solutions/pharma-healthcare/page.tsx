@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import PlaceholderImage from "@/components/PlaceholderImage";
-import ProductGallery from "@/components/ProductGallery";
 
 export const metadata: Metadata = {
   title: "Pharma & Healthcare Packaging — LinkPrint Pro",
@@ -12,18 +11,21 @@ export const metadata: Metadata = {
 const products = [
   {
     name: "Pharma Folding Cartons",
+    image: "/images/desktop/药盒.png",
     specs: "400–600gsm SBS / Art Paper · AQ or UV Coating",
     processes: "Offset print, emboss, batch number, tamper-evident seal",
     description: "Primary and secondary packaging for solid dosage forms, medical devices, and diagnostic kits. EU MDR compliant.",
   },
   {
     name: "Patient Information Leaflets",
+    image: "/images/desktop/说明书标签.png",
     specs: "40–70gsm Uncoated · Multi-Fold / Booklet",
     processes: "Offset or digital, multi-language, braille-ready scoring",
     description: "CE-marked leaflets with IFU content. Multi-language edition support with regulatory review readiness.",
   },
   {
     name: "Compliance Document Pack",
+    image: "/images/desktop/防篡改.png",
     specs: "A4 Ring-Binder / Custom Folder · Full Documentation",
     processes: "Offset cover, tab dividers, foil-stamped branding",
     description: "Complete compliance dossier — certificate of analysis, batch records, and EU declaration of conformity.",
@@ -39,14 +41,6 @@ const complianceSteps = [
   { title: "Delivery", subtitle: "Batch-sealed delivery with CoA, batch certificate, and EU declaration of conformity." },
 ];
 
-const galleryImages = [
-  "/images/desktop/OTC零售药盒.png",
-  "/images/desktop/保健品礼盒.png",
-  "/images/desktop/冷链药品包装.png",
-  "/images/desktop/药盒.png",
-  "/images/desktop/医美化妆品盒.png",
-  "/images/desktop/防篡改.png",
-];
 
 export default function PharmaHealthcarePage() {
   return (
@@ -172,6 +166,14 @@ export default function PharmaHealthcarePage() {
                   <span className="font-mono text-xs text-text-secondary/40">
                     {String(i + 1).padStart(2, "0")}
                   </span>
+                  <div className="mb-3 w-16 h-16 overflow-hidden">
+                    <PlaceholderImage
+                      label={p.name}
+                      aspectRatio="1/1"
+                      src={p.image}
+                      className="w-full h-full"
+                    />
+                  </div>
                   <h3 className="mt-2 font-display text-2xl text-text-primary">
                     {p.name}
                   </h3>
@@ -300,7 +302,6 @@ export default function PharmaHealthcarePage() {
       </section>
 
       {/* Product Gallery */}
-      <ProductGallery images={galleryImages} title="Pharma & Healthcare" />
     </>
   );
 }

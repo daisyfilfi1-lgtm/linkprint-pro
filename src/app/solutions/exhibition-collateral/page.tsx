@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import PlaceholderImage from "@/components/PlaceholderImage";
-import ProductGallery from "@/components/ProductGallery";
 
 export const metadata: Metadata = {
   title: "Exhibition Packaging Solutions — LinkPrint Pro",
@@ -31,24 +30,28 @@ const painPoints = [
 const products = [
   {
     name: "Brochures & Lookbooks",
+    image: "/images/desktop/宣传册目录.png",
     specs: "A4 / A5 · 8–48 Pages · Saddle-Stitched or Perfect Bound",
     processes: "Offset print, spot UV, foil-stamped cover",
     description: "Presentation-quality collateral for distribution at booths and meetings.",
   },
   {
     name: "Posters & Signage",
+    image: "/images/desktop/海报.png",
     specs: "A2 / A1 / Custom · 170–300gsm Uncoated",
     processes: "Soy-based flexo, edge gilding, matte lamination",
     description: "Wall graphics, directional signage, and presentation posters for your exhibition space.",
   },
   {
     name: "Exhibition Gift Boxes",
+    image: "/images/desktop/展会礼盒.png",
     specs: "Rigid 2mm Board / 150gsm Brand Wrap",
     processes: "Full-wrap litho, hot foil logo, magnetic closure, ribbon pull",
     description: "Branded gift boxes for VIP visitors, press kits, and product samples.",
   },
   {
     name: "Business Cards",
+    image: "/images/desktop/名片吊牌贴纸.png",
     specs: "400gsm Uncoated / 400–600gsm Cotton",
     processes: "Letterpress, foil stamping, blind emboss, duplex edge",
     description: "Tactile business cards that communicate craftsmanship before a handshake.",
@@ -63,14 +66,6 @@ const exhibitionCalendar = [
   { name: "CosmoPharm PACK", location: "Milan", date: "Nov 2025", link: "#" },
 ];
 
-const galleryImages = [
-  "/images/desktop/展会礼盒.png",
-  "/images/desktop/展会礼盒2.png",
-  "/images/desktop/展会急救包.png",
-  "/images/desktop/海报.png",
-  "/images/desktop/宣传册目录.png",
-  "/images/desktop/名片吊牌贴纸.png",
-];
 
 export default function ExhibitionCollateralPage() {
   return (
@@ -169,6 +164,14 @@ export default function ExhibitionCollateralPage() {
                   <span className="font-mono text-xs text-text-secondary/40">
                     {String(i + 1).padStart(2, "0")}
                   </span>
+                  <div className="mb-3 w-16 h-16 overflow-hidden">
+                    <PlaceholderImage
+                      label={p.name}
+                      aspectRatio="1/1"
+                      src={p.image}
+                      className="w-full h-full"
+                    />
+                  </div>
                   <h3 className="mt-2 font-display text-2xl text-text-primary">
                     {p.name}
                   </h3>
@@ -292,7 +295,6 @@ export default function ExhibitionCollateralPage() {
       </section>
 
       {/* Product Gallery */}
-      <ProductGallery images={galleryImages} title="Exhibition Collateral" />
     </>
   );
 }

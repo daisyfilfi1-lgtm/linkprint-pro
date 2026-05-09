@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import PlaceholderImage from "@/components/PlaceholderImage";
-import ProductGallery from "@/components/ProductGallery";
 
 export const metadata: Metadata = {
   title: "Creator Packaging Solutions — LinkPrint Pro",
@@ -12,24 +11,28 @@ export const metadata: Metadata = {
 const products = [
   {
     name: "Art Print Boxes",
+    image: "/images/desktop/设计师品牌邮寄.png",
     specs: "E-flute / 1.2mm / Archival 300gsm Lining",
     finishing: "Foil stamping, blind emboss, ribbon pull",
     description: "Flat-packed or assembled. Archival-quality interior for prints, posters, and fine art.",
   },
   {
     name: "Limited Edition Drops",
+    image: "/images/desktop/限量发售.png",
     specs: "Rigid 2mm Board / 150gsm Art Wrap",
     finishing: "Hot foil serial number, edge gilding, magnetic closure",
     description: "Numbered, collectible packaging for limited-run merchandise and collaborations.",
   },
   {
     name: "Pop-Up Kits",
+    image: "/images/desktop/快闪活动.png",
     specs: "350gsm CCNB / Quick-fold Die-Cut",
     finishing: "Perforation, snap-lock, no-glue assembly",
     description: "Self-erecting structures for event merch, tour stops, and seasonal activations.",
   },
   {
     name: "Designer Mailer Sets",
+    image: "/images/desktop/众筹.png",
     specs: "400gsm Recycled / PLA-coated Interior",
     finishing: "Inside print, soy-based ink, compostable window",
     description: "100% plastic-free mailers with custom interior printing for unboxing moments.",
@@ -51,13 +54,6 @@ const faqItems = [
   },
 ];
 
-const galleryImages = [
-  "/images/desktop/设计师品牌邮寄.png",
-  "/images/desktop/限量发售.png",
-  "/images/desktop/NFT.png",
-  "/images/desktop/众筹.png",
-  "/images/desktop/快闪活动.png",
-];
 
 export default function CreatorPackagingPage() {
   return (
@@ -181,6 +177,14 @@ export default function CreatorPackagingPage() {
                   <span className="font-mono text-xs text-text-secondary/40">
                     {String(i + 1).padStart(2, "0")}
                   </span>
+                  <div className="mb-3 w-16 h-16 overflow-hidden">
+                    <PlaceholderImage
+                      label={p.name}
+                      aspectRatio="1/1"
+                      src={p.image}
+                      className="w-full h-full"
+                    />
+                  </div>
                   <h3 className="mt-2 font-display text-2xl text-text-primary">
                     {p.name}
                   </h3>
@@ -285,7 +289,6 @@ export default function CreatorPackagingPage() {
       </section>
 
       {/* Product Gallery */}
-      <ProductGallery images={galleryImages} title="Creator Packaging" />
     </>
   );
 }

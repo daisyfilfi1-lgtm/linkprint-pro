@@ -1,10 +1,10 @@
 import Link from "next/link";
 import PlaceholderImage from "@/components/PlaceholderImage";
-import ProductGallery from "@/components/ProductGallery";
 
 const seasonalProducts = [
   {
     name: "Advent Calendar",
+    image: "/images/desktop/seasonal-holiday圣诞倒数礼盒.png",
     holiday: "Christmas / New Year",
     structure: "12/24-grid drawers, magnetic flip lid, layered nesting",
     finishing: "Foil snowflakes, embossed reindeer, soft-touch, metallic ink illustrations",
@@ -23,6 +23,7 @@ seasonal warmth without garishness, desaturated holiday palette,
   },
   {
     name: "Heart-Shaped Gift Box",
+    image: "/images/desktop/seasonal-holiday情人节心形礼盒.png",
     holiday: "Valentine's Day / 520 / Qixi",
     structure: "Heart-shaped rigid box, magnetic snap, internal divider",
     finishing: "Rose gold foil, embossed rose, soft-touch, inside love letter print",
@@ -40,6 +41,7 @@ romantic yet restrained, no cliche hearts,
   },
   {
     name: "Floral Message Box",
+    image: "/images/desktop/seasonal-holiday母亲节花语礼盒.png",
     holiday: "Mother's Day / Women's Day",
     structure: "Book-style magnetic lid, pop-up 3D flower",
     finishing: "Debossed petal texture, spot UV dew drops, foil greeting",
@@ -57,6 +59,7 @@ botanical and tender,
   },
   {
     name: "Black Friday Limited Box",
+    image: "/images/desktop/seasonal-holiday黑五限定盒.png",
     holiday: "Black Friday / Cyber Monday / Singles' Day",
     structure: "Dark-themed mailer box, holographic logo, limited VDP numbering",
     finishing: "Holographic foil, soft-touch, spot UV, serialized numbering",
@@ -74,6 +77,7 @@ mysterious and exclusive,
   },
   {
     name: "Multi-Tier Gift Set",
+    image: "/images/desktop/中秋节.png",
     holiday: "Mid-Autumn / Thanksgiving",
     structure: "3-tier drawer box, belly band, carry handle",
     finishing: "Foil illustration, debossed cloud pattern, soft-touch, ribbon seal",
@@ -92,6 +96,7 @@ East-meets-West elegance,
   },
   {
     name: "Summer Cool Edition",
+    image: "/images/desktop/夏日清爽限定.png",
     holiday: "Summer / Seasonal Refresh",
     structure: "Window cut-out, ventilated structure, cool-toned design",
     finishing: "Spot UV water ripple, silver foil, soft-touch",
@@ -109,6 +114,7 @@ airy and refreshing,
   },
   {
     name: "Corporate Holiday Gift Set",
+    image: "/images/desktop/企业定制.png",
     holiday: "Year-End / Client Gifts / Employee Gifts",
     structure: "Multi-cell insert, custom logo seal, thank-you card slot",
     finishing: "Foil company branding, embossing, soft-touch, inside brand story print",
@@ -127,6 +133,7 @@ executive and thoughtful,
   },
   {
     name: "Wedding Favor Box",
+    image: "/images/desktop/婚礼.png",
     holiday: "Weddings / Engagements",
     structure: "Personalized name printing, magnetic closure, layered reveal",
     finishing: "Foil couple names, 3D embossed motif, soft-touch, edge gilding",
@@ -145,14 +152,6 @@ intimate and artisanal,
   },
 ];
 
-const galleryImages = [
-  "/images/desktop/seasonal-holiday圣诞倒数礼盒.png",
-  "/images/desktop/seasonal-holiday情人节心形礼盒.png",
-  "/images/desktop/seasonal-holiday母亲节花语礼盒.png",
-  "/images/desktop/seasonal-holiday黑五限定盒.png",
-  "/images/desktop/中秋节.png",
-  "/images/desktop/夏日清爽限定.png",
-];
 
 export default function SeasonalHolidayPage() {
   return (
@@ -243,6 +242,14 @@ export default function SeasonalHolidayPage() {
                   <span className="font-mono text-xs text-text-secondary/40">
                     {String(i + 1).padStart(2, "0")}
                   </span>
+                  <div className="mb-3 w-16 h-16 overflow-hidden">
+                    <PlaceholderImage
+                      label={p.name}
+                      aspectRatio="1/1"
+                      src={p.image}
+                      className="w-full h-full"
+                    />
+                  </div>
                   <h3 className="mt-2 font-display text-2xl text-text-primary">
                     {p.name}
                   </h3>
@@ -312,7 +319,6 @@ export default function SeasonalHolidayPage() {
       </section>
 
       {/* Product Gallery */}
-      <ProductGallery images={galleryImages} title="Seasonal & Holiday" />
 
       {/* Section 4: CTA */}
       <section className="bg-warm py-24 lg:py-32">

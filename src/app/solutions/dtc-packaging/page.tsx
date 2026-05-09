@@ -1,5 +1,4 @@
 import PlaceholderImage from "@/components/PlaceholderImage";
-import ProductGallery from "@/components/ProductGallery";
 import Link from "next/link";
 
 const painPoints = [
@@ -33,36 +32,42 @@ const painPoints = [
 const products = [
   {
     name: "Mailer Box",
+    image: "/images/desktop/DTC品牌邮寄盒.png",
     specs: "E-flute / 1.2mm / 200–400gsm Lining",
     processes: "Foil stamping, spot UV, embossed logo",
     description: "The e-commerce standard. Self-locking, no tape needed.",
   },
   {
     name: "Subscription Sleeve",
+    image: "/images/desktop/DTC-订阅盒.png",
     specs: "350gsm CCNB / Matte Lamination",
     processes: "Laser die-cut window, hot foil serial number",
     description: "Slim, shippable, designed for recurring touchpoints.",
   },
   {
     name: "Rigid Setup Box",
+    image: "/images/desktop/D2C吊牌.png",
     specs: "2mm Greyboard / 150gsm Wrapping Paper",
     processes: "Full-wrap litho, edge gilding, magnetic closure",
     description: "Premium unboxing for luxury DTC and gifting.",
   },
   {
     name: "Folding Carton",
+    image: "/images/desktop/D2C-AB测试多版本.png",
     specs: "400gsm Art Paper / AQ Coating",
     processes: "Offset print, emboss, gloss spot UV",
     description: "Cost-efficient, high-volume, retail-ready packaging.",
   },
   {
     name: "Telescopic Box",
+    image: "/images/desktop/D2C退货包装.png",
     specs: "1.5mm Solid Board / Kraft Wrap",
     processes: "Inside print, blind emboss, ribbon pull",
     description: "Two-piece box for fragile goods and curated sets.",
   },
   {
     name: "Clamshell Mailer",
+    image: "/images/desktop/D2C-插页感谢卡.png",
     specs: "1mm Recycled Board / PLA Coating",
     processes: "Soy-based print, perforation, compostable window",
     description: "100% plastic-free, curbside recyclable mailer.",
@@ -78,14 +83,6 @@ const complianceItems = [
   "Carbon-neutral shipping via Gold Standard offsets",
 ];
 
-const galleryImages = [
-  "/images/desktop/DTC品牌邮寄盒.png",
-  "/images/desktop/DTC-订阅盒.png",
-  "/images/desktop/D2C-AB测试多版本.png",
-  "/images/desktop/D2C-插页感谢卡.png",
-  "/images/desktop/D2C吊牌.png",
-  "/images/desktop/D2C退货包装.png",
-];
 
 export default function DtcPackagingPage() {
   return (
@@ -201,8 +198,16 @@ export default function DtcPackagingPage() {
             {products.map((p, i) => (
               <div
                 key={p.name}
-                className="grid grid-cols-1 md:grid-cols-4 gap-6 py-10 border-t border-black/5 last:border-b last:border-black/5 items-start"
+                className="grid grid-cols-1 md:grid-cols-5 gap-6 py-10 border-t border-black/5 last:border-b last:border-black/5 items-start"
               >
+                <div className="md:col-span-1">
+                  <PlaceholderImage
+                    label={p.name}
+                    aspectRatio="1/1"
+                    src={p.image}
+                    className="w-full"
+                  />
+                </div>
                 <div className="md:col-span-1">
                   <span className="font-mono text-xs text-text-secondary/40">
                     {String(i + 1).padStart(2, "0")}
@@ -301,7 +306,6 @@ export default function DtcPackagingPage() {
       </section>
 
       {/* Product Gallery */}
-      <ProductGallery images={galleryImages} title="DTC Packaging" />
     </>
   );
 }

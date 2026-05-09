@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import PlaceholderImage from "@/components/PlaceholderImage";
+import ProductGallery from "@/components/ProductGallery";
 
 export const metadata: Metadata = {
   title: "Pharma & Healthcare Packaging — LinkPrint Pro",
@@ -36,6 +37,15 @@ const complianceSteps = [
   { title: "Production", subtitle: "GMP-controlled manufacturing with batch traceability and environmental monitoring." },
   { title: "FQC", subtitle: "Full quality control — dimensional, color, adhesion, and seal integrity testing." },
   { title: "Delivery", subtitle: "Batch-sealed delivery with CoA, batch certificate, and EU declaration of conformity." },
+];
+
+const galleryImages = [
+  "/images/desktop/OTC零售药盒.png",
+  "/images/desktop/保健品礼盒.png",
+  "/images/desktop/冷链药品包装.png",
+  "/images/desktop/药盒.png",
+  "/images/desktop/医美化妆品盒.png",
+  "/images/desktop/防篡改.png",
 ];
 
 export default function PharmaHealthcarePage() {
@@ -288,6 +298,9 @@ export default function PharmaHealthcarePage() {
           </div>
         </div>
       </section>
+
+      {/* Product Gallery */}
+      <ProductGallery images={galleryImages} title="Pharma & Healthcare" />
     </>
   );
 }

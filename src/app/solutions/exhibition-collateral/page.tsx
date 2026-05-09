@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import PlaceholderImage from "@/components/PlaceholderImage";
+import ProductGallery from "@/components/ProductGallery";
 
 export const metadata: Metadata = {
   title: "Exhibition Packaging Solutions — LinkPrint Pro",
@@ -60,6 +61,15 @@ const exhibitionCalendar = [
   { name: "Luxe Pack", location: "Monaco / New York", date: "Sep / Nov 2025", link: "#" },
   { name: "Empack", location: "Various EU", date: "Oct 2025", link: "#" },
   { name: "CosmoPharm PACK", location: "Milan", date: "Nov 2025", link: "#" },
+];
+
+const galleryImages = [
+  "/images/desktop/展会礼盒.png",
+  "/images/desktop/展会礼盒2.png",
+  "/images/desktop/展会急救包.png",
+  "/images/desktop/海报.png",
+  "/images/desktop/宣传册目录.png",
+  "/images/desktop/名片吊牌贴纸.png",
 ];
 
 export default function ExhibitionCollateralPage() {
@@ -280,6 +290,9 @@ export default function ExhibitionCollateralPage() {
           </div>
         </div>
       </section>
+
+      {/* Product Gallery */}
+      <ProductGallery images={galleryImages} title="Exhibition Collateral" />
     </>
   );
 }

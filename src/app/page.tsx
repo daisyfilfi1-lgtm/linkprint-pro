@@ -202,21 +202,30 @@ export default function HomePage() {
   return (
     <>
       {/* ─── Section 1: Hero ─── */}
-      <section className="relative min-h-screen flex items-center bg-charcoal overflow-hidden">
-        {/* Constrained background image — matches content width below */}
-        <div className="absolute inset-0 flex justify-center pointer-events-none">
-          <div className="relative w-full max-w-7xl h-full">
-            <Image
-              src="/images/desktop/hero-main-bg.png"
-              alt="Premium printing and packaging showcase"
-              fill
-              className="object-cover"
-              priority
-              sizes="(max-width: 1280px) 100vw, 1280px"
-            />
-            {/* Dark overlay for text readability */}
-            <div className="absolute inset-0" style={{ backgroundColor: "rgba(0,0,0,0.55)" }} />
-          </div>
+      <section className="relative min-h-screen flex items-center overflow-hidden" style={{ backgroundColor: "#0D0D0D" }}>
+        {/* Full-bleed background image */}
+        <div className="absolute inset-0 pointer-events-none">
+          <Image
+            src="/images/desktop/hero-main-bg.png"
+            alt="Premium printing and packaging showcase"
+            fill
+            className="object-cover object-center"
+            priority
+            sizes="100vw"
+          />
+          {/* Gradient overlay — depth without crushing the image */}
+          <div 
+            className="absolute inset-0"
+            style={{ 
+              background: "linear-gradient(135deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.35) 40%, rgba(0,0,0,0.25) 60%, rgba(0,0,0,0.55) 100%)" 
+            }}
+          />
+          {/* Subtle grain texture */}
+          <div className="absolute inset-0 opacity-[0.04]" style={{
+            backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E\")",
+            backgroundRepeat: "repeat",
+            backgroundSize: "256px 256px"
+          }} />
         </div>
 
         <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-40 pb-32 w-full relative z-10">
@@ -320,20 +329,14 @@ export default function HomePage() {
                       isReverse ? "lg:flex-row-reverse" : ""
                     }`}
                   >
-                    {/* Image half — 2×3 product grid for visual diversity */}
-                    <div className="lg:w-1/2">
-                      <div className="grid grid-cols-2 gap-1.5">
-                        {scene.images.slice(0, 6).map((img, idx) => (
-                          <div key={idx} className="overflow-hidden">
-                            <PlaceholderImage
-                              label={`${scene.title} ${idx + 1}`}
-                              aspectRatio="4/3"
-                              src={img}
-                              className="w-full h-full"
-                            />
-                          </div>
-                        ))}
-                      </div>
+                    {/* Image half — representative product shot */}
+                    <div className="lg:w-1/2 overflow-hidden">
+                      <PlaceholderImage
+                        label={scene.title}
+                        aspectRatio="4/3"
+                        src={scene.images[0]}
+                        className="w-full h-full"
+                      />
                     </div>
                     {/* Text half */}
                     <div className="lg:w-1/2 flex flex-col justify-center px-6 lg:px-12 py-8">

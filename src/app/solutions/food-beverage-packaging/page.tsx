@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import PlaceholderImage from "@/components/PlaceholderImage";
+import ProductGallery from "@/components/ProductGallery";
 
 export const metadata: Metadata = {
   title: "F&B Packaging Solutions — LinkPrint Pro",
@@ -132,6 +133,15 @@ const complianceItems = [
   { name: "FDA 21 CFR 176.170", description: "Components of paper and paperboard in contact with aqueous and fatty foods" },
   { name: "EU 10/2011", description: "Plastic materials in food contact (for barrier coatings)" },
   { name: "FSC Chain of Custody", description: "Sustainable sourcing for food brands' ESG reporting" },
+];
+
+const galleryImages = [
+  "/images/desktop/啤酒.png",
+  "/images/desktop/巧克力.png",
+  "/images/desktop/咖啡订阅盒.png",
+  "/images/desktop/健康零食邮寄盒.png",
+  "/images/desktop/城市限定.png",
+  "/images/desktop/季节酒款限定.png",
 ];
 
 export default function FoodBeveragePackagingPage() {
@@ -430,6 +440,9 @@ export default function FoodBeveragePackagingPage() {
           </p>
         </div>
       </section>
+
+      {/* Product Gallery */}
+      <ProductGallery images={galleryImages} title="Food & Beverage Packaging" />
 
       {/* Section 8: Bottom CTA */}
       <section className="bg-charcoal py-24 lg:py-32">

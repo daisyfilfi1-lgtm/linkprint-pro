@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import PlaceholderImage from "@/components/PlaceholderImage";
+import ProductGallery from "@/components/ProductGallery";
 
 export const metadata: Metadata = {
   title: "Creator Packaging Solutions — LinkPrint Pro",
@@ -48,6 +49,14 @@ const faqItems = [
     question: "Can you ship directly to my fulfilment center?",
     answer: "Yes. We ship to fulfilment centers across the EU and US. Flat-packed boxes reduce storage footprint by up to 70%. We can also drop-ship direct to customers with your branded shipping labels. Just provide the addresses and we handle the logistics.",
   },
+];
+
+const galleryImages = [
+  "/images/desktop/设计师品牌邮寄.png",
+  "/images/desktop/限量发售.png",
+  "/images/desktop/NFT.png",
+  "/images/desktop/众筹.png",
+  "/images/desktop/快闪活动.png",
 ];
 
 export default function CreatorPackagingPage() {
@@ -274,6 +283,9 @@ export default function CreatorPackagingPage() {
           </div>
         </div>
       </section>
+
+      {/* Product Gallery */}
+      <ProductGallery images={galleryImages} title="Creator Packaging" />
     </>
   );
 }

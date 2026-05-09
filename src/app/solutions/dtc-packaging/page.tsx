@@ -1,4 +1,5 @@
 import PlaceholderImage from "@/components/PlaceholderImage";
+import ProductGallery from "@/components/ProductGallery";
 import Link from "next/link";
 
 const painPoints = [
@@ -75,6 +76,15 @@ const complianceItems = [
   "ISO 9001:2015 Quality Management",
   "EU MDR Ready for pharma and medical devices",
   "Carbon-neutral shipping via Gold Standard offsets",
+];
+
+const galleryImages = [
+  "/images/desktop/DTC品牌邮寄盒.png",
+  "/images/desktop/DTC-订阅盒.png",
+  "/images/desktop/D2C-AB测试多版本.png",
+  "/images/desktop/D2C-插页感谢卡.png",
+  "/images/desktop/D2C吊牌.png",
+  "/images/desktop/D2C退货包装.png",
 ];
 
 export default function DtcPackagingPage() {
@@ -289,6 +299,9 @@ export default function DtcPackagingPage() {
           </div>
         </div>
       </section>
+
+      {/* Product Gallery */}
+      <ProductGallery images={galleryImages} title="DTC Packaging" />
     </>
   );
 }

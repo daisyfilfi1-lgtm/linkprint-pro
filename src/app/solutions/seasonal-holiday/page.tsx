@@ -1,5 +1,6 @@
 import Link from "next/link";
 import PlaceholderImage from "@/components/PlaceholderImage";
+import ProductGallery from "@/components/ProductGallery";
 
 const seasonalProducts = [
   {
@@ -142,6 +143,15 @@ beside the box: a dried hydrangea and a silk ribbon in dusty pink,
 intimate and artisanal,
 [通用基底]`,
   },
+];
+
+const galleryImages = [
+  "/images/desktop/seasonal-holiday圣诞倒数礼盒.png",
+  "/images/desktop/seasonal-holiday情人节心形礼盒.png",
+  "/images/desktop/seasonal-holiday母亲节花语礼盒.png",
+  "/images/desktop/seasonal-holiday黑五限定盒.png",
+  "/images/desktop/中秋节.png",
+  "/images/desktop/夏日清爽限定.png",
 ];
 
 export default function SeasonalHolidayPage() {
@@ -300,6 +310,9 @@ export default function SeasonalHolidayPage() {
           </div>
         </div>
       </section>
+
+      {/* Product Gallery */}
+      <ProductGallery images={galleryImages} title="Seasonal & Holiday" />
 
       {/* Section 4: CTA */}
       <section className="bg-warm py-24 lg:py-32">

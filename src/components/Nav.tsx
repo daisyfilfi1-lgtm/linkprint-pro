@@ -77,7 +77,7 @@ export default function Nav() {
                         pathname.startsWith("/solutions")
                           ? "text-mint"
                           : isTransparent
-                          ? "text-text-primary hover:text-mint"
+                          ? "text-off-white/80 hover:text-off-white"
                           : "text-text-secondary hover:text-text-primary"
                       }`}
                     >
@@ -112,7 +112,7 @@ export default function Nav() {
                     pathname === link.href
                       ? "text-mint"
                       : isTransparent
-                      ? "text-text-primary hover:text-mint"
+                      ? "text-off-white/80 hover:text-off-white"
                       : "text-text-secondary hover:text-text-primary"
                   }`}
                 >

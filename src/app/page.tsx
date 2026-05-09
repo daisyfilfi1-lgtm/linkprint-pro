@@ -8,60 +8,89 @@ const scenes = [
     subtitle: "Direct-to-Consumer Brands",
     description:
       "Custom mailer boxes, subscription packaging, and unboxing experiences built for e-commerce conversion. MOQ from 500 units.",
-    imageLabel: "DTC Brand Mailer Box",
     href: "/solutions/dtc-packaging",
-    category: "dtc_mailer",
-    image: "/images/desktop/DTC品牌邮寄盒.png",
+    images: [
+      "/images/desktop/DTC品牌邮寄盒.png",
+      "/images/desktop/DTC-订阅盒.png",
+      "/images/desktop/D2C-AB测试多版本.png",
+      "/images/desktop/D2C-插页感谢卡.png",
+      "/images/desktop/D2C吊牌.png",
+      "/images/desktop/D2C退货包装.png",
+    ],
   },
   {
     title: "Seasonal",
     subtitle: "Seasonal & Holiday",
     description:
       "18 days from concept to shelf. Christmas, Valentine's, Black Friday — 500 units per design.",
-    imageLabel: "Seasonal Advent Calendar Box",
     href: "/solutions/seasonal-holiday",
-    category: "hero_paper",
-    image: "/images/desktop/seasonal-holiday圣诞倒数礼盒.png",
+    images: [
+      "/images/desktop/seasonal-holiday圣诞倒数礼盒.png",
+      "/images/desktop/seasonal-holiday情人节心形礼盒.png",
+      "/images/desktop/seasonal-holiday母亲节花语礼盒.png",
+      "/images/desktop/seasonal-holiday黑五限定盒.png",
+      "/images/desktop/中秋节.png",
+      "/images/desktop/夏日清爽限定.png",
+    ],
   },
   {
     title: "Creator",
     subtitle: "Creator Economy",
     description:
       "Limited drops, merch packaging, and seasonal collections. We match your timeline — 72-hour prototyping, 10-day production.",
-    imageLabel: "Creator Brand Mailer Box",
     href: "/solutions/creator-packaging",
-    category: "creator",
-    image: "/images/desktop/设计师品牌邮寄.png",
+    images: [
+      "/images/desktop/设计师品牌邮寄.png",
+      "/images/desktop/限量发售.png",
+      "/images/desktop/NFT.png",
+      "/images/desktop/众筹.png",
+      "/images/desktop/快闪活动.png",
+    ],
   },
   {
     title: "Exhibition",
     subtitle: "Exhibition Collateral",
     description:
       "Presentation kits, product sample boxes, and trade show materials that communicate craftsmanship before a handshake.",
-    imageLabel: "Exhibition Gift Box",
     href: "/solutions/exhibition-collateral",
-    category: "exhibition",
-    image: "/images/desktop/展会礼盒.png",
+    images: [
+      "/images/desktop/展会礼盒.png",
+      "/images/desktop/展会礼盒2.png",
+      "/images/desktop/展会急救包.png",
+      "/images/desktop/海报.png",
+      "/images/desktop/宣传册目录.png",
+      "/images/desktop/名片吊牌贴纸.png",
+    ],
   },
   {
     title: "Pharma",
     subtitle: "Pharma & Nutraceuticals",
     description:
       "GMP-compliant paper packaging for supplements, medical devices, and health products. EU MDR ready documentation.",
-    imageLabel: "OTC Retail Pharma Box",
     href: "/solutions/pharma-healthcare",
-    category: "pharma",
-    image: "/images/desktop/OTC零售药盒.png",
+    images: [
+      "/images/desktop/OTC零售药盒.png",
+      "/images/desktop/保健品礼盒.png",
+      "/images/desktop/冷链药品包装.png",
+      "/images/desktop/药盒.png",
+      "/images/desktop/医美化妆品盒.png",
+      "/images/desktop/防篡改.png",
+    ],
   },
   {
     title: "F&B",
     subtitle: "Craft Food & Beverage",
     description:
       "Seasonal labels, city-specific editions, tamper-evident paper for craft breweries and quick commerce. 500 units.",
-    imageLabel: "Craft Beer Packaging",
     href: "/solutions/food-beverage-packaging",
-    category: "fb_packaging",
-    image: "/images/desktop/啤酒.png",
+    images: [
+      "/images/desktop/啤酒.png",
+      "/images/desktop/巧克力.png",
+      "/images/desktop/咖啡订阅盒.png",
+      "/images/desktop/健康零食邮寄盒.png",
+      "/images/desktop/城市限定.png",
+      "/images/desktop/季节酒款限定.png",
+    ],
   },
 ];
 
@@ -173,19 +202,21 @@ export default function HomePage() {
   return (
     <>
       {/* ─── Section 1: Hero ─── */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
-        {/* Full background image */}
-        <div className="absolute inset-0 pointer-events-none">
-          <Image
-            src="/images/desktop/hero-main-bg.png"
-            alt="Premium printing and packaging showcase"
-            fill
-            className="object-cover object-center"
-            priority
-            sizes="100vw"
-          />
-          {/* Dark overlay for text readability */}
-          <div className="absolute inset-0" style={{ backgroundColor: "rgba(0,0,0,0.55)" }} />
+      <section className="relative min-h-screen flex items-center bg-charcoal overflow-hidden">
+        {/* Constrained background image — matches content width below */}
+        <div className="absolute inset-0 flex justify-center pointer-events-none">
+          <div className="relative w-full max-w-7xl h-full">
+            <Image
+              src="/images/desktop/hero-main-bg.png"
+              alt="Premium printing and packaging showcase"
+              fill
+              className="object-cover"
+              priority
+              sizes="(max-width: 1280px) 100vw, 1280px"
+            />
+            {/* Dark overlay for text readability */}
+            <div className="absolute inset-0" style={{ backgroundColor: "rgba(0,0,0,0.55)" }} />
+          </div>
         </div>
 
         <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-40 pb-32 w-full relative z-10">
@@ -289,16 +320,20 @@ export default function HomePage() {
                       isReverse ? "lg:flex-row-reverse" : ""
                     }`}
                   >
-                    {/* Image half */}
-                    <div className="lg:w-1/2 overflow-hidden">
-                      <PlaceholderImage
-                        label={scene.imageLabel}
-                        aspectRatio="4/3"
-                        src={scene.image}
-                        category={scene.category}
-                        variant={i}
-                        className="w-full h-full"
-                      />
+                    {/* Image half — 2×3 product grid for visual diversity */}
+                    <div className="lg:w-1/2">
+                      <div className="grid grid-cols-2 gap-1.5">
+                        {scene.images.slice(0, 6).map((img, idx) => (
+                          <div key={idx} className="overflow-hidden">
+                            <PlaceholderImage
+                              label={`${scene.title} ${idx + 1}`}
+                              aspectRatio="4/3"
+                              src={img}
+                              className="w-full h-full"
+                            />
+                          </div>
+                        ))}
+                      </div>
                     </div>
                     {/* Text half */}
                     <div className="lg:w-1/2 flex flex-col justify-center px-6 lg:px-12 py-8">

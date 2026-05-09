@@ -189,7 +189,7 @@ export default function CapabilitiesMaterialsPage() {
                 </div>
                 <div className="lg:col-span-2">
                   <span className="font-mono text-xs tracking-[0.15em] text-text-secondary/40 uppercase">Best for</span>
-                  <p className="mt-2 font-mono text-sm text-text-primary">{finish.bestFor}</p>
+                  <p className="mt-2 text-sm text-text-primary">{finish.bestFor}</p>
                 </div>
                 <div className="lg:col-span-4">
                   <p className="text-base text-text-secondary leading-relaxed">{finish.definition}</p>
@@ -234,7 +234,7 @@ export default function CapabilitiesMaterialsPage() {
                 </div>
                 <div className="lg:col-span-3">
                   <span className="font-mono text-xs tracking-[0.15em] text-mint uppercase">Best for</span>
-                  <p className="mt-2 font-mono text-sm text-off-white/70">{di.bestFor}</p>
+                  <p className="mt-2 text-sm text-off-white/70">{di.bestFor}</p>
                 </div>
                 <div className="lg:col-span-6">
                   <p className="text-base text-off-white/60 leading-relaxed">{di.definition}</p>

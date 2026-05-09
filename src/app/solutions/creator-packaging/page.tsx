@@ -70,7 +70,7 @@ export default function CreatorPackagingPage() {
             </span>
             <h1 className="mt-6 font-display text-4xl lg:text-6xl text-text-primary leading-tight">
               Limited Runs, <br />
-              <span className="italic">Gallery Quality.</span>
+              Gallery Quality.
             </h1>
             <p className="mt-6 text-text-secondary text-sm leading-relaxed">
               Packaging that matches your creative standard. Small batches,
@@ -116,7 +116,7 @@ export default function CreatorPackagingPage() {
                 Philosophy
               </span>
               <h2 className="mt-6 font-display text-4xl lg:text-5xl text-text-primary leading-tight">
-                Packaging as <span className="italic">Content.</span>
+                Packaging as Content.
               </h2>
               <p className="mt-6 text-text-secondary text-sm leading-relaxed">
                 Your packaging is the first physical touchpoint with your
@@ -160,7 +160,7 @@ export default function CreatorPackagingPage() {
             Product Line
           </span>
           <h2 className="mt-6 font-display text-4xl lg:text-5xl text-text-primary leading-tight">
-            Four formats. <span className="italic">Infinite releases.</span>
+            Four formats. Infinite releases.
           </h2>
           <div className="mt-16 space-y-0">
             {products.map((p, i) => (
@@ -193,7 +193,7 @@ export default function CreatorPackagingPage() {
                   </p>
                 </div>
                 <div className="md:col-span-1">
-                  <p className="text-sm text-text-secondary leading-relaxed italic">
+                  <p className="text-sm text-text-secondary leading-relaxed">
                     {p.description}
                   </p>
                 </div>
@@ -210,7 +210,7 @@ export default function CreatorPackagingPage() {
             FAQ
           </span>
           <h2 className="mt-6 font-display text-4xl lg:text-5xl text-text-primary leading-tight max-w-2xl">
-            Questions creators <span className="italic">actually ask.</span>
+            Questions creators actually ask.
           </h2>
           <div className="mt-16 space-y-8">
             {faqItems.map((faq, i) => (
@@ -250,7 +250,7 @@ export default function CreatorPackagingPage() {
               <span className="font-mono text-xs tracking-[0.2em] text-mint uppercase">
                 Case Study
               </span>
-              <blockquote className="mt-6 font-display text-3xl lg:text-4xl italic text-off-white leading-tight">
+              <blockquote className="mt-6 font-display text-3xl lg:text-4xl text-off-white leading-tight">
                 &ldquo;500 numbered boxes, delivered in 12 days. Our community
                 shared every single unboxing.&rdquo;
               </blockquote>

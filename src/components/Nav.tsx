@@ -60,7 +60,7 @@ export default function Nav() {
               alt="Top Printing"
               width={120}
               height={40}
-              className="h-8 w-auto object-contain"
+              className="h-12 w-auto object-contain"
               priority
             />
           </Link>

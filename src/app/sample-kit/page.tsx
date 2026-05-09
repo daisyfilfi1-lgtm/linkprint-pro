@@ -80,9 +80,9 @@ export default function SampleKitPage() {
             <span className="text-mint text-2xl">✓</span>
           </div>
           <h1 className="font-display text-4xl text-text-primary leading-tight">
-            Your sample kit is <span className="italic">on its way.</span>
+            Your sample kit is on its way.
           </h1>
-          <p className="mt-6 text-text-secondary text-sm leading-relaxed">
+          <p className="mt-6 text-text-secondary text-base leading-relaxed">
             We&apos;ll send a confirmation to {formData.email} within 24 hours
             with tracking details. In the meantime, feel free to browse our
             solutions.
@@ -103,9 +103,9 @@ export default function SampleKitPage() {
             </span>
             <h1 className="mt-6 font-display text-4xl lg:text-6xl text-text-primary leading-tight">
               Feel the quality{" "}
-              <span className="italic">before you order.</span>
+              before you order.
             </h1>
-            <p className="mt-6 text-text-secondary text-sm leading-relaxed max-w-xl">
+            <p className="mt-6 text-text-secondary text-base leading-relaxed max-w-xl">
               Not sure which paper weight, finish, or structure fits your
               product? We&apos;ll send a curated sample kit with our most popular
               materials and processes — tailored to your industry.
@@ -133,7 +133,7 @@ export default function SampleKitPage() {
                 {kitContents.map((item, i) => (
                   <li
                     key={i}
-                    className="flex items-start gap-3 text-sm text-text-secondary"
+                    className="flex items-start gap-3 text-base text-text-secondary"
                   >
                     <span className="text-mint mt-0.5">—</span>
                     {item}
@@ -160,7 +160,7 @@ export default function SampleKitPage() {
                       onChange={(e) =>
                         setFormData({ ...formData, name: e.target.value })
                       }
-                      className="w-full bg-transparent border-b border-black/10 py-3 text-sm text-text-primary focus:outline-none focus:border-mint transition-colors"
+                      className="w-full bg-transparent border-b border-black/10 py-3 text-base text-text-primary focus:outline-none focus:border-mint transition-colors"
                       placeholder="Your full name"
                     />
                   </div>
@@ -175,7 +175,7 @@ export default function SampleKitPage() {
                       onChange={(e) =>
                         setFormData({ ...formData, email: e.target.value })
                       }
-                      className="w-full bg-transparent border-b border-black/10 py-3 text-sm text-text-primary focus:outline-none focus:border-mint transition-colors"
+                      className="w-full bg-transparent border-b border-black/10 py-3 text-base text-text-primary focus:outline-none focus:border-mint transition-colors"
                       placeholder="you@company.com"
                     />
                   </div>
@@ -193,7 +193,7 @@ export default function SampleKitPage() {
                       onChange={(e) =>
                         setFormData({ ...formData, company: e.target.value })
                       }
-                      className="w-full bg-transparent border-b border-black/10 py-3 text-sm text-text-primary focus:outline-none focus:border-mint transition-colors"
+                      className="w-full bg-transparent border-b border-black/10 py-3 text-base text-text-primary focus:outline-none focus:border-mint transition-colors"
                       placeholder="Company name"
                     />
                   </div>
@@ -208,7 +208,7 @@ export default function SampleKitPage() {
                       onChange={(e) =>
                         setFormData({ ...formData, country: e.target.value })
                       }
-                      className="w-full bg-transparent border-b border-black/10 py-3 text-sm text-text-primary focus:outline-none focus:border-mint transition-colors"
+                      className="w-full bg-transparent border-b border-black/10 py-3 text-base text-text-primary focus:outline-none focus:border-mint transition-colors"
                       placeholder="Country"
                     />
                   </div>
@@ -224,7 +224,7 @@ export default function SampleKitPage() {
                     onChange={(e) =>
                       setFormData({ ...formData, address: e.target.value })
                     }
-                    className="w-full bg-transparent border-b border-black/10 py-3 text-sm text-text-primary focus:outline-none focus:border-mint transition-colors resize-none"
+                    className="w-full bg-transparent border-b border-black/10 py-3 text-base text-text-primary focus:outline-none focus:border-mint transition-colors resize-none"
                     rows={2}
                     placeholder="Street, city, postal code, country"
                   />
@@ -254,7 +254,7 @@ export default function SampleKitPage() {
                             </span>
                           )}
                         </div>
-                        <span className="text-sm text-text-secondary group-hover:text-text-primary transition-colors">
+                        <span className="text-base text-text-secondary group-hover:text-text-primary transition-colors">
                           {scene}
                         </span>
                       </label>
@@ -286,7 +286,7 @@ export default function SampleKitPage() {
                             <div className="w-2 h-2 rounded-full bg-mint" />
                           )}
                         </div>
-                        <span className="text-sm text-text-secondary group-hover:text-text-primary transition-colors">
+                        <span className="text-base text-text-secondary group-hover:text-text-primary transition-colors">
                           {opt.label}
                         </span>
                       </label>
@@ -297,7 +297,7 @@ export default function SampleKitPage() {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="w-full py-4 bg-mint text-charcoal text-sm font-body font-semibold tracking-wide hover:bg-mint/90 transition-colors duration-300 disabled:opacity-50"
+                  className="w-full py-4 bg-mint text-charcoal text-base font-body font-semibold tracking-wide hover:bg-mint/90 transition-colors duration-300 disabled:opacity-50"
                 >
                   {submitting ? "Submitting..." : "Ship My Sample Kit"}
                 </button>

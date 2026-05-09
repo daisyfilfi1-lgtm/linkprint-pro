@@ -8,54 +8,60 @@ const scenes = [
     subtitle: "Direct-to-Consumer Brands",
     description:
       "Custom mailer boxes, subscription packaging, and unboxing experiences built for e-commerce conversion. MOQ from 500 units.",
-    imageLabel: "DTC MAILER BOX — Unboxing Scene with Branded Tissue Paper",
+    imageLabel: "DTC Brand Mailer Box",
     href: "/solutions/dtc-packaging",
     category: "dtc_mailer",
+    image: "/images/desktop/DTC品牌邮寄盒.png",
   },
   {
     title: "Seasonal",
     subtitle: "Seasonal & Holiday",
     description:
       "18 days from concept to shelf. Christmas, Valentine's, Black Friday — 500 units per design.",
-    imageLabel: "SEASONAL PACKAGING — Luxury Advent Calendar with Foil Accents and Drawers",
+    imageLabel: "Seasonal Advent Calendar Box",
     href: "/solutions/seasonal-holiday",
     category: "hero_paper",
+    image: "/images/desktop/seasonal-holiday圣诞倒数礼盒.png",
   },
   {
     title: "Creator",
     subtitle: "Creator Economy",
     description:
       "Limited drops, merch packaging, and seasonal collections. We match your timeline — 72-hour prototyping, 10-day production.",
-    imageLabel: "CREATOR MERCH — Limited Edition Drop Box with Foil Accent",
+    imageLabel: "Creator Brand Mailer Box",
     href: "/solutions/creator-packaging",
     category: "creator",
+    image: "/images/desktop/设计师品牌邮寄.png",
   },
   {
     title: "Exhibition",
     subtitle: "Exhibition Collateral",
     description:
       "Presentation kits, product sample boxes, and trade show materials that communicate craftsmanship before a handshake.",
-    imageLabel: "EXHIBITION KIT — A5 Presentation Folder with Embossed Logo",
+    imageLabel: "Exhibition Gift Box",
     href: "/solutions/exhibition-collateral",
     category: "exhibition",
+    image: "/images/desktop/展会礼盒.png",
   },
   {
     title: "Pharma",
     subtitle: "Pharma & Nutraceuticals",
     description:
       "GMP-compliant paper packaging for supplements, medical devices, and health products. EU MDR ready documentation.",
-    imageLabel: "PHARMA BOX — Clinical White Paperboard with Tamper-Evident Seal",
+    imageLabel: "OTC Retail Pharma Box",
     href: "/solutions/pharma-healthcare",
     category: "pharma",
+    image: "/images/desktop/OTC零售药盒.png",
   },
   {
     title: "F&B",
     subtitle: "Craft Food & Beverage",
     description:
       "Seasonal labels, city-specific editions, tamper-evident paper for craft breweries and quick commerce. 500 units.",
-    imageLabel: "F&B PACKAGING — Craft Beer Label Close-up with Foil Detail",
+    imageLabel: "Craft Beer Packaging",
     href: "/solutions/food-beverage-packaging",
     category: "fb_packaging",
+    image: "/images/desktop/啤酒.png",
   },
 ];
 
@@ -84,26 +90,32 @@ const capabilities = [
   {
     name: "Foil Stamping",
     description: "Matte gold, silver, holographic — precision registration on uncoated stocks",
+    image: "/images/desktop/烫金.png",
   },
   {
     name: "Embossing & Debossing",
     description: "Blind, registered, multi-level — custom dies for tactile brand experiences",
+    image: "/images/desktop/浮雕.png",
   },
   {
     name: "Spot UV",
     description: "High-gloss contrast on matte paper, selective coating for visual hierarchy",
+    image: "/images/desktop/局部UV.png",
   },
   {
     name: "Soy-Based Flexo",
     description: "Pantone-matched, eco-friendly inks suitable for FSC-certified substrates",
+    image: "/images/desktop/大豆油墨.png",
   },
   {
     name: "Laser Die-Cut",
     description: "Complex geometries, micro-perforations, and intricate window cutouts",
+    image: "/images/desktop/四重工艺叠加.png",
   },
   {
     name: "Hot Foil & Edge Gilding",
     description: "Metallic edge finishing and decorative foil accents for premium presentation",
+    image: "/images/desktop/冷烫金.png",
   },
 ];
 
@@ -161,18 +173,19 @@ export default function HomePage() {
   return (
     <>
       {/* ─── Section 1: Hero ─── */}
-      <section className="relative min-h-screen flex items-center bg-charcoal overflow-hidden">
-        {/* Background image right side */}
-        <div className="absolute right-0 top-0 w-1/2 h-full pointer-events-none"
-          style={{ opacity: 0.3 }}
-        >
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        {/* Full background image */}
+        <div className="absolute inset-0 pointer-events-none">
           <Image
-            src="/images/hero_paper_texture_0.png"
+            src="/images/desktop/hero-main-bg.png"
             alt="Premium printing and packaging showcase"
             fill
             className="object-cover object-center"
             priority
+            sizes="100vw"
           />
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0" style={{ backgroundColor: "rgba(0,0,0,0.55)" }} />
         </div>
 
         <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-40 pb-32 w-full relative z-10">
@@ -184,7 +197,7 @@ export default function HomePage() {
               Precision Print<br />&amp; Premium Packaging.
             </h1>
             <p
-              className="mt-8 text-base leading-relaxed max-w-xl"
+              className="mt-8 text-lg leading-relaxed max-w-xl"
               style={{ color: "rgba(253,252,250,0.5)" }}
             >
               From food, cosmetics, pharma and spirits to automotive parts and electronics — we deliver packaging solutions for every industry need.
@@ -257,9 +270,9 @@ export default function HomePage() {
               Solutions
             </span>
             <h2 className="mt-4 font-display text-4xl lg:text-5xl text-text-primary leading-tight">
-              Solutions for brands <span className="italic">that move fast</span>
+              Solutions for brands that move fast
             </h2>
-            <p className="mt-4 text-sm text-text-secondary leading-relaxed max-w-xl">
+            <p className="mt-4 text-base text-text-secondary leading-relaxed max-w-xl">
               Six specialized packaging verticals — DTC, Seasonal &amp; Holiday, Creator, F&amp;B, Exhibition, Pharma — one paper-first philosophy. Every solution starts with a material consultation and ends with delivery to your doorstep.
             </p>
           </div>
@@ -281,6 +294,7 @@ export default function HomePage() {
                       <PlaceholderImage
                         label={scene.imageLabel}
                         aspectRatio="4/3"
+                        src={scene.image}
                         category={scene.category}
                         variant={i}
                         className="w-full h-full"
@@ -299,10 +313,10 @@ export default function HomePage() {
                           {scene.title}
                         </span>
                       </div>
-                      <h3 className="font-display text-2xl italic text-text-primary mb-3">
+                      <h3 className="font-display text-2xl text-text-primary mb-3">
                         {scene.subtitle}
                       </h3>
-                      <p className="text-sm text-text-secondary leading-relaxed max-w-lg">
+                      <p className="text-base text-text-secondary leading-relaxed max-w-lg">
                         {scene.description}
                       </p>
                       <span
@@ -369,7 +383,7 @@ export default function HomePage() {
                 style={{ backgroundColor: "rgba(253,252,250,0.03)" }}
               >
                 <QuoteIcon />
-                <p className="mt-2 text-sm leading-relaxed" style={{ color: "rgba(253,252,250,0.8)" }}>
+                <p className="mt-2 text-base leading-relaxed" style={{ color: "rgba(253,252,250,0.8)" }}>
                   {t.quote}
                 </p>
                 <div className="my-6 border-t" style={{ borderColor: "rgba(255,255,255,0.1)" }} />
@@ -400,9 +414,9 @@ export default function HomePage() {
               Craft
             </span>
             <h2 className="mt-4 font-display text-4xl lg:text-5xl text-text-primary leading-tight">
-              Paper-First <span className="italic">Craft</span>
+              Paper-First Craft
             </h2>
-            <p className="mt-4 text-sm text-text-secondary leading-relaxed">
+            <p className="mt-4 text-base text-text-secondary leading-relaxed">
               Six core processes that define our craft. Every technique is available from MOQ 500 — no premium markups for small batches.
             </p>
           </div>
@@ -418,15 +432,14 @@ export default function HomePage() {
                 <PlaceholderImage
                   label={cap.name}
                   aspectRatio="4/3"
-                  category={"dtc_mailer"}
-                  variant={i}
+                  src={cap.image}
                   className="w-full"
                 />
                 <div className="p-6">
                   <h3 className="font-display text-xl text-text-primary mb-2">
                     {cap.name}
                   </h3>
-                  <p className="text-sm text-text-secondary leading-relaxed">
+                  <p className="text-base text-text-secondary leading-relaxed">
                     {cap.description}
                   </p>
                 </div>
@@ -442,10 +455,10 @@ export default function HomePage() {
           <h2 className="font-display text-4xl lg:text-5xl text-off-white leading-tight max-w-2xl mx-auto">
             Not sure which packaging
             <br />
-            <span className="italic">fits your brand?</span>
+            <span className="">fits your brand?</span>
           </h2>
           <p
-            className="mt-6 text-sm max-w-lg mx-auto leading-relaxed"
+            className="mt-6 text-base max-w-lg mx-auto leading-relaxed"
             style={{ color: "rgba(253,252,250,0.6)" }}
           >
             Tell us about your product and volume. We&apos;ll recommend the right paper, structure, and finishing — and send you a physical sample within 7 days.

@@ -50,7 +50,7 @@ export default function PharmaHealthcarePage() {
             </span>
             <h1 className="mt-6 font-display text-4xl lg:text-6xl text-off-white leading-tight">
               Pharma-Grade Compliance,{" "}
-              <span className="italic">Small-Batch Flexibility.</span>
+              Small-Batch Flexibility.
             </h1>
             <p className="mt-6 text-off-white/60 text-sm leading-relaxed">
               GMP-compliant paper packaging for supplements, medical devices,
@@ -103,7 +103,7 @@ export default function PharmaHealthcarePage() {
               Certifications
             </span>
             <h2 className="mt-6 font-display text-4xl lg:text-5xl text-text-primary leading-tight">
-              Standards we <span className="italic">stand by.</span>
+              Standards we stand by.
             </h2>
             <p className="mt-4 text-text-secondary text-sm max-w-xl mx-auto">
               All certifications apply globally across every solution we offer —
@@ -150,7 +150,7 @@ export default function PharmaHealthcarePage() {
           </span>
           <h2 className="mt-6 font-display text-4xl lg:text-5xl text-text-primary leading-tight">
             Three essentials for{" "}
-            <span className="italic">regulated packaging.</span>
+            regulated packaging.
           </h2>
           <div className="mt-16 space-y-0">
             {products.map((p, i) => (
@@ -183,7 +183,7 @@ export default function PharmaHealthcarePage() {
                   </p>
                 </div>
                 <div className="md:col-span-1">
-                  <p className="text-sm text-text-secondary leading-relaxed italic">
+                  <p className="text-sm text-text-secondary leading-relaxed">
                     {p.description}
                   </p>
                 </div>
@@ -201,7 +201,7 @@ export default function PharmaHealthcarePage() {
           </span>
           <h2 className="mt-6 font-display text-4xl lg:text-5xl text-text-primary leading-tight max-w-2xl">
             Six steps from file{" "}
-            <span className="italic">to regulated delivery.</span>
+            to regulated delivery.
           </h2>
           <div className="mt-16">
             {/* Desktop horizontal */}
@@ -264,7 +264,7 @@ export default function PharmaHealthcarePage() {
               <span className="font-mono text-xs tracking-[0.2em] text-mint uppercase">
                 Case Study
               </span>
-              <blockquote className="mt-6 font-display text-3xl lg:text-4xl italic text-off-white leading-tight">
+              <blockquote className="mt-6 font-display text-3xl lg:text-4xl text-off-white leading-tight">
                 &ldquo;1,000 EMA-compliant drug cartons delivered with full
                 batch documentation in 14 days.&rdquo;
               </blockquote>

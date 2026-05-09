@@ -10,6 +10,8 @@ interface PlaceholderImageProps {
   category?: string;
   /** Optional index to cycle through variants of the same category for visual diversity */
   variant?: number;
+  /** Direct image source path — overrides category lookup when provided */
+  src?: string;
 }
 
 const categoryImages: Record<string, string[]> = {
@@ -38,27 +40,33 @@ export default function PlaceholderImage({
   aspectRatio = "4/3",
   category,
   variant,
+  src,
 }: PlaceholderImageProps) {
   const [imgError, setImgError] = useState(false);
-  const images = category ? categoryImages[category] : null;
   
-  // Pick image: use variant index if provided, otherwise hash the label to distribute
-  let imageIndex = 0;
-  if (images && images.length > 0) {
-    if (variant !== undefined) {
-      imageIndex = variant % images.length;
-    } else {
-      // Deterministic distribution based on label text
-      let hash = 0;
-      for (let i = 0; i < label.length; i++) {
-        hash = ((hash << 5) - hash) + label.charCodeAt(i);
-        hash |= 0;
+  let imageDef: { src: string; alt: string } | null = null;
+  
+  if (src && !imgError) {
+    // Direct src takes priority
+    imageDef = { src, alt: label };
+  } else if (category && !imgError) {
+    // Category-based lookup with variant distribution
+    const images = categoryImages[category];
+    if (images && images.length > 0) {
+      let imageIndex = 0;
+      if (variant !== undefined) {
+        imageIndex = variant % images.length;
+      } else {
+        let hash = 0;
+        for (let i = 0; i < label.length; i++) {
+          hash = ((hash << 5) - hash) + label.charCodeAt(i);
+          hash |= 0;
+        }
+        imageIndex = Math.abs(hash) % images.length;
       }
-      imageIndex = Math.abs(hash) % images.length;
+      imageDef = { src: images[imageIndex], alt: categoryAlts[category] || label };
     }
   }
-
-  const imageDef = images && !imgError ? { src: images[imageIndex], alt: categoryAlts[category!] || label } : null;
 
   if (imageDef) {
     return (

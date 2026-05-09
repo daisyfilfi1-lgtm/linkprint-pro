@@ -40,9 +40,9 @@ export default function CompliancePage() {
           </span>
           <h1 className="mt-6 font-display text-4xl lg:text-6xl text-off-white leading-tight max-w-3xl">
             Every standard that{" "}
-            <span className="italic">backs every order.</span>
+            backs every order.
           </h1>
-          <p className="mt-6 text-off-white/60 text-sm leading-relaxed max-w-xl">
+          <p className="mt-6 text-off-white/60 text-base leading-relaxed max-w-xl">
             Quality certifications, regulatory compliance, and third-party
             verifications that apply across all our solutions — from DTC to
             Pharma, from F&B to Exhibition.
@@ -58,7 +58,7 @@ export default function CompliancePage() {
           </span>
           <h2 className="mt-6 font-display text-4xl lg:text-5xl text-text-primary leading-tight">
             Eight credentials,{" "}
-            <span className="italic">one standard of quality.</span>
+            one standard of quality.
           </h2>
           <div className="mt-16 space-y-0">
             {certifications.map((cert, i) => (
@@ -75,7 +75,7 @@ export default function CompliancePage() {
                   <h3 className="font-mono text-sm text-text-primary font-medium">
                     {cert.name}
                   </h3>
-                  <p className="text-sm text-text-secondary mt-1">
+                  <p className="text-base text-text-secondary mt-1">
                     {cert.desc}
                   </p>
                 </div>
@@ -88,7 +88,7 @@ export default function CompliancePage() {
                   </p>
                 </div>
                 <div className="md:col-span-6">
-                  <p className="text-sm text-text-secondary leading-relaxed">
+                  <p className="text-base text-text-secondary leading-relaxed">
                     {cert.detail}
                   </p>
                 </div>
@@ -106,7 +106,7 @@ export default function CompliancePage() {
           </span>
           <h2 className="mt-6 font-display text-4xl lg:text-5xl text-text-primary leading-tight max-w-2xl">
             Which certification applies{" "}
-            <span className="italic">to your need.</span>
+            to your need.
           </h2>
           <div className="mt-16 overflow-x-auto">
             <table className="w-full text-left font-mono text-xs">

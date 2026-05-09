@@ -109,7 +109,7 @@ export default function ResourcesPage() {
           </span>
           <h1 className="mt-6 font-display text-4xl lg:text-6xl text-text-primary leading-tight max-w-3xl">
             Insights and answers{" "}
-            <span className="italic">for smarter packaging.</span>
+            for smarter packaging.
           </h1>
         </div>
       </section>
@@ -121,7 +121,7 @@ export default function ResourcesPage() {
             Blog
           </span>
           <h2 className="mt-6 font-display text-4xl lg:text-5xl text-text-primary leading-tight max-w-2xl">
-            Insights from the <span className="italic">paper lab.</span>
+            Insights from the paper lab.
           </h2>
           <div className="mt-16 space-y-0 max-w-4xl">
             {blogPosts.map((post, i) => (
@@ -142,7 +142,7 @@ export default function ResourcesPage() {
                     <h3 className="font-display text-xl text-text-primary hover:text-mint transition-colors cursor-default">
                       {post.title}
                     </h3>
-                    <p className="mt-2 text-sm text-text-secondary leading-relaxed max-w-xl">
+                    <p className="mt-2 text-base text-text-secondary leading-relaxed max-w-xl">
                       {post.excerpt}
                     </p>
                   </div>
@@ -164,7 +164,7 @@ export default function ResourcesPage() {
           </span>
           <h2 className="mt-6 font-display text-4xl lg:text-5xl text-text-primary leading-tight max-w-2xl">
             Frequently asked{" "}
-            <span className="italic">questions.</span>
+            questions.
           </h2>
           <div className="mt-16 space-y-0">
             {faqItems.map((item, i) => (
@@ -199,7 +199,7 @@ export default function ResourcesPage() {
                   }`}
                 >
                   <div className="pl-10 pr-12">
-                    <p className="text-sm text-text-secondary leading-relaxed">
+                    <p className="text-base text-text-secondary leading-relaxed">
                       {item.answer}
                     </p>
                   </div>

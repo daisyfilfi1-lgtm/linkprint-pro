@@ -89,7 +89,7 @@ export default function DtcPackagingPage() {
             </span>
             <h1 className="mt-6 font-display text-4xl lg:text-6xl text-off-white leading-tight">
               Packaging that converts. <br />
-              <span className="italic">From unboxing to repurchase.</span>
+              From unboxing to repurchase.
             </h1>
             <div className="mt-8 grid grid-cols-2 gap-x-8 gap-y-4 font-mono text-xs tracking-[0.1em]">
               <div>
@@ -138,7 +138,7 @@ export default function DtcPackagingPage() {
           <h2 className="mt-6 font-display text-4xl lg:text-5xl text-text-primary leading-tight max-w-2xl">
             DTC packaging is broken.
             <br />
-            <span className="italic">We fixed it.</span>
+            We fixed it.
           </h2>
 
           <div className="mt-16 space-y-0">
@@ -184,7 +184,7 @@ export default function DtcPackagingPage() {
             Product Line
           </span>
           <h2 className="mt-6 font-display text-4xl lg:text-5xl text-text-primary leading-tight">
-            Six structures. <span className="italic">Infinite iterations.</span>
+            Six structures. Infinite iterations.
           </h2>
 
           <div className="mt-16 space-y-0">
@@ -218,7 +218,7 @@ export default function DtcPackagingPage() {
                   </p>
                 </div>
                 <div className="md:col-span-1">
-                  <p className="text-sm text-text-secondary leading-relaxed italic">
+                  <p className="text-sm text-text-secondary leading-relaxed">
                     {p.description}
                   </p>
                 </div>
@@ -244,7 +244,7 @@ export default function DtcPackagingPage() {
               <span className="font-mono text-xs tracking-[0.2em] text-mint uppercase">
                 Case Study
               </span>
-              <blockquote className="mt-6 font-display text-3xl lg:text-4xl italic text-text-primary leading-tight">
+              <blockquote className="mt-6 font-display text-3xl lg:text-4xl text-text-primary leading-tight">
                 &ldquo;Switching to LinkPrint cut our packaging carbon footprint
                 by 73% and lifted our unboxing share rate by 40%.&rdquo;
               </blockquote>

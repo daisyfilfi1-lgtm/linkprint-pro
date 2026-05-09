@@ -164,7 +164,7 @@ export default function SeasonalHolidayPage() {
             </span>
             <h1 className="mt-6 font-display text-4xl lg:text-6xl text-text-primary leading-tight">
               Seasonal &amp; Holiday <br />
-              <span className="italic">Short-Run Customization.</span>
+              Short-Run Customization.
             </h1>
             <p className="mt-6 text-text-secondary text-sm leading-relaxed">
               From concept to shelf in 18 days. Christmas, Valentine&apos;s, Black
@@ -210,7 +210,7 @@ export default function SeasonalHolidayPage() {
                 Product Line
               </span>
               <h2 className="mt-6 font-display text-4xl lg:text-5xl text-text-primary leading-tight">
-                Eight occasions. <span className="italic">Unlimited iterations.</span>
+                Eight occasions. Unlimited iterations.
               </h2>
             </div>
             <div className="lg:w-[55%]">
@@ -289,7 +289,7 @@ export default function SeasonalHolidayPage() {
             Why Top Printing
           </span>
           <h2 className="mt-6 font-display text-4xl lg:text-5xl text-off-white leading-tight max-w-2xl">
-            Fast, flexible, <span className="italic">and festival-ready.</span>
+            Fast, flexible, and festival-ready.
           </h2>
           <div className="mt-16 font-mono text-sm text-off-white/70 space-y-2 border-t border-white/10 pt-10 max-w-lg">
             <p>72H PROTOTYPE → 15D DELIVERY</p>
@@ -305,7 +305,7 @@ export default function SeasonalHolidayPage() {
       <section className="bg-warm py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 text-center">
           <h2 className="font-display text-4xl lg:text-5xl text-text-primary leading-tight max-w-xl mx-auto">
-            Ready for your next <span className="italic">seasonal drop?</span>
+            Ready for your next seasonal drop?
           </h2>
           <p className="mt-6 text-text-secondary text-sm max-w-lg mx-auto leading-relaxed">
             Start with a sample kit. See our paper stocks and finishes, then

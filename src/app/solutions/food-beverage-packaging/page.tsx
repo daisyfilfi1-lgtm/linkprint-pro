@@ -146,9 +146,9 @@ export default function FoodBeveragePackagingPage() {
             </span>
             <h1 className="mt-6 font-display text-4xl lg:text-6xl text-off-white leading-tight">
               Seasonal Editions,{" "}
-              <span className="italic">City-Specific Runs.</span>
+              City-Specific Runs.
             </h1>
-            <p className="mt-6 text-off-white/60 text-sm leading-relaxed italic font-body">
+            <p className="mt-6 text-off-white/60 text-sm leading-relaxed font-body">
               Paper packaging for craft brands that move faster than local
               factories can print.
             </p>
@@ -208,7 +208,7 @@ export default function FoodBeveragePackagingPage() {
           </span>
           <h2 className="mt-6 font-display text-4xl lg:text-5xl text-text-primary leading-tight">
             Four barriers to F&B packaging{" "}
-            <span className="italic">that we eliminate.</span>
+            that we eliminate.
           </h2>
           <div className="mt-16 space-y-0">
             {painPoints.map((item, i) => (
@@ -222,7 +222,7 @@ export default function FoodBeveragePackagingPage() {
                   </span>
                 </div>
                 <div className="md:col-span-4">
-                  <p className="text-sm text-text-secondary leading-relaxed italic">
+                  <p className="text-sm text-text-secondary leading-relaxed">
                     &ldquo;{item.pain}&rdquo;
                   </p>
                 </div>
@@ -250,7 +250,7 @@ export default function FoodBeveragePackagingPage() {
           </span>
           <h2 className="mt-6 font-display text-4xl lg:text-5xl text-text-primary leading-tight">
             Eight products for{" "}
-            <span className="italic">food & beverage packaging.</span>
+            food & beverage packaging.
           </h2>
           <div className="mt-16 space-y-0">
             {products.map((p, i) => (
@@ -304,7 +304,7 @@ export default function FoodBeveragePackagingPage() {
           </span>
           <h2 className="mt-6 font-display text-4xl lg:text-5xl text-text-primary leading-tight max-w-3xl">
             Three capabilities that set us apart{" "}
-            <span className="italic">in F&B packaging.</span>
+            in F&B packaging.
           </h2>
           <div className="mt-16 space-y-24">
             {differentiations.map((diff, i) => (
@@ -363,7 +363,7 @@ export default function FoodBeveragePackagingPage() {
                   <span className="font-mono text-xs tracking-[0.2em] text-mint uppercase">
                     {cs.client}
                   </span>
-                  <blockquote className="mt-4 font-display text-2xl lg:text-3xl italic text-off-white leading-tight">
+                  <blockquote className="mt-4 font-display text-2xl lg:text-3xl text-off-white leading-tight">
                     {cs.title}
                   </blockquote>
                   <div className="mt-8 flex flex-wrap gap-3">
@@ -391,7 +391,7 @@ export default function FoodBeveragePackagingPage() {
           </span>
           <h2 className="mt-6 font-display text-4xl lg:text-5xl text-text-primary leading-tight">
             Regulations we{" "}
-            <span className="italic">meet on every order.</span>
+            meet on every order.
           </h2>
           <div className="mt-16 space-y-0">
             {complianceItems.map((item, i) => (
@@ -436,7 +436,7 @@ export default function FoodBeveragePackagingPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12 text-center">
           <h2 className="font-display text-4xl lg:text-5xl text-off-white leading-tight max-w-2xl mx-auto">
             Brewing Something{" "}
-            <span className="italic">New?</span>
+            New?
           </h2>
           <p className="mt-6 text-off-white/60 text-sm max-w-lg mx-auto leading-relaxed">
             Get a food-grade sample kit with wet-strength label swatches, folding

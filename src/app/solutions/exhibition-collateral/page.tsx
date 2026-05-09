@@ -82,7 +82,7 @@ export default function ExhibitionCollateralPage() {
             </span>
             <h1 className="mt-6 font-display text-5xl lg:text-7xl text-off-white leading-tight">
               From Booth to Box,{" "}
-              <span className="italic">One Visual Identity.</span>
+              One Visual Identity.
             </h1>
             <p className="mt-6 text-off-white/60 text-sm leading-relaxed max-w-xl">
               Brochures, posters, gift boxes, and business cards — all produced
@@ -110,7 +110,7 @@ export default function ExhibitionCollateralPage() {
           </span>
           <h2 className="mt-6 font-display text-4xl lg:text-5xl text-text-primary leading-tight max-w-2xl">
             The stress of event prep{" "}
-            <span className="italic">— solved.</span>
+            — solved.
           </h2>
           <div className="mt-16 space-y-0">
             {painPoints.map((pp, i) => (
@@ -122,7 +122,7 @@ export default function ExhibitionCollateralPage() {
                   <span className="font-mono text-xs text-text-secondary/40 mt-0.5">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <p className="font-display text-lg italic text-text-secondary/70">
+                  <p className="font-display text-lg text-text-secondary/70">
                     &ldquo;{pp.problem}&rdquo;
                   </p>
                 </div>
@@ -147,7 +147,7 @@ export default function ExhibitionCollateralPage() {
             Exhibition Range
           </span>
           <h2 className="mt-6 font-display text-4xl lg:text-5xl text-text-primary leading-tight">
-            Everything your booth <span className="italic">needs.</span>
+            Everything your booth needs.
           </h2>
           <div className="mt-16 space-y-0">
             {products.map((p, i) => (
@@ -180,7 +180,7 @@ export default function ExhibitionCollateralPage() {
                   </p>
                 </div>
                 <div className="md:col-span-1">
-                  <p className="text-sm text-text-secondary leading-relaxed italic">
+                  <p className="text-sm text-text-secondary leading-relaxed">
                     {p.description}
                   </p>
                 </div>
@@ -197,7 +197,7 @@ export default function ExhibitionCollateralPage() {
             Events
           </span>
           <h2 className="mt-6 font-display text-4xl lg:text-5xl text-text-primary leading-tight">
-            Meet us at <span className="italic">these shows.</span>
+            Meet us at these shows.
           </h2>
           <div className="mt-12 overflow-x-auto pb-4">
             <div className="flex gap-8 min-w-max">
@@ -257,7 +257,7 @@ export default function ExhibitionCollateralPage() {
             <span className="font-mono text-xs tracking-[0.2em] text-mint uppercase">
               Case Study
             </span>
-            <blockquote className="mt-6 font-display text-3xl lg:text-5xl italic text-off-white leading-tight max-w-xl">
+            <blockquote className="mt-6 font-display text-3xl lg:text-5xl text-off-white leading-tight max-w-xl">
               &ldquo;7-day exhibition kit rescue. From brief to booth in one
               week.&rdquo;
             </blockquote>

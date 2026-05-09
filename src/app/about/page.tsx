@@ -49,9 +49,9 @@ export default function AboutPage() {
             </span>
             <h1 className="mt-6 font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.1] tracking-tight text-text-primary">
               Paper is our medium. <br />
-              <span className="italic">Precision is our signature.</span>
+              Precision is our signature.
             </h1>
-            <p className="mt-6 text-text-secondary text-sm leading-relaxed max-w-xl">
+            <p className="mt-6 text-text-secondary text-base leading-relaxed max-w-xl">
               A premium paper packaging manufacturer with 90+ craftspeople, 5,000㎡ of production space, and one unwavering commitment: deliver exceptional print quality at any scale.
             </p>
           </div>
@@ -77,16 +77,16 @@ export default function AboutPage() {
                 Our Story
               </span>
               <h2 className="mt-6 font-display text-4xl lg:text-5xl text-text-primary leading-tight">
-                Built in 2014. <span className="italic">Refined every year since.</span>
+                Built in 2014. Refined every year since.
               </h2>
-              <p className="mt-6 text-text-secondary text-sm leading-relaxed">
+              <p className="mt-6 text-text-secondary text-base leading-relaxed">
                 Top Printing was founded in Zhuhai, China, with a simple idea: make 
                 premium paper packaging accessible to brands of every size. From a 
                 500㎡ workshop with 8 people, we&apos;ve grown into a 5,000㎡ production 
                 facility with 90+ skilled team members — designers, engineers, press 
                 operators, and quality inspectors.
               </p>
-              <p className="mt-4 text-text-secondary text-sm leading-relaxed">
+              <p className="mt-4 text-text-secondary text-base leading-relaxed">
                 Today we serve clients across the EU, UK, and US — from DTC brands 
                 launching their first product to established names requiring 
                 compliance-ready pharmaceutical packaging. Every box we produce 
@@ -105,13 +105,13 @@ export default function AboutPage() {
             Values
           </span>
           <h2 className="mt-6 font-display text-4xl lg:text-5xl text-text-primary leading-tight max-w-2xl">
-            What drives us — <span className="italic">every print, every day.</span>
+            What drives us — every print, every day.
           </h2>
           <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-12">
             {values.map((v) => (
               <div key={v.title} className="border-t border-black/10 pt-8">
                 <h3 className="font-display text-2xl text-text-primary">{v.title}</h3>
-                <p className="mt-4 text-sm text-text-secondary leading-relaxed">{v.description}</p>
+                <p className="mt-4 text-base text-text-secondary leading-relaxed">{v.description}</p>
               </div>
             ))}
           </div>
@@ -125,14 +125,14 @@ export default function AboutPage() {
             Milestones
           </span>
           <h2 className="mt-6 font-display text-4xl lg:text-5xl text-text-primary leading-tight max-w-2xl">
-            A decade of <span className="italic">growth.</span>
+            A decade of growth.
           </h2>
           <div className="mt-16 space-y-0">
             {milestones.map((m, i) => (
               <div key={m.year} className="grid grid-cols-[80px_1fr] gap-8 py-6 border-t border-black/5 last:border-b last:border-black/5 items-start">
                 <span className="font-mono text-lg text-mint font-semibold">{m.year}</span>
                 <div>
-                  <p className="text-sm text-text-primary">{m.event}</p>
+                  <p className="text-base text-text-primary">{m.event}</p>
                 </div>
               </div>
             ))}
@@ -147,13 +147,13 @@ export default function AboutPage() {
             Certifications
           </span>
           <h2 className="mt-6 font-display text-4xl lg:text-5xl text-off-white leading-tight max-w-2xl">
-            Certified quality, <span className="italic">from fiber to finish.</span>
+            Certified quality, from fiber to finish.
           </h2>
           <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {certifications.map((cert) => (
               <div key={cert.name} className="border-t border-white/10 pt-8">
                 <h3 className="font-display text-xl text-mint">{cert.name}</h3>
-                <p className="mt-3 text-sm text-off-white/60 leading-relaxed">{cert.description}</p>
+                <p className="mt-3 text-base text-off-white/60 leading-relaxed">{cert.description}</p>
               </div>
             ))}
           </div>
@@ -167,7 +167,7 @@ export default function AboutPage() {
             Equipment
           </span>
           <h2 className="mt-6 font-display text-4xl lg:text-5xl text-text-primary leading-tight max-w-2xl">
-            Machines that <span className="italic">match our ambition.</span>
+            Machines that match our ambition.
           </h2>
           <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {equipment.map((eq) => (
@@ -198,9 +198,9 @@ export default function AboutPage() {
                 Showroom
               </span>
               <h2 className="mt-6 font-display text-4xl lg:text-5xl text-text-primary leading-tight">
-                See the craft <span className="italic">in person.</span>
+                See the craft in person.
               </h2>
-              <p className="mt-6 text-text-secondary text-sm leading-relaxed">
+              <p className="mt-6 text-text-secondary text-base leading-relaxed">
                 Our material library features over 200 paper swatches, 50+ finish 
                 samples, and dozens of structural prototypes. Visit our Zhuhai showroom 
                 to feel the difference between cotton and kraft, between soft-touch 
@@ -224,9 +224,9 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12 text-center">
           <h2 className="font-display text-4xl lg:text-5xl text-off-white leading-tight max-w-2xl mx-auto">
             Ready to work with <br />
-            <span className="italic">a real print partner?</span>
+            a real print partner?
           </h2>
-          <p className="mt-6 text-off-white/60 text-sm max-w-lg mx-auto leading-relaxed">
+          <p className="mt-6 text-off-white/60 text-base max-w-lg mx-auto leading-relaxed">
             Start with a sample kit. See our paper stocks, feel our finishes, 
             and let us show you what precision packaging means.
           </p>

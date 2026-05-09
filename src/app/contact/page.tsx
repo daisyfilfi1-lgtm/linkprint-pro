@@ -104,9 +104,9 @@ export default function ContactPage() {
             <span className="text-mint text-2xl">✓</span>
           </div>
           <h1 className="font-display text-4xl text-text-primary leading-tight">
-            Your request is <span className="italic">in review.</span>
+            Your request is in review.
           </h1>
-          <p className="mt-6 text-text-secondary text-sm leading-relaxed">
+          <p className="mt-6 text-text-secondary text-base leading-relaxed">
             We&apos;ll respond within 24 hours with your quote and compliance
             advice. A confirmation has been sent to {formData.email}.
           </p>
@@ -123,7 +123,7 @@ export default function ContactPage() {
             <h3 className="font-display text-2xl text-text-primary mb-2">
               What scene are you packaging for?
             </h3>
-            <p className="text-sm text-text-secondary mb-8">
+            <p className="text-base text-text-secondary mb-8">
               Tell us about your brand and use case so we can recommend the right
               materials.
             </p>
@@ -145,7 +145,7 @@ export default function ContactPage() {
                       <div className="w-2.5 h-2.5 rounded-full bg-mint" />
                     )}
                   </div>
-                  <span className="text-sm text-text-primary">{opt}</span>
+                  <span className="text-base text-text-primary">{opt}</span>
                 </label>
               ))}
             </div>
@@ -157,7 +157,7 @@ export default function ContactPage() {
             <h3 className="font-display text-2xl text-text-primary mb-2">
               What type of packaging?
             </h3>
-            <p className="text-sm text-text-secondary mb-8">
+            <p className="text-base text-text-secondary mb-8">
               Select the structure that best matches your product.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -178,7 +178,7 @@ export default function ContactPage() {
                       <div className="w-2.5 h-2.5 rounded-full bg-mint" />
                     )}
                   </div>
-                  <span className="text-sm text-text-primary">{opt}</span>
+                  <span className="text-base text-text-primary">{opt}</span>
                 </label>
               ))}
             </div>
@@ -190,14 +190,14 @@ export default function ContactPage() {
             <h3 className="font-display text-2xl text-text-primary mb-2">
               Tell us about your specs
             </h3>
-            <p className="text-sm text-text-secondary mb-8">
+            <p className="text-base text-text-secondary mb-8">
               Dimensions, volume, material preference, finishing, or any special
               requirements.
             </p>
             <textarea
               value={formData.specs}
               onChange={(e) => updateField("specs", e.target.value)}
-              className="w-full bg-transparent border border-black/10 p-4 text-sm text-text-primary focus:outline-none focus:border-mint transition-colors resize-none min-h-[200px]"
+              className="w-full bg-transparent border border-black/10 p-4 text-base text-text-primary focus:outline-none focus:border-mint transition-colors resize-none min-h-[200px]"
               placeholder="Example: 200mm x 150mm x 40mm, 1,200 units, 400gsm art paper, matte lamination, foil stamp logo on front..."
             />
           </div>
@@ -208,7 +208,7 @@ export default function ContactPage() {
             <h3 className="font-display text-2xl text-text-primary mb-2">
               Upload reference files
             </h3>
-            <p className="text-sm text-text-secondary mb-8">
+            <p className="text-base text-text-secondary mb-8">
               Artwork, design files, or reference images. Optional but
               recommended for accurate quoting. (AI, PDF, PNG, JPG)
             </p>
@@ -232,7 +232,7 @@ export default function ContactPage() {
               />
               {formData.file ? (
                 <div>
-                  <span className="text-mint text-sm font-medium">
+                  <span className="text-mint text-base font-medium">
                     {formData.file.name}
                   </span>
                   <p className="text-xs text-text-secondary/40 mt-2">
@@ -241,7 +241,7 @@ export default function ContactPage() {
                 </div>
               ) : (
                 <div>
-                  <span className="text-text-secondary/60 text-sm">
+                  <span className="text-text-secondary/60 text-base">
                     Drop files here or click to browse
                   </span>
                   <p className="text-xs text-text-secondary/40 mt-2">
@@ -258,7 +258,7 @@ export default function ContactPage() {
             <h3 className="font-display text-2xl text-text-primary mb-2">
               Your contact details
             </h3>
-            <p className="text-sm text-text-secondary mb-8">
+            <p className="text-base text-text-secondary mb-8">
               We&apos;ll send your quote and compliance advice within 24 hours.
             </p>
             <div className="space-y-6">
@@ -272,7 +272,7 @@ export default function ContactPage() {
                     required
                     value={formData.name}
                     onChange={(e) => updateField("name", e.target.value)}
-                    className="w-full bg-transparent border-b border-black/10 py-3 text-sm text-text-primary focus:outline-none focus:border-mint transition-colors"
+                    className="w-full bg-transparent border-b border-black/10 py-3 text-base text-text-primary focus:outline-none focus:border-mint transition-colors"
                     placeholder="Your full name"
                   />
                 </div>
@@ -285,7 +285,7 @@ export default function ContactPage() {
                     required
                     value={formData.email}
                     onChange={(e) => updateField("email", e.target.value)}
-                    className="w-full bg-transparent border-b border-black/10 py-3 text-sm text-text-primary focus:outline-none focus:border-mint transition-colors"
+                    className="w-full bg-transparent border-b border-black/10 py-3 text-base text-text-primary focus:outline-none focus:border-mint transition-colors"
                     placeholder="you@company.com"
                   />
                 </div>
@@ -300,7 +300,7 @@ export default function ContactPage() {
                     required
                     value={formData.company}
                     onChange={(e) => updateField("company", e.target.value)}
-                    className="w-full bg-transparent border-b border-black/10 py-3 text-sm text-text-primary focus:outline-none focus:border-mint transition-colors"
+                    className="w-full bg-transparent border-b border-black/10 py-3 text-base text-text-primary focus:outline-none focus:border-mint transition-colors"
                     placeholder="Company name"
                   />
                 </div>
@@ -313,7 +313,7 @@ export default function ContactPage() {
                     required
                     value={formData.country}
                     onChange={(e) => updateField("country", e.target.value)}
-                    className="w-full bg-transparent border-b border-black/10 py-3 text-sm text-text-primary focus:outline-none focus:border-mint transition-colors"
+                    className="w-full bg-transparent border-b border-black/10 py-3 text-base text-text-primary focus:outline-none focus:border-mint transition-colors"
                     placeholder="Country"
                   />
                 </div>
@@ -338,7 +338,7 @@ export default function ContactPage() {
             </span>
             <h1 className="mt-6 font-display text-4xl lg:text-5xl text-off-white leading-tight">
               Quote + Compliance Advice{" "}
-              <span className="italic">within 24 hours.</span>
+              within 24 hours.
             </h1>
 
             <div className="mt-12 space-y-8">
@@ -346,13 +346,13 @@ export default function ContactPage() {
                 <h4 className="text-xs font-mono tracking-[0.15em] text-mint uppercase mb-3">
                   EU Contact
                 </h4>
-                <p className="text-sm text-off-white/70">
+                <p className="text-base text-off-white/70">
                   WhatsApp: +44 20 1234 5678
                 </p>
-                <p className="text-sm text-off-white/70">
+                <p className="text-base text-off-white/70">
                   LinkedIn: /company/linkprint-pro
                 </p>
-                <p className="text-sm text-off-white/70">
+                <p className="text-base text-off-white/70">
                   Email: eu@linkprint.pro
                 </p>
               </div>
@@ -360,10 +360,10 @@ export default function ContactPage() {
                 <h4 className="text-xs font-mono tracking-[0.15em] text-mint uppercase mb-3">
                   US Contact
                 </h4>
-                <p className="text-sm text-off-white/70">
+                <p className="text-base text-off-white/70">
                   Phone: +1 212 555 0198
                 </p>
-                <p className="text-sm text-off-white/70">
+                <p className="text-base text-off-white/70">
                   Email: us@linkprint.pro
                 </p>
               </div>
@@ -371,7 +371,7 @@ export default function ContactPage() {
                 <h4 className="text-xs font-mono tracking-[0.15em] text-mint uppercase mb-3">
                   EU Hub
                 </h4>
-                <p className="text-sm text-off-white/70 leading-relaxed">
+                <p className="text-base text-off-white/70 leading-relaxed">
                   LinkPrint Pro EU<br />
                   Prinsengracht 250<br />
                   1016 HE Amsterdam<br />

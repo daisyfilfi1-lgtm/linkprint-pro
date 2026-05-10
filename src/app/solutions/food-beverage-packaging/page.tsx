@@ -4,14 +4,14 @@ import Link from "next/link";
 const fbProducts = [
   {
     name: "Craft Beer Labels",
-    image: "/images/desktop/啤酒.png",
+    image: "/images/desktop/城市限定.png",
     description: "Pantone-matched labels for craft breweries. City-specific editions, seasonal variants, tamper-evident paper.",
     specs: "Lead time 7 days, MOQ 500, soy-based inks",
     process: "Offset or digital, cold foil, emboss, spot UV",
   },
   {
     name: "6-Pack Carrier Boxes",
-    image: "/images/desktop/健康零食邮寄盒.png",
+    image: "/images/desktop/Carrier Boxes.png",
     description: "FSC kraft carrier boxes for 4/6/8-pack configurations. Stackable, shippable, retail-ready.",
     specs: "Lead time 10 days, MOQ 500, E-flute or solid board",
     process: "Flexo print, die-cut handles, reinforced bottom",

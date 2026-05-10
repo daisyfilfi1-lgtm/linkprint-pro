@@ -80,9 +80,9 @@ export default function Footer() {
               Contact
             </h4>
             <ul className="space-y-3 text-sm text-off-white/70">
-              <li>EU: +44 20 1234 5678</li>
-              <li>US: +1 212 555 0198</li>
-              <li>hello@topprinting.com</li>
+              <li>中山市坦洲镇坦神南路150号B栋4楼</li>
+              <li>support@topprinting.net</li>
+              <li>0760-87137817</li>
               <li className="pt-2 text-off-white/50 font-mono text-xs">
                 MOQ 500 · 72H Prototyping · 15-Day Delivery
               </li>

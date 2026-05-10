@@ -69,7 +69,7 @@ export default function PharmaHealthcarePage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-20 pb-16 lg:pb-24 bg-charcoal">
+      <section className="pt-28 pb-16 lg:pb-24 bg-charcoal">
         <div className="max-w-5xl mx-auto px-6 lg:px-12">
           <span className="font-mono text-sm tracking-[0.2em] text-mint uppercase">Pharma & Healthcare</span>
           <h1 className="mt-6 font-display text-4xl lg:text-5xl text-off-white leading-tight" style={{ fontSize: "clamp(32px, 4vw, 48px)" }}>

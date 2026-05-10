@@ -80,7 +80,7 @@ export default function Footer() {
               Contact
             </h4>
             <ul className="space-y-3 text-sm text-off-white/70">
-              <li>中山市坦洲镇坦神南路150号B栋4楼</li>
+              <li>Building B, 4F, No.150 Tanshen South Rd, Tanzhou, Zhongshan</li>
               <li>support@topprinting.net</li>
               <li>0760-87137817</li>
               <li className="pt-2 text-off-white/50 font-mono text-xs">

@@ -4,65 +4,65 @@ import PlaceholderImage from "@/components/PlaceholderImage";
 const classicFinishes = [
   {
     name: "Foil Stamping",
-    english: "烫金",
-    definition: "Heat-pressed metallic foil transfers onto paper, creating mirror-like reflection and precious metal质感.",
-    bestFor: "Luxury logos, wine labels, beauty boxes",
+    definition: "Turns your logo into liquid metal. Foil catches light like a mirror — customers feel the premium before they open the box. We use recyclable thin-gauge foil that reduces environmental load without reducing impact.",
+    idealFor: "Luxury logos, Wine labels, Beauty boxes, Limited editions",
+    avoidFor: "Large solid areas, Direct food-contact surfaces",
     image: "/images/desktop/烫金.png",
     imageLabel: "Foil Stamping on Paper",
   },
   {
     name: "Embossing",
-    english: "浮雕",
-    definition: "Metal dies press the paper surface upward, creating three-dimensional tactile memory.",
-    bestFor: "Brand crests, certificates, premium gift boxes",
+    definition: "A logo you can feel with your eyes closed. Blind emboss creates shadows that move as the box turns in the customer's hands.",
+    idealFor: "Brand crests, Certificates, Premium gift boxes, Invitations",
+    avoidFor: "Thin papers below 200gsm, Intricate fine-line artwork",
     image: "/images/desktop/浮雕.png",
     imageLabel: "Embossing Detail",
   },
   {
     name: "Debossing",
-    english: "压凹",
-    definition: "The reverse of embossing — patterns are pressed into the paper surface creating recessed impressions.",
-    bestFor: "Minimalist packaging, combined with soft-touch lamination",
+    definition: "Pressed into the surface, not printed on it. Deboss gives minimalist brands a subtle depth that whispers instead of shouts.",
+    idealFor: "Minimalist packaging, Soft-touch laminate pairings, Brand marks",
+    avoidFor: "Papers below 200gsm, Reverse-side printing over debossed areas",
     image: "/images/desktop/压凹.png",
     imageLabel: "Debossing Detail",
   },
   {
     name: "Spot UV Coating",
-    english: "局部UV",
-    definition: "Selective high-gloss coating creates mirror-like contrast on matte paper surfaces.",
-    bestFor: "Tech brands, modern beauty, lifestyle products",
+    definition: "Gloss where it matters, matte everywhere else. Spot UV creates a tension between shine and shadow that draws the eye exactly where you want it.",
+    idealFor: "Tech brands, Modern beauty, Lifestyle products, Photography portfolios",
+    avoidFor: "Uncoated papers, Heavy ink coverage underneath",
     image: "/images/desktop/局部UV.png",
     imageLabel: "Spot UV Detail",
   },
   {
     name: "Soft-Touch Lamination",
-    english: "触感膜",
-    definition: "Film lamination that delivers a velvety, peach-skin matte tactile experience.",
-    bestFor: "Electronics, perfumes, luxury mailer boxes",
+    definition: "The surface that stops thumbs from scrolling. Soft-touch lamination makes packaging irresistible to hold — and harder to throw away.",
+    idealFor: "Electronics, Perfumes, Luxury mailer boxes, High-retention packaging",
+    avoidFor: "Compostable-only briefs, Extreme humidity environments",
     image: "/images/desktop/触摸感.png",
     imageLabel: "Soft-Touch Surface",
   },
   {
     name: "Textured Varnish",
-    english: "纹理上光",
-    definition: "Transparent coating embedded with texture simulating leather, linen, or wood grain.",
-    bestFor: "Wine gift boxes, premium food packaging",
+    definition: "Paper that mimics leather, linen, or wood grain. Textured varnish adds a layer of sensory deception — looks like fabric, feels like luxury.",
+    idealFor: "Wine gift boxes, Premium food packaging, Heritage brands",
+    avoidFor: "Tight-register fine print, High-speed filling lines",
     image: "/images/desktop/纹理上光.png",
     imageLabel: "Textured Varnish Detail",
   },
   {
     name: "Holographic Foil",
-    english: "全息烫印",
-    definition: "Heat-transferred holographic foil creating rainbow refraction and anti-counterfeiting effects.",
-    bestFor: "Limited drops, anti-counterfeit packaging, young brands",
+    definition: "Rainbow refraction that shifts with every angle. Holographic foil turns a static box into a moving experience — and makes counterfeiting nearly impossible.",
+    idealFor: "Limited drops, Anti-counterfeit packaging, Youth brands, Event merch",
+    avoidFor: "Conservative/corporate identities, CMYK overprint registration",
     image: "/images/desktop/全息烫印.png",
     imageLabel: "Holographic Foil Effect",
   },
   {
     name: "Pearlescent / Metallic Ink",
-    english: "珠光/金属油墨",
-    definition: "Ink infused with mica or metal particles delivering subtle shimmer without foil.",
-    bestFor: "Cosmetics, chocolate, seasonal limited editions",
+    definition: "Subtle shimmer without the cost of foil. Mica-infused ink catches light at the edges — for brands that want elegance, not flash.",
+    idealFor: "Cosmetics, Chocolate, Seasonal editions, Wedding stationery",
+    avoidFor: "High-coverage solid backgrounds, Monochrome-only briefs",
     image: "/images/desktop/金属油墨.png",
     imageLabel: "Metallic Ink Finish",
   },
@@ -71,52 +71,56 @@ const classicFinishes = [
 const digitalInnovations = [
   {
     name: "Digital Foil",
-    english: "数字烫金",
-    definition: "No plate required — digital nozzles deposit metallic foil layers directly. Water usage reduced by 80% vs traditional foil.",
-    bestFor: "500–2,000 seasonal editions, city-specific runs",
+    image: "/images/desktop/数字烫金.png",
+    imageLabel: "Digital Foil Detail",
+    definition: "Seasonal drops without die costs. 500 units of gold foil, delivered in 10 days — not 3 weeks. Water usage reduced by 80% vs traditional methods.",
+    idealFor: "500–2,000 seasonal editions, City-specific runs, Rapid-turnaround campaigns",
   },
   {
     name: "Digital Embossing",
-    english: "数字浮雕",
-    definition: "Digital UV inks stack to create physical height differences simulating embossing — at 1/5 the cost of traditional dies.",
-    bestFor: "Short-run test marketing, A/B testing multiple versions",
+    image: "/images/desktop/数字浮雕.png",
+    imageLabel: "Digital Embossing Detail",
+    definition: "Test-market packaging with real emboss texture. No die investment, no minimums, no regret. Digital UV inks stack to create physical height at 1/5 the cost.",
+    idealFor: "Short-run test marketing, A/B testing multiple versions, Crowdfunding rewards",
   },
   {
     name: "Variable Data Printing (VDP)",
-    english: "可变数据印刷",
-    definition: "Every sheet can carry different text, patterns, or serial numbers without stopping the press.",
-    bestFor: "City-specific labels, serialized traceability, personalized subscription boxes",
+    image: "/images/desktop/可变数据印刷.png",
+    imageLabel: "Variable Data Printing",
+    definition: "One print run, 50 city names. Berlin, Munich, Hamburg — each bottle tells a local story. Variable data printing makes every sheet unique without stopping the press.",
+    idealFor: "City-specific labels, Serialized traceability, Personalized subscription boxes",
   },
   {
     name: "Cold Foil Transfer",
-    english: "冷烫金",
-    definition: "UV adhesive bonds metallic foil without heat — ideal for heat-sensitive materials and rapid turnaround orders.",
-    bestFor: "Food-contact packaging, temperature-sensitive labels, fast-turn orders",
+    image: "/images/desktop/冷烫金.png",
+    imageLabel: "Cold Foil Transfer Detail",
+    definition: "Foil on temperature-sensitive materials. Chocolate labels, cosmetic tubes — no heat damage, no compromise. UV adhesive bonds metallic foil cold.",
+    idealFor: "Food-contact packaging, Temperature-sensitive labels, Fast-turn orders",
   },
 ];
 
 const paperStocks = [
-  { name: "FSC White Card", gsm: "250-400gsm", trait: "High whiteness, smooth coating, precise color reproduction", use: "Cosmetic boxes, pharma cartons, premium folding cartons", image: "/images/desktop/白卡.png" },
-  { name: "FSC Kraft Paper", gsm: "120-350gsm", trait: "Unbleached fibers, natural brown tone, rustic texture", use: "Organic brands, artisan food, sustainable DTC", image: "/images/desktop/牛皮纸.png" },
-  { name: "Recycled Art Paper", gsm: "200-350gsm", trait: "PCR post-consumer fibers, subtle impurity texture, unique handfeel", use: "Eco-conscious brands, limited art packaging", image: "/images/desktop/再生艺术纸.png" },
-  { name: "Cotton Paper", gsm: "250-450gsm", trait: "Cotton fiber, extremely long fibers, archival quality", use: "Certificates, luxury perfume boxes, jewelry packaging", image: "/images/desktop/棉纸.png" },
-  { name: "Hemp Paper", gsm: "200-300gsm", trait: "Hemp fiber, fast-renewable, stronger than wood pulp", use: "Pioneering sustainable brands, CBD/health products", image: "/images/desktop/麻纸.png" },
-  { name: "Translucent Paper", gsm: "40-120gsm", trait: "Semi-transparent, grease-resistant, plastic window alternative", use: "Food packaging windows, cosmetic inner liners", image: "/images/desktop/半透明纸.png" },
-  { name: "Touch Paper", gsm: "250-350gsm", trait: "Built-in soft-touch coating, no additional lamination needed", use: "Minimalist beauty, electronics boxes", image: "/images/desktop/触感纸.png" },
-  { name: "Pearlescent Paper", gsm: "200-300gsm", trait: "Built-in micro-shimmer,光泽 without additional printing", use: "Festival packaging, wedding/party supplies", image: "/images/desktop/珠光纸.png" },
+  { name: "FSC White Card", gsm: "250-400gsm", trait: "The blank canvas for bold color. Smooth coated surface makes Pantone shades sing — ideal for cosmetics and pharma where color accuracy is trust.", use: "Cosmetic boxes, Pharma cartons, Premium folding cartons", image: "/images/desktop/白卡.png" },
+  { name: "FSC Kraft Paper", gsm: "120-350gsm", trait: "Honest packaging that doesn't pretend. Unbleached fibers show the paper's origin — perfect for organic brands that want transparency, not gloss.", use: "Organic brands, Artisan food, Sustainable DTC", image: "/images/desktop/牛皮纸.png" },
+  { name: "Recycled Art Paper", gsm: "200-350gsm", trait: "Imperfect by design. Visible fiber fragments tell a recycling story — customers feel the sustainability before they read the label.", use: "Eco-conscious brands, Limited art packaging", image: "/images/desktop/再生艺术纸.png" },
+  { name: "Cotton Paper", gsm: "250-450gsm", trait: "Paper that outlasts the product. Cotton fibers create a surface closer to fabric than pulp — for certificates, perfumes, and anything meant to be kept.", use: "Certificates, Luxury perfume boxes, Jewelry packaging", image: "/images/desktop/棉纸.png" },
+  { name: "Hemp Paper", gsm: "200-300gsm", trait: "The future fiber, available now. Hemp's natural ribbed texture signals innovation — for CBD, wellness, and brands ahead of the curve.", use: "Pioneering sustainable brands, CBD/Health products", image: "/images/desktop/麻纸.png" },
+  { name: "Translucent Paper", gsm: "40-120gsm", trait: "See-through without the plastic guilt. Diffuses light like frosted glass — the PPWR-compliant window for food and cosmetics.", use: "Food packaging windows, Cosmetic inner liners", image: "/images/desktop/半透明纸.png" },
+  { name: "Touch Paper", gsm: "250-350gsm", trait: "Velvet touch, built-in. No extra lamination layer means cleaner recycling — and a surface that feels as considered as the brand inside.", use: "Minimalist beauty, Electronics boxes", image: "/images/desktop/触感纸.png" },
+  { name: "Pearlescent Paper", gsm: "200-300gsm", trait: "Shimmer born in the paper, not printed on it. Mother-of-pearl glow shifts from warm gold to cool silver as the box moves.", use: "Festival packaging, Wedding/Party supplies", image: "/images/desktop/珠光纸.png" },
 ];
 
 const inks = [
-  { name: "Soy-based Ink", trait: "Vegetable oil base, low VOC, vibrant color, good paper penetration", compliance: "FDA 21 CFR 176.170 / EU food contact compliant", image: "/images/desktop/大豆油墨.png" },
-  { name: "Water-based Ink", trait: "Solvent-free, odourless, fast-drying, suitable for food packaging", compliance: "PFAS-free, meets PPWR recyclability requirements", image: "/images/desktop/水洗油墨.png" },
-  { name: "UV-curable Ink", trait: "Instant curing, abrasion-resistant, suitable for non-absorbent materials", compliance: "Low migration, suitable for pharma/food outer packaging", image: "/images/desktop/UV固化油墨.png" },
-  { name: "Metallic Ink", trait: "Contains metal particles, can replace some foil needs, recyclable-friendly", compliance: "Easier to recycle than foil,首选 for mono-material structures", image: "/images/desktop/金属油墨.png" },
+  { name: "Soy-based Ink", trait: "Vegetable oil base, low VOC, vibrant color, good paper penetration", compliance: "FDA 21 CFR 176.170 / EU food contact compliant", whenToChoose: "Choose when: Food-contact packaging, brands with sustainability reporting requirements", image: "/images/desktop/大豆油墨.png" },
+  { name: "Water-based Ink", trait: "Solvent-free, odourless, fast-drying, suitable for food packaging", compliance: "PFAS-free, meets PPWR recyclability requirements", whenToChoose: "Choose when: Direct food contact, enclosed packaging, odour-sensitive products", image: "/images/desktop/水洗油墨.png" },
+  { name: "UV-curable Ink", trait: "Instant curing, abrasion-resistant, suitable for non-absorbent materials", compliance: "Low migration, suitable for pharma/food outer packaging", whenToChoose: "Choose when: Non-porous substrates, high-speed lines, abrasion-prone applications", image: "/images/desktop/UV固化油墨.png" },
+  { name: "Metallic Ink", trait: "Contains metal particles, can replace some foil needs, recyclable-friendly", compliance: "Easier to recycle than foil, preferred for mono-material structures", whenToChoose: "Choose when: Budget-conscious metallic effects, mono-material recyclability targets", image: "/images/desktop/金属油墨.png" },
 ];
 
 const coatings = [
-  { name: "Water-based Lamination", trait: "Solvent-free adhesive, biodegradable, recyclable with paper", trend: "Replacing traditional BOPP/PE lamination, PPWR compliant", image: "/images/desktop/水性覆膜.png" },
-  { name: "PLA Bio-lamination", trait: "Corn starch based, compostable, high transparency", trend: "Fastest growing in European food packaging", image: "/images/desktop/PLA生物覆膜.png" },
-  { name: "UV Varnish (no film)", trait: "Direct coating, no plastic layer added, maintains paper recyclability", trend: "2025 mainstream, replacing plastic lamination", image: "/images/desktop/无膜UV涂层.png" },
+  { name: "Water-based Lamination", trait: "Solvent-free adhesive, biodegradable, recyclable with paper", trend: "Replacing traditional BOPP/PE lamination, PPWR compliant", whenToChoose: "Choose when: Recyclability-first briefs, EU PPWR compliance required", image: "/images/desktop/水性覆膜.png" },
+  { name: "PLA Bio-lamination", trait: "Corn starch based, compostable, high transparency", trend: "Fastest growing in European food packaging", whenToChoose: "Choose when: Industrial compostability required, Plant-based brand positioning", image: "/images/desktop/PLA生物覆膜.png" },
+  { name: "UV Varnish (no film)", trait: "Direct coating, no plastic layer added, maintains paper recyclability", trend: "2025 mainstream, replacing plastic lamination", whenToChoose: "Choose when: Maximum recyclability, Mono-material structures, Light protection needed without film", image: "/images/desktop/无膜UV涂层.png" },
 ];
 
 const printMethods = [
@@ -185,11 +189,16 @@ export default function CapabilitiesMaterialsPage() {
                 <div className="lg:col-span-3">
                   <span className="font-mono text-sm text-text-secondary/40">{String(i + 1).padStart(2, "0")}</span>
                   <h3 className="mt-2 font-display text-2xl text-text-primary">{finish.name}</h3>
-                  <span className="font-mono text-xs tracking-[0.15em] text-text-secondary/40 uppercase">{finish.english}</span>
                 </div>
                 <div className="lg:col-span-2">
-                  <span className="font-mono text-xs tracking-[0.15em] text-text-secondary/40 uppercase">Best for</span>
-                  <p className="mt-2 text-sm text-text-primary">{finish.bestFor}</p>
+                  <span className="font-mono text-xs tracking-[0.15em] text-text-secondary/40 uppercase">Ideal for</span>
+                  <p className="mt-2 text-sm text-text-primary">{finish.idealFor}</p>
+                  {finish.avoidFor && (
+                    <>
+                      <span className="mt-3 block font-mono text-xs tracking-[0.15em] text-text-secondary/40 uppercase">Avoid for</span>
+                      <p className="mt-2 text-sm text-text-secondary/70">{finish.avoidFor}</p>
+                    </>
+                  )}
                 </div>
                 <div className="lg:col-span-4">
                   <p className="text-base text-text-secondary leading-relaxed">{finish.definition}</p>
@@ -208,15 +217,27 @@ export default function CapabilitiesMaterialsPage() {
         </div>
       </section>
 
+      {/* Transition: Classic → Digital */}
+      <section className="bg-warm">
+        <div className="text-center py-12 border-t border-black/5">
+          <p className="font-display text-xl italic text-text-secondary max-w-xl mx-auto leading-relaxed">
+            &ldquo;When traditional dies become too expensive or too slow, digital takes over.&rdquo;
+          </p>
+        </div>
+      </section>
+
       {/* Digital Innovation — Dark Mode */}
       <section className="bg-charcoal py-24 lg:py-32" id="digital-innovation">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="flex flex-col lg:flex-row gap-16 mb-20">
+          <div className="flex flex-col lg:flex-row gap-16 mb-12">
             <div className="lg:w-[60%]">
               <span className="font-mono text-sm tracking-[0.2em] text-mint uppercase">Digital Innovation</span>
               <h2 className="mt-6 font-display text-4xl lg:text-5xl text-off-white leading-tight">
                 Digital Embellishment: Precision Without Plates.
               </h2>
+              <p className="mt-4 font-display text-xl italic text-off-white/40 max-w-xl">
+                Precision without plates. Short runs without compromise.
+              </p>
             </div>
             <div className="lg:w-[40%]">
               <p className="text-off-white/60 text-base leading-relaxed">
@@ -230,14 +251,21 @@ export default function CapabilitiesMaterialsPage() {
                 <div className="lg:col-span-3">
                   <span className="font-mono text-sm text-off-white/30">{String(i + 1).padStart(2, "0")}</span>
                   <h3 className="mt-2 font-display text-2xl text-off-white">{di.name}</h3>
-                  <span className="font-mono text-xs tracking-[0.15em] text-off-white/30 uppercase">{di.english}</span>
+                </div>
+                <div className="lg:col-span-2">
+                  <span className="font-mono text-xs tracking-[0.15em] text-mint uppercase">Ideal for</span>
+                  <p className="mt-2 text-sm text-off-white/70">{di.idealFor}</p>
+                </div>
+                <div className="lg:col-span-4">
+                  <p className="text-base text-off-white/60 leading-relaxed">{di.definition}</p>
                 </div>
                 <div className="lg:col-span-3">
-                  <span className="font-mono text-xs tracking-[0.15em] text-mint uppercase">Best for</span>
-                  <p className="mt-2 text-sm text-off-white/70">{di.bestFor}</p>
-                </div>
-                <div className="lg:col-span-6">
-                  <p className="text-base text-off-white/60 leading-relaxed">{di.definition}</p>
+                  <PlaceholderImage
+                    label={di.imageLabel || di.name}
+                    aspectRatio="4/3"
+                    src={di.image}
+                    className="w-full"
+                  />
                 </div>
               </div>
             ))}
@@ -268,36 +296,92 @@ export default function CapabilitiesMaterialsPage() {
             </div>
           </div>
 
-          {/* Paper Stocks — with images */}
-          <h3 className="font-display text-3xl text-text-primary mb-10">Paper Stocks</h3>
-          <div className="space-y-0 mb-20">
-            {paperStocks.map((stock, i) => (
-              <div key={stock.name} className="grid grid-cols-1 lg:grid-cols-12 gap-6 py-6 border-t border-black/5 last:border-b last:border-black/5 items-start">
-                <div className="lg:col-span-2">
-                  <span className="font-mono text-sm text-text-secondary/40">{String(i + 1).padStart(2, "0")}</span>
-                  <h4 className="mt-1 font-display text-lg text-text-primary">{stock.name}</h4>
+          {/* Paper Stocks — grouped by family */}
+          <h3 className="font-display text-3xl text-text-primary mb-4">Paper Stocks</h3>
+          <p className="text-text-secondary text-sm mb-10 max-w-xl">FSC-certified. PFAS-free. Selected for recyclability and sensory impact.</p>
+
+          {/* Family 1: Coated & Smooth */}
+          <div className="mb-16">
+            <div className="border-t-2 border-text-primary/10 pt-6 mb-6">
+              <h4 className="font-display text-xl text-text-primary">Coated &amp; Smooth</h4>
+              <p className="mt-1 text-sm text-text-secondary/70">For brands that want maximum color impact</p>
+            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {paperStocks.filter(s => ["FSC White Card", "Touch Paper", "Pearlescent Paper"].includes(s.name)).map((stock) => (
+                <div key={stock.name} className="flex flex-col p-6 border border-black/5 hover:border-black/10 transition-colors">
+                  <div className="flex items-start justify-between mb-3">
+                    <div>
+                      <h4 className="font-display text-lg text-text-primary">{stock.name}</h4>
+                      <span className="font-mono text-xs text-text-secondary/50">{stock.gsm}</span>
+                    </div>
+                  </div>
+                  <p className="text-sm text-text-secondary leading-relaxed mb-3 flex-1">{stock.trait}</p>
+                  <div className="mt-3">
+                    <span className="font-mono text-[10px] tracking-[0.15em] text-text-secondary/40 uppercase">Ideal for</span>
+                    <p className="text-xs text-text-primary mt-1">{stock.use}</p>
+                  </div>
+                  <div className="mt-4">
+                    <PlaceholderImage label={stock.name} aspectRatio="4/3" src={stock.image} className="w-full" />
+                  </div>
                 </div>
-                <div className="lg:col-span-1">
-                  <span className="font-mono text-xs tracking-[0.15em] text-text-secondary/40 uppercase">GSM</span>
-                  <p className="mt-1 font-mono text-sm text-text-primary">{stock.gsm}</p>
+              ))}
+            </div>
+          </div>
+
+          {/* Family 2: Natural & Textured */}
+          <div className="mb-16">
+            <div className="border-t-2 border-text-primary/10 pt-6 mb-6">
+              <h4 className="font-display text-xl text-text-primary">Natural &amp; Textured</h4>
+              <p className="mt-1 text-sm text-text-secondary/70">For brands that want honesty and handfeel</p>
+            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {paperStocks.filter(s => ["FSC Kraft Paper", "Recycled Art Paper", "Hemp Paper"].includes(s.name)).map((stock) => (
+                <div key={stock.name} className="flex flex-col p-6 border border-black/5 hover:border-black/10 transition-colors">
+                  <div className="flex items-start justify-between mb-3">
+                    <div>
+                      <h4 className="font-display text-lg text-text-primary">{stock.name}</h4>
+                      <span className="font-mono text-xs text-text-secondary/50">{stock.gsm}</span>
+                    </div>
+                  </div>
+                  <p className="text-sm text-text-secondary leading-relaxed mb-3 flex-1">{stock.trait}</p>
+                  <div className="mt-3">
+                    <span className="font-mono text-[10px] tracking-[0.15em] text-text-secondary/40 uppercase">Ideal for</span>
+                    <p className="text-xs text-text-primary mt-1">{stock.use}</p>
+                  </div>
+                  <div className="mt-4">
+                    <PlaceholderImage label={stock.name} aspectRatio="4/3" src={stock.image} className="w-full" />
+                  </div>
                 </div>
-                <div className="lg:col-span-3">
-                  <p className="text-base text-text-secondary leading-relaxed">{stock.trait}</p>
+              ))}
+            </div>
+          </div>
+
+          {/* Family 3: Specialty & Premium */}
+          <div className="mb-20">
+            <div className="border-t-2 border-text-primary/10 pt-6 mb-6">
+              <h4 className="font-display text-xl text-text-primary">Specialty &amp; Premium</h4>
+              <p className="mt-1 text-sm text-text-secondary/70">For the unexpected — papers that surprise and elevate</p>
+            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {paperStocks.filter(s => ["Cotton Paper", "Translucent Paper"].includes(s.name)).map((stock) => (
+                <div key={stock.name} className="flex flex-col p-6 border border-black/5 hover:border-black/10 transition-colors">
+                  <div className="flex items-start justify-between mb-3">
+                    <div>
+                      <h4 className="font-display text-lg text-text-primary">{stock.name}</h4>
+                      <span className="font-mono text-xs text-text-secondary/50">{stock.gsm}</span>
+                    </div>
+                  </div>
+                  <p className="text-sm text-text-secondary leading-relaxed mb-3 flex-1">{stock.trait}</p>
+                  <div className="mt-3">
+                    <span className="font-mono text-[10px] tracking-[0.15em] text-text-secondary/40 uppercase">Ideal for</span>
+                    <p className="text-xs text-text-primary mt-1">{stock.use}</p>
+                  </div>
+                  <div className="mt-4">
+                    <PlaceholderImage label={stock.name} aspectRatio="4/3" src={stock.image} className="w-full" />
+                  </div>
                 </div>
-                <div className="lg:col-span-2">
-                  <span className="font-mono text-xs tracking-[0.15em] text-text-secondary/40 uppercase">Best for</span>
-                  <p className="mt-1 text-sm text-text-primary">{stock.use}</p>
-                </div>
-                <div className="lg:col-span-4">
-                  <PlaceholderImage
-                    label={stock.name}
-                    aspectRatio="4/3"
-                    src={stock.image}
-                    className="w-full"
-                  />
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
 
           {/* Inks — with images */}
@@ -311,6 +395,7 @@ export default function CapabilitiesMaterialsPage() {
                 </div>
                 <div className="lg:col-span-3">
                   <p className="text-base text-text-secondary leading-relaxed">{ink.trait}</p>
+                  <p className="mt-2 text-xs italic text-text-secondary/60">{ink.whenToChoose}</p>
                 </div>
                 <div className="lg:col-span-3">
                   <span className="font-mono text-xs tracking-[0.15em] text-text-secondary/40 uppercase">Compliance</span>
@@ -339,6 +424,7 @@ export default function CapabilitiesMaterialsPage() {
                 </div>
                 <div className="lg:col-span-3">
                   <p className="text-base text-text-secondary leading-relaxed">{coat.trait}</p>
+                  <p className="mt-2 text-xs italic text-text-secondary/60">{coat.whenToChoose}</p>
                 </div>
                 <div className="lg:col-span-3">
                   <span className="font-mono text-xs tracking-[0.15em] text-text-secondary/40 uppercase">Trend</span>
@@ -451,17 +537,17 @@ export default function CapabilitiesMaterialsPage() {
       <section className="bg-warm py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 text-center">
           <h2 className="font-display text-4xl lg:text-5xl text-text-primary leading-tight max-w-xl mx-auto">
-            See It. Touch It. Believe It.
+            Your Brand, in Your Hands.
           </h2>
           <p className="mt-6 text-text-secondary text-base max-w-lg mx-auto leading-relaxed">
-            Order a sample kit with 6 material swatches and 4 finish samples — foil, emboss, soft-touch, and spot UV.
+            Order a physical sample kit with 6 paper swatches and 4 finish samples — foil, emboss, soft-touch, and spot UV. Feel the difference before you commit.
           </p>
           <div className="mt-10">
             <Link
               href="/sample-kit"
               className="inline-flex items-center px-10 py-4 border-2 border-text-primary text-text-primary text-base font-body font-medium tracking-wide hover:bg-text-primary hover:text-warm transition-all duration-300"
             >
-              Get Material Sample Kit
+              Request Your Sample Kit
             </Link>
           </div>
         </div>

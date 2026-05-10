@@ -39,14 +39,14 @@ const products = [
   },
   {
     name: "Subscription Sleeve",
-    image: "/images/desktop/DTC-订阅盒.png",
+    image: "/images/desktop/套筒封套.png",
     specs: "350gsm CCNB / Matte Lamination",
     processes: "Laser die-cut window, hot foil serial number",
     description: "Slim, shippable, designed for recurring touchpoints.",
   },
   {
     name: "Rigid Setup Box",
-    image: "/images/desktop/D2C吊牌.png",
+    image: "/images/desktop/硬盒磁吸扣.png",
     specs: "2mm Greyboard / 150gsm Wrapping Paper",
     processes: "Full-wrap litho, edge gilding, magnetic closure",
     description: "Premium unboxing for luxury DTC and gifting.",
@@ -60,14 +60,14 @@ const products = [
   },
   {
     name: "Telescopic Box",
-    image: "/images/desktop/D2C退货包装.png",
+    image: "/images/desktop/Telescopic Box.png",
     specs: "1.5mm Solid Board / Kraft Wrap",
     processes: "Inside print, blind emboss, ribbon pull",
     description: "Two-piece box for fragile goods and curated sets.",
   },
   {
     name: "Clamshell Mailer",
-    image: "/images/desktop/D2C-插页感谢卡.png",
+    image: "/images/desktop/Clamshell Mailer.png",
     specs: "1mm Recycled Board / PLA Coating",
     processes: "Soy-based print, perforation, compostable window",
     description: "100% plastic-free, curbside recyclable mailer.",
@@ -189,7 +189,7 @@ export default function DtcPackagingPage() {
           <PlaceholderImage
             label="DTC Packaging Hero"
             aspectRatio="3/2"
-            src={products[0].image}
+            src="/images/desktop/三种工艺图.png"
             className="w-full h-full"
           />
         </div>
@@ -201,23 +201,6 @@ export default function DtcPackagingPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {stats.map((s) => (
               <StatCard key={s.label} {...s} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Pain Points */}
-      <section className="bg-warm py-16 lg:py-24">
-        <div className="max-w-4xl mx-auto px-6 lg:px-12">
-          <span className="font-mono text-sm tracking-[0.2em] text-mint uppercase">
-            Why brands switch
-          </span>
-          <h2 className="mt-4 font-display text-3xl lg:text-4xl text-text-primary leading-tight">
-            DTC packaging is broken. We fixed it.
-          </h2>
-          <div className="mt-12 space-y-4">
-            {painPoints.map((pp, i) => (
-              <PainCard key={i} pp={pp} i={i} />
             ))}
           </div>
         </div>
@@ -248,7 +231,7 @@ export default function DtcPackagingPage() {
               <PlaceholderImage
                 label="Case Study — Onda Wellness"
                 aspectRatio="3/2"
-                src={products[0].image}
+                src="/images/desktop/易撕条.png"
                 className="w-full"
               />
             </div>
@@ -264,6 +247,23 @@ export default function DtcPackagingPage() {
                 <p className="text-sm text-text-secondary mt-0.5">Head of Product, Onda Wellness</p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why brands switch — FAQ */}
+      <section className="bg-warm py-16 lg:py-24">
+        <div className="max-w-4xl mx-auto px-6 lg:px-12">
+          <span className="font-mono text-sm tracking-[0.2em] text-mint uppercase">
+            Why brands switch
+          </span>
+          <h2 className="mt-4 font-display text-3xl lg:text-4xl text-text-primary leading-tight">
+            DTC packaging is broken. We fixed it.
+          </h2>
+          <div className="mt-12 space-y-4">
+            {painPoints.map((pp, i) => (
+              <PainCard key={i} pp={pp} i={i} />
+            ))}
           </div>
         </div>
       </section>

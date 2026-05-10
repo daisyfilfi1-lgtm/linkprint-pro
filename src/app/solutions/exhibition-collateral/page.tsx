@@ -87,7 +87,7 @@ export default function ExhibitionCollateralPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-20 pb-16 lg:pb-24 bg-charcoal">
+      <section className="pt-28 pb-16 lg:pb-24 bg-charcoal">
         <div className="max-w-5xl mx-auto px-6 lg:px-12">
           <span className="font-mono text-sm tracking-[0.2em] text-mint uppercase">Exhibition Collateral</span>
           <h1 className="mt-6 font-display text-4xl lg:text-5xl text-off-white leading-tight" style={{ fontSize: "clamp(32px, 4vw, 48px)" }}>
@@ -109,18 +109,6 @@ export default function ExhibitionCollateralPage() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Combo shot */}
-      <section className="bg-warm">
-        <div className="max-w-5xl mx-auto">
-          <PlaceholderImage
-            label="Complete Exhibition Set"
-            aspectRatio="16/9"
-            src={collateralItems[0].image}
-            className="w-full"
-          />
         </div>
       </section>
 

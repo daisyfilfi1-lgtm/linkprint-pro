@@ -1,307 +1,176 @@
-import type { Metadata } from "next";
-import Link from "next/link";
 import PlaceholderImage from "@/components/PlaceholderImage";
+import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: "Pharma & Healthcare Packaging — LinkPrint Pro",
-  description:
-    "GMP-compliant paper packaging for supplements, medical devices, and health products. EU MDR ready. MOQ 500, full compliance documentation.",
-};
-
-const products = [
+const pharmaProducts = [
   {
     name: "Pharma Folding Cartons",
     image: "/images/desktop/药盒.png",
-    specs: "400–600gsm SBS / Art Paper · AQ or UV Coating",
-    processes: "Offset print, emboss, batch number, tamper-evident seal",
-    description: "Primary and secondary packaging for solid dosage forms, medical devices, and diagnostic kits. EU MDR compliant.",
+    description: "GMP-compliant folding cartons for tablets, capsules, and medical devices. Tamper-evident seal, braille embossing available.",
+    specs: "350-400gsm SBS board, aqueous coating, child-resistant option",
+    compliance: "EU MDR 2017/745, ISO 15378, FDA 21 CFR",
   },
   {
     name: "Patient Information Leaflets",
     image: "/images/desktop/说明书标签.png",
-    specs: "40–70gsm Uncoated · Multi-Fold / Booklet",
-    processes: "Offset or digital, multi-language, braille-ready scoring",
-    description: "CE-marked leaflets with IFU content. Multi-language edition support with regulatory review readiness.",
+    description: "Multi-language PILs printed on pharmaceutical-grade paper. Folded to fit carton dimensions. Batch-coded for traceability.",
+    specs: "40-60gsm pharma paper, up to 32 panels, micro-font clear",
+    compliance: "EMA QRD template compliant, braille ready",
   },
   {
     name: "Compliance Document Pack",
     image: "/images/desktop/防篡改.png",
-    specs: "A4 Ring-Binder / Custom Folder · Full Documentation",
-    processes: "Offset cover, tab dividers, foil-stamped branding",
-    description: "Complete compliance dossier — certificate of analysis, batch records, and EU declaration of conformity.",
+    description: "Complete compliance documentation package shipped with every order. REACH, FSC, CE, and batch traceability reports included.",
+    specs: "Digital and physical documentation, 48h delivery",
+    compliance: "Full EU and FDA documentation set",
   },
 ];
 
-const complianceSteps = [
-  { title: "File Pre-Check", subtitle: "Review artwork for regulatory compliance markers and structural integrity." },
-  { title: "Compliance Audit", subtitle: "Cross-check materials against EU MDR, REACH, FSC chain-of-custody requirements." },
-  { title: "Digital Proof", subtitle: "FDA/EU-compliant digital proof with measurement call-outs and material declarations." },
-  { title: "Production", subtitle: "GMP-controlled manufacturing with batch traceability and environmental monitoring." },
-  { title: "FQC", subtitle: "Full quality control — dimensional, color, adhesion, and seal integrity testing." },
-  { title: "Delivery", subtitle: "Batch-sealed delivery with CoA, batch certificate, and EU declaration of conformity." },
+const certBadges = [
+  "ISO 9001:2015",
+  "FSC Certified",
+  "EU MDR 2017/745",
+  "REACH Compliant",
+  "CE Marking",
+  "ISO 15378",
 ];
 
+const processSteps = [
+  { step: "1", title: "Material Audit", desc: "Paper and ink compliance verification against EU MDR and FDA requirements." },
+  { step: "2", title: "Artwork Review", desc: "Braille, font size, and safety symbol verification per EMA QRD guidelines." },
+  { step: "3", title: "Pre-Production Sample", desc: "Physical sample with batch coding, tamper-evident seal, and color proof." },
+  { step: "4", title: "Production Run", desc: "GMP environment, IQC/IPQC/FQC at every stage. Real-time batch tracking." },
+  { step: "5", title: "Lab Testing", desc: "Migration testing, extractables, and leachables per ISO and FDA standards." },
+  { step: "6", title: "Documentation Pack", desc: "Full compliance dossier shipped with order. Digital archive for audits." },
+];
+
+function ProductCard({ p }: { p: typeof pharmaProducts[0] }) {
+  return (
+    <div className="border border-black/5 hover:border-black/10 hover:shadow-sm transition-all" style={{ borderRadius: "4px" }}>
+      <PlaceholderImage label={p.name} aspectRatio="3/2" src={p.image} className="w-full" />
+      <div className="p-5">
+        <h3 className="font-display text-xl text-text-primary">{p.name}</h3>
+        <p className="mt-2 text-sm text-text-secondary leading-relaxed">{p.description}</p>
+        <div className="mt-3 space-y-1">
+          <div className="flex gap-2">
+            <span className="font-mono text-xs flex-shrink-0" style={{ color: "rgba(107,107,107,0.4)" }}>Specs:</span>
+            <span className="text-sm text-text-secondary">{p.specs}</span>
+          </div>
+          <div className="flex gap-2">
+            <span className="font-mono text-xs flex-shrink-0" style={{ color: "rgba(107,107,107,0.4)" }}>Compliance:</span>
+            <span className="text-sm text-mint">{p.compliance}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function PharmaHealthcarePage() {
   return (
     <>
-      {/* Section 1: Hero */}
-      <section className="flex flex-col lg:flex-row min-h-[80vh] pt-20">
-        <div className="lg:w-1/2 bg-charcoal flex items-center px-6 lg:px-12 py-20 lg:py-0">
-          <div className="max-w-lg">
-            <span className="font-mono text-xs tracking-[0.2em] text-mint uppercase">
-              Pharma Solutions
-            </span>
-            <h1 className="mt-6 font-display text-4xl lg:text-6xl text-off-white leading-tight">
-              Pharma-Grade Compliance,{" "}
-              Small-Batch Flexibility.
-            </h1>
-            <p className="mt-6 text-off-white/60 text-sm leading-relaxed">
-              GMP-compliant paper packaging for supplements, medical devices,
-              and nutraceuticals. Full EU MDR documentation included with every
-              order — from MOQ 500.
-            </p>
-            <div className="mt-8 grid grid-cols-2 gap-x-8 gap-y-4 font-mono text-xs tracking-[0.1em]">
-              <div>
-                <span className="text-off-white/40">MOQ</span>
-                <p className="text-off-white mt-1">500 Units</p>
-              </div>
-              <div>
-                <span className="text-off-white/40">Compliance</span>
-                <p className="text-off-white mt-1">EU MDR · GMP · REACH</p>
-              </div>
-              <div>
-                <span className="text-off-white/40">Documentation</span>
-                <p className="text-off-white mt-1">Full Batch Records</p>
-              </div>
-              <div>
-                <span className="text-off-white/40">Audit Ready</span>
-                <p className="text-off-white mt-1">ISO 9001:2015</p>
-              </div>
-            </div>
-            <div className="mt-10">
-              <Link
-                href="/contact"
-                className="inline-flex items-center px-8 py-3 border-2 border-off-white text-off-white text-sm font-body font-medium tracking-wide hover:bg-off-white hover:text-charcoal transition-all duration-300"
-              >
-                Request Pharma Compliance Quote
-              </Link>
-            </div>
-          </div>
-        </div>
-        <div className="lg:w-1/2 min-h-[40vh] lg:min-h-full">
-          <PlaceholderImage
-            label="PHARMA HERO — Clinical White Folding Carton with Tamper-Evident Seal and Batch Number"
-            aspectRatio="1/1"
-            className="w-full h-full"
-            category="pharma"
-          />
-        </div>
-      </section>
-
-      {/* Section 2: Certifications Wall */}
-      <section className="bg-warm py-24 lg:py-32">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="text-center mb-16">
-            <span className="font-mono text-xs tracking-[0.2em] text-mint uppercase">
-              Certifications
-            </span>
-            <h2 className="mt-6 font-display text-4xl lg:text-5xl text-text-primary leading-tight">
-              Standards we stand by.
-            </h2>
-            <p className="mt-4 text-text-secondary text-sm max-w-xl mx-auto">
-              All certifications apply globally across every solution we offer —
-              from DTC to Pharma. No shortcuts, no exceptions.
-            </p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+      {/* Hero */}
+      <section className="pt-20 pb-16 lg:pb-24 bg-charcoal">
+        <div className="max-w-5xl mx-auto px-6 lg:px-12">
+          <span className="font-mono text-sm tracking-[0.2em] text-mint uppercase">Pharma & Healthcare</span>
+          <h1 className="mt-6 font-display text-4xl lg:text-5xl text-off-white leading-tight" style={{ fontSize: "clamp(32px, 4vw, 48px)" }}>
+            GMP-compliant packaging. Small-batch flexibility.
+          </h1>
+          <p className="mt-4 text-base leading-relaxed max-w-lg" style={{ color: "rgba(253,252,250,0.5)" }}>
+            Paper packaging for supplements, medical devices, and health products. EU MDR ready documentation included with every order.
+          </p>
+          <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-lg">
             {[
-              { name: "ISO 9001:2015", desc: "Quality Management System" },
-              { name: "FSC® Certified", desc: "Chain of Custody" },
-              { name: "EU MDR 2017/745", desc: "Medical Device Ready" },
-              { name: "REACH Compliant", desc: "All Materials & Inks" },
-              { name: "CE Marking", desc: "EU Market Distribution" },
-            ].map((cert) => (
-              <div key={cert.name} className="border border-black/5 p-6 bg-off-white text-center">
-                <PlaceholderImage
-                  label={`CERTIFICATION — ${cert.name} Certificate Scan`}
-                  aspectRatio="1/1"
-                  className="w-full mb-4"
-                  category="pharma"
-                />
-                <h3 className="font-mono text-xs tracking-[0.1em] text-text-primary font-medium">
-                  {cert.name}
-                </h3>
-                <p className="text-[10px] text-text-secondary/60 mt-1">
-                  {cert.desc}
-                </p>
+              { v: "GMP", l: "Certified" },
+              { v: "500", l: "MOQ" },
+              { v: "EU MDR", l: "Ready" },
+              { v: "48H", l: "Compliance Docs" },
+            ].map((s) => (
+              <div key={s.l} className="p-4 text-center" style={{ backgroundColor: "rgba(253,252,250,0.04)", borderRadius: "4px" }}>
+                <div className="font-display text-xl font-bold" style={{ color: "#C9A962" }}>{s.v}</div>
+                <div className="font-mono text-xs mt-1" style={{ color: "rgba(253,252,250,0.5)" }}>{s.l}</div>
               </div>
             ))}
-          </div>
-          <div className="mt-8 text-center">
-            <p className="text-[10px] font-mono text-text-secondary/40 tracking-[0.1em]">
-              CERTIFICATIONS AVAILABLE FOR REVIEW UPON REQUEST · STANDARDS APPLY ACROSS ALL SOLUTIONS
-            </p>
           </div>
         </div>
       </section>
 
-      {/* Section 3: Product Grid */}
-      <section className="bg-off-white py-24 lg:py-32">
-        <div className="max-w-6xl mx-auto px-6 lg:px-12">
-          <span className="font-mono text-xs tracking-[0.2em] text-mint uppercase">
-            Pharma Range
-          </span>
-          <h2 className="mt-6 font-display text-4xl lg:text-5xl text-text-primary leading-tight">
-            Three essentials for{" "}
-            regulated packaging.
-          </h2>
-          <div className="mt-16 space-y-0">
-            {products.map((p, i) => (
+      {/* Certification Badges */}
+      <section className="bg-warm py-12 border-b border-black/5">
+        <div className="max-w-5xl mx-auto px-6 lg:px-12">
+          <div className="grid grid-cols-3 md:grid-cols-6 gap-3">
+            {certBadges.map((cert) => (
               <div
-                key={p.name}
-                className="grid grid-cols-1 md:grid-cols-4 gap-6 py-10 border-t border-black/5 last:border-b last:border-black/5 items-start"
+                key={cert}
+                className="px-3 py-3 text-center font-mono text-xs tracking-[0.1em]"
+                style={{
+                  backgroundColor: "rgba(0,0,0,0.03)",
+                  borderRadius: "4px",
+                  color: "#6B6B6B",
+                }}
               >
-                <div className="md:col-span-1">
-                  <span className="font-mono text-xs text-text-secondary/40">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <div className="mb-3 w-16 h-16 overflow-hidden">
-                    <PlaceholderImage
-                      label={p.name}
-                      aspectRatio="1/1"
-                      src={p.image}
-                      className="w-full h-full"
-                    />
-                  </div>
-                  <h3 className="mt-2 font-display text-2xl text-text-primary">
-                    {p.name}
-                  </h3>
-                </div>
-                <div className="md:col-span-1">
-                  <span className="font-mono text-[10px] tracking-[0.15em] text-text-secondary/40 uppercase">
-                    Specs
-                  </span>
-                  <p className="mt-2 font-mono text-xs text-text-primary leading-relaxed">
-                    {p.specs}
-                  </p>
-                </div>
-                <div className="md:col-span-1">
-                  <span className="font-mono text-[10px] tracking-[0.15em] text-text-secondary/40 uppercase">
-                    Processes
-                  </span>
-                  <p className="mt-2 text-sm text-text-secondary leading-relaxed">
-                    {p.processes}
-                  </p>
-                </div>
-                <div className="md:col-span-1">
-                  <p className="text-sm text-text-secondary leading-relaxed">
-                    {p.description}
-                  </p>
-                </div>
+                {cert}
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Section 4: Compliance Process */}
-      <section className="bg-warm py-24 lg:py-32">
+      {/* Products */}
+      <section className="bg-warm py-16 lg:py-24">
         <div className="max-w-6xl mx-auto px-6 lg:px-12">
-          <span className="font-mono text-xs tracking-[0.2em] text-mint uppercase">
-            Compliance Workflow
-          </span>
-          <h2 className="mt-6 font-display text-4xl lg:text-5xl text-text-primary leading-tight max-w-2xl">
-            Six steps from file{" "}
-            to regulated delivery.
+          <span className="font-mono text-sm tracking-[0.2em] text-mint uppercase">Products</span>
+          <h2 className="mt-4 font-display text-3xl lg:text-4xl text-text-primary leading-tight">
+            Pharmaceutical-grade paper packaging.
           </h2>
-          <div className="mt-16">
-            {/* Desktop horizontal */}
-            <div className="hidden lg:flex items-start justify-between relative">
-              <div className="absolute top-6 left-0 right-0 h-px bg-black/10" />
-              {complianceSteps.map((step, i) => (
-                <div key={step.title} className="flex flex-col items-center relative z-10 w-[15%]">
-                  <div className="w-12 h-12 rounded-full bg-charcoal flex items-center justify-center text-off-white font-mono text-sm font-bold">
-                    {i + 1}
-                  </div>
-                  <h3 className="mt-6 font-display text-base text-text-primary text-center">
-                    {step.title}
-                  </h3>
-                  <p className="mt-2 text-[10px] text-text-secondary text-center leading-relaxed">
-                    {step.subtitle}
-                  </p>
-                </div>
-              ))}
-            </div>
-            {/* Mobile vertical */}
-            <div className="lg:hidden space-y-10">
-              {complianceSteps.map((step, i) => (
-                <div key={step.title} className="flex gap-6">
-                  <div className="flex flex-col items-center">
-                    <div className="w-10 h-10 rounded-full bg-charcoal flex items-center justify-center text-off-white font-mono text-xs font-bold">
-                      {i + 1}
-                    </div>
-                    {i < complianceSteps.length - 1 && (
-                      <div className="w-px flex-1 bg-black/10 mt-2" />
-                    )}
-                  </div>
-                  <div className="pb-10">
-                    <h3 className="font-display text-lg text-text-primary">
-                      {step.title}
-                    </h3>
-                    <p className="mt-1 text-xs text-text-secondary">
-                      {step.subtitle}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+            {pharmaProducts.map((p) => (
+              <ProductCard key={p.name} p={p} />
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Section 5: Case Teaser */}
-      <section className="bg-charcoal py-24 lg:py-32">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="flex flex-col lg:flex-row gap-16 items-center">
-            <div className="lg:w-1/2">
-              <PlaceholderImage
-                label="PHARMA CASE — Clinical Folding Carton with Batch Code, Tamper-Evident Seal, and Barcode Micro Macro"
-                aspectRatio="4/3"
-                className="w-full"
-                category="pharma"
-              />
-            </div>
-            <div className="lg:w-1/2 max-w-lg">
-              <span className="font-mono text-xs tracking-[0.2em] text-mint uppercase">
-                Case Study
-              </span>
-              <blockquote className="mt-6 font-display text-3xl lg:text-4xl text-off-white leading-tight">
-                &ldquo;1,000 EMA-compliant drug cartons delivered with full
-                batch documentation in 14 days.&rdquo;
-              </blockquote>
-              <div className="mt-6">
-                <p className="text-sm font-body font-medium text-off-white">
-                  Dr. Elena Voss
-                </p>
-                <p className="text-xs font-mono text-off-white/40 mt-1">
-                  CEO, Voss Bioceuticals
-                </p>
-              </div>
-              <div className="mt-10">
-                <Link
-                  href="/case-studies"
-                  className="inline-flex items-center text-sm font-body font-medium text-mint hover:text-mint/80 transition-colors duration-200"
+      {/* Process Flow */}
+      <section className="py-16 lg:py-24" style={{ backgroundColor: "#FDFCFA" }}>
+        <div className="max-w-5xl mx-auto px-6 lg:px-12">
+          <span className="font-mono text-sm tracking-[0.2em] text-mint uppercase">Process</span>
+          <h2 className="mt-4 font-display text-3xl text-text-primary leading-tight">
+            6-step compliance workflow.
+          </h2>
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-4">
+            {processSteps.map((ps) => (
+              <div key={ps.step} className="p-5 border border-black/5" style={{ borderRadius: "4px" }}>
+                <div
+                  className="w-8 h-8 rounded-full flex items-center justify-center font-mono text-sm font-bold mb-3"
+                  style={{ backgroundColor: "#C9A962", color: "#1A1A1A" }}
                 >
-                  Read Full Case Study →
-                </Link>
+                  {ps.step}
+                </div>
+                <h4 className="font-display text-lg text-text-primary">{ps.title}</h4>
+                <p className="mt-1 text-sm text-text-secondary leading-relaxed">{ps.desc}</p>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Product Gallery */}
+      {/* CTA */}
+      <section className="bg-charcoal py-16">
+        <div className="max-w-3xl mx-auto px-6 lg:px-12 text-center">
+          <h2 className="font-display text-2xl lg:text-3xl text-off-white leading-tight">
+            Need compliant pharmaceutical packaging?
+          </h2>
+          <div className="mt-8">
+            <Link
+              href="/contact"
+              className="inline-flex items-center px-8 py-3 text-sm font-medium tracking-wide transition-all duration-300"
+              style={{ backgroundColor: "#C9A962", color: "#1A1A1A", borderRadius: "2px" }}
+            >
+              Request Compliance Quote
+            </Link>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

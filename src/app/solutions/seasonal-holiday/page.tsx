@@ -1,341 +1,188 @@
-import Link from "next/link";
 import PlaceholderImage from "@/components/PlaceholderImage";
+import Link from "next/link";
 
 const seasonalProducts = [
   {
     name: "Advent Calendar",
     image: "/images/desktop/seasonal-holiday圣诞倒数礼盒.png",
-    holiday: "Christmas / New Year",
-    structure: "12/24-grid drawers, magnetic flip lid, layered nesting",
-    finishing: "Foil snowflakes, embossed reindeer, soft-touch, metallic ink illustrations",
-    material: "FSC White Card + gold/red spot colors + ribbon handle",
-    category: "creator",
-    variant: 0,
-    imageLabel: "SEASONAL — Luxury Advent Calendar with 24 Drawers and Gold Foil Accents",
-    aiPrompt: `A luxury advent calendar box with 12 small drawers partially pulled out,
-each drawer front has a blind embossed snowflake pattern,
-matte gold foil numbering (1-12) on each drawer,
-deep forest green paper with subtle metallic sheen,
-one drawer reveals a tiny wrapped chocolate inside,
-beside the box: a pine branch and a cinnamon stick,
-seasonal warmth without garishness, desaturated holiday palette,
-[通用基底 with dark charcoal background, single spotlight]`,
+    holiday: "Christmas",
+    structure: "24-drawer rigid box, 2mm greyboard, magnetic closure",
+    finishing: "Gold hot foil, spot UV on drawer fronts, red velvet lining",
+    material: "400gsm art paper, FSC certified",
   },
   {
     name: "Heart-Shaped Gift Box",
     image: "/images/desktop/seasonal-holiday情人节心形礼盒.png",
-    holiday: "Valentine's Day / 520 / Qixi",
-    structure: "Heart-shaped rigid box, magnetic snap, internal divider",
-    finishing: "Rose gold foil, embossed rose, soft-touch, inside love letter print",
-    material: "Pearlescent paper / cotton paper + velvet ribbon",
-    category: "dtc_mailer",
-    variant: 1,
-    imageLabel: "SEASONAL — Heart-Shaped Rigid Box with Rose Gold Foil and Velvet Ribbon",
-    aiPrompt: `A heart-shaped rigid box with magnetic closure,
-exterior in dusty rose paper with velvet-touch lamination,
-matte rose gold foil heart pattern subtly reflecting light,
-lid slightly open revealing cream satin interior,
-beside the box: a single dried red rose and a raw marble slab,
-romantic yet restrained, no cliche hearts,
-[通用基底]`,
+    holiday: "Valentine's Day",
+    structure: "Custom die-cut heart shape, magnetic lid, ribbon pull",
+    finishing: "Rose gold foil, soft-touch lamination, pearlized coating",
+    material: "350gsm pearlescent paper, recycled board",
   },
   {
     name: "Floral Message Box",
     image: "/images/desktop/seasonal-holiday母亲节花语礼盒.png",
-    holiday: "Mother's Day / Women's Day",
-    structure: "Book-style magnetic lid, pop-up 3D flower",
-    finishing: "Debossed petal texture, spot UV dew drops, foil greeting",
-    material: "Recycled art paper + linen texture paper",
-    category: "hero_paper",
-    variant: 0,
-    imageLabel: "SEASONAL — Mother's Day Box with Pop-Up Floral Interior and Foil Greeting",
-    aiPrompt: `A book-style box with pop-up paper flower mechanism emerging as lid opens,
-cream linen-textured paper with blind embossed floral vines,
-soft sage green accents,
-matte gold foil "Thank You" in elegant serif,
-beside the box: dried lavender stems and a handwritten note card,
-botanical and tender,
-[通用基底]`,
+    holiday: "Mother's Day",
+    structure: "Telescopic two-piece box, insert tray, satin ribbon",
+    finishing: "Embossed floral pattern, gold edge gilding, matte lamination",
+    material: "300gsm cotton paper, 1.5mm greyboard",
   },
   {
     name: "Black Friday Limited Box",
     image: "/images/desktop/seasonal-holiday黑五限定盒.png",
-    holiday: "Black Friday / Cyber Monday / Singles' Day",
-    structure: "Dark-themed mailer box, holographic logo, limited VDP numbering",
-    finishing: "Holographic foil, soft-touch, spot UV, serialized numbering",
-    material: "Black card stock + metallic ink",
-    category: "creator",
-    variant: 2,
-    imageLabel: "SEASONAL — Black Friday Limited Box with Holographic Foil and Serial Number",
-    aiPrompt: `A matte black rigid box with holographic foil logo shifting between teal and gold,
-limited edition number "047/500" embossed in matte gold,
-surface has soft-touch lamination with fingerprint-resistant quality,
-lid slightly ajar revealing dark grey tissue paper inside,
-beside the box: a black obsidian stone and a dried black dahlia,
-mysterious and exclusive,
-[通用基底 with dark charcoal background]`,
+    holiday: "Black Friday",
+    structure: "Mailer box with insert, E-flute corrugated",
+    finishing: "Matte black coating, holographic foil logo, spot UV",
+    material: "350gsm black CCNB, 1.2mm E-flute",
   },
   {
     name: "Multi-Tier Gift Set",
     image: "/images/desktop/中秋节.png",
-    holiday: "Mid-Autumn / Thanksgiving",
-    structure: "3-tier drawer box, belly band, carry handle",
-    finishing: "Foil illustration, debossed cloud pattern, soft-touch, ribbon seal",
-    material: "FSC art paper + metallized paper + satin ribbon",
-    category: "exhibition",
-    variant: 1,
-    imageLabel: "SEASONAL — 3-Tier Mid-Autumn Gift Box with Ribbon Seal and Embossed Details",
-    aiPrompt: `A three-tier drawer box with cream and terracotta paper bands,
-each tier has a different blind embossed pattern: clouds, harvest wheat, full moon,
-matte gold foil border on each drawer front,
-silk ribbon pull in ochre color,
-top tier slightly pulled out revealing mooncake-shaped insert,
-beside the box: a ceramic tea cup and dried osmanthus flowers,
-East-meets-West elegance,
-[通用基底]`,
+    holiday: "Mid-Autumn Festival",
+    structure: "3-tier drawer box, individual compartments, ribbon pull",
+    finishing: "Gold foil on textured paper, blind emboss, internal pattern print",
+    material: "250gsm art paper, 2mm greyboard",
   },
   {
     name: "Summer Cool Edition",
     image: "/images/desktop/夏日清爽限定.png",
-    holiday: "Summer / Seasonal Refresh",
-    structure: "Window cut-out, ventilated structure, cool-toned design",
-    finishing: "Spot UV water ripple, silver foil, soft-touch",
-    material: "Translucent paper window + white card",
-    category: "hero_paper",
-    variant: 2,
-    imageLabel: "SEASONAL — Summer Limited Box with Window Cut-Out and Silver Foil Details",
-    aiPrompt: `A window-cut box with translucent glassine paper revealing product inside,
-exterior in cool grey-blue paper with water-spot UV pattern mimicking ripples,
-matte silver foil accents,
-perforated easy-open tab,
-beside the box: a clear quartz crystal and a dried palm leaf,
-airy and refreshing,
-[通用基底]`,
+    holiday: "Summer Collection",
+    structure: "Slipcase with inner tray, finger cutout",
+    finishing: "Gradient offset print, gloss spot UV, cool-tone foil",
+    material: "300gsm coated paper, 1.5mm board",
   },
   {
     name: "Corporate Holiday Gift Set",
     image: "/images/desktop/企业定制.png",
-    holiday: "Year-End / Client Gifts / Employee Gifts",
-    structure: "Multi-cell insert, custom logo seal, thank-you card slot",
-    finishing: "Foil company branding, embossing, soft-touch, inside brand story print",
-    material: "Recycled board + FSC certified + satin ribbon",
-    category: "exhibition",
-    variant: 2,
-    imageLabel: "SEASONAL — Corporate Gift Box with Multi-Cell Insert and Custom Logo Foil",
-    aiPrompt: `A multi-cell rigid box with branded belly band wrapper,
-exterior in deep navy paper with blind embossed geometric grid,
-matte gold foil company monogram,
-interior reveals four compartments with different gifts: notebook, pen, candle, chocolate,
-each item wrapped in cream tissue with gold sticker seal,
-beside the box: a leather desk pad corner and a brass paperweight,
-executive and thoughtful,
-[通用基底]`,
+    holiday: "Year-End Corporate",
+    structure: "Rigid setup box, foam insert, magnetic closure",
+    finishing: "Debossed logo, matte lamination, metallic edge",
+    material: "400gsm kraft wrap, 2mm greyboard",
   },
   {
     name: "Wedding Favor Box",
     image: "/images/desktop/婚礼.png",
-    holiday: "Weddings / Engagements",
-    structure: "Personalized name printing, magnetic closure, layered reveal",
-    finishing: "Foil couple names, 3D embossed motif, soft-touch, edge gilding",
-    material: "Cotton paper / pearlescent paper + velvet ribbon",
-    category: "creator",
-    variant: 3,
-    imageLabel: "SEASONAL — Wedding Favor Box with Personalized Names and Edge Gilding",
-    aiPrompt: `A small rigid box with hinged lid,
-exterior in handmade cotton paper with visible flower petal inclusions,
-blind embossed couple initials with matte gold foil,
-edge gilding catching soft light,
-inside: macarons wrapped in glassine with personalized sticker,
-beside the box: a dried hydrangea and a silk ribbon in dusty pink,
-intimate and artisanal,
-[通用基底]`,
+    holiday: "Wedding Season",
+    structure: "Small rigid box, satin ribbon tie, insert card slot",
+    finishing: "Hot foil monogram, pearlized finish, wax seal compatible",
+    material: "250gsm cotton paper, 1.5mm greyboard",
   },
 ];
 
+const serviceTags = [
+  "MOQ 500 Units",
+  "72H Prototyping",
+  "No Plate Fee",
+  "Unlimited Versions",
+];
+
+function ServiceTagBar() {
+  return (
+    <section className="bg-charcoal py-8 border-t" style={{ borderColor: "rgba(255,255,255,0.05)" }}>
+      <div className="max-w-5xl mx-auto px-6 lg:px-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {serviceTags.map((tag) => (
+            <div
+              key={tag}
+              className="px-4 py-3 text-center font-mono text-xs tracking-[0.1em]"
+              style={{
+                color: "#C9A962",
+                backgroundColor: "rgba(201,169,98,0.08)",
+                borderRadius: "2px",
+              }}
+            >
+              {tag}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ProductCard({ p }: { p: typeof seasonalProducts[0] }) {
+  return (
+    <div className="group border border-black/5 hover:border-black/10 hover:shadow-sm transition-all" style={{ borderRadius: "4px" }}>
+      <PlaceholderImage label={p.name} aspectRatio="3/2" src={p.image} className="w-full" />
+      <div className="p-5">
+        <span className="font-mono text-xs tracking-[0.15em] text-mint uppercase">{p.holiday}</span>
+        <h3 className="mt-1 font-display text-xl text-text-primary">{p.name}</h3>
+        <div className="mt-3 space-y-2">
+          <div>
+            <span className="font-mono text-xs tracking-[0.15em] uppercase" style={{ color: "rgba(107,107,107,0.4)" }}>Structure</span>
+            <p className="mt-0.5 text-sm text-text-secondary">{p.structure}</p>
+          </div>
+          <div>
+            <span className="font-mono text-xs tracking-[0.15em] uppercase" style={{ color: "rgba(107,107,107,0.4)" }}>Finishing</span>
+            <p className="mt-0.5 text-sm text-text-secondary">{p.finishing}</p>
+          </div>
+          <div>
+            <span className="font-mono text-xs tracking-[0.15em] uppercase" style={{ color: "rgba(107,107,107,0.4)" }}>Material</span>
+            <p className="mt-0.5 text-sm text-text-secondary">{p.material}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function SeasonalHolidayPage() {
   return (
     <>
-      {/* Section 1: Hero */}
-      <section className="flex flex-col lg:flex-row min-h-[80vh] pt-20">
-        <div className="lg:w-1/2 min-h-[40vh] lg:min-h-full">
-          <PlaceholderImage
-            label="SEASONAL HERO — Advent Calendar and Gift Boxes Displayed in Festive Setting"
-            aspectRatio="1/1"
-            className="w-full h-full"
-            category="hero_paper"
-          />
-        </div>
-        <div className="lg:w-1/2 bg-warm flex items-center px-6 lg:px-12 py-20 lg:py-0">
-          <div className="max-w-lg">
-            <span className="font-mono text-xs tracking-[0.2em] text-mint uppercase">
-              Seasonal Solutions
-            </span>
-            <h1 className="mt-6 font-display text-4xl lg:text-6xl text-text-primary leading-tight">
-              Seasonal &amp; Holiday <br />
-              Short-Run Customization.
-            </h1>
-            <p className="mt-6 text-text-secondary text-sm leading-relaxed">
-              From concept to shelf in 18 days. Christmas, Valentine&apos;s, Black
-              Friday, Mid-Autumn, and every celebration in between — 500 units
-              per design, zero plate costs.
-            </p>
-            <div className="mt-8 grid grid-cols-2 gap-x-8 gap-y-4 font-mono text-xs tracking-[0.1em]">
-              <div>
-                <span className="text-text-secondary/40">Turnaround</span>
-                <p className="text-text-primary mt-1">18 Days Concept-to-Shelf</p>
-              </div>
-              <div>
-                <span className="text-text-secondary/40">Minimum</span>
-                <p className="text-text-primary mt-1">500 Units Per Design</p>
-              </div>
-              <div>
-                <span className="text-text-secondary/40">Versions</span>
-                <p className="text-text-primary mt-1">Unlimited A/B/C Testing</p>
-              </div>
-              <div>
-                <span className="text-text-secondary/40">Plate Cost</span>
-                <p className="text-text-primary mt-1">Zero (Digital Printing)</p>
-              </div>
-            </div>
-            <div className="mt-10">
-              <Link
-                href="/contact"
-                className="inline-flex items-center px-8 py-3 border-2 border-text-primary text-text-primary text-sm font-body font-medium tracking-wide hover:bg-text-primary hover:text-warm transition-all duration-300"
-              >
-                Start Your Seasonal Project
-              </Link>
-            </div>
+      {/* Hero */}
+      <section className="pt-20 pb-16 lg:pb-24 bg-charcoal">
+        <div className="max-w-5xl mx-auto px-6 lg:px-12 text-center">
+          <span className="font-mono text-sm tracking-[0.2em] text-mint uppercase">Seasonal & Holiday</span>
+          <h1 className="mt-6 font-display text-4xl lg:text-5xl text-off-white leading-tight" style={{ fontSize: "clamp(32px, 4vw, 48px)" }}>
+            18 days from concept to shelf.
+          </h1>
+          <p className="mt-4 text-base leading-relaxed max-w-lg mx-auto" style={{ color: "rgba(253,252,250,0.5)" }}>
+            Christmas, Valentine&apos;s, Black Friday, Mid-Autumn — seasonal packaging that arrives before the rush. MOQ 500 per design.
+          </p>
+          <div className="mt-8">
+            <Link
+              href="/contact"
+              className="inline-flex items-center px-8 py-3 text-sm font-medium tracking-wide transition-all duration-300"
+              style={{ backgroundColor: "#C9A962", color: "#1A1A1A", borderRadius: "2px" }}
+            >
+              Start Seasonal Order
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Section 2: Product Grid */}
-      <section className="bg-warm py-24 lg:py-32 border-t border-black/5">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="flex flex-col lg:flex-row gap-16 mb-16">
-            <div className="lg:w-[40%]">
-              <span className="font-mono text-xs tracking-[0.2em] text-mint uppercase">
-                Product Line
-              </span>
-              <h2 className="mt-6 font-display text-4xl lg:text-5xl text-text-primary leading-tight">
-                Eight occasions. Unlimited iterations.
-              </h2>
-            </div>
-            <div className="lg:w-[55%]">
-              <p className="text-text-secondary text-sm leading-relaxed">
-                Every seasonal campaign is different. We give you the structural
-                platform and finishing flexibility to create unique packaging for
-                each holiday — without the setup costs of traditional tooling.
-              </p>
-            </div>
-          </div>
+      <ServiceTagBar />
 
-          <div className="space-y-0">
-            {seasonalProducts.map((p, i) => (
-              <div
-                key={p.name}
-                className="grid grid-cols-1 lg:grid-cols-12 gap-6 py-10 border-t border-black/5 last:border-b last:border-black/5 items-start"
-              >
-                {/* Number + Name */}
-                <div className="lg:col-span-2">
-                  <span className="font-mono text-xs text-text-secondary/40">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <div className="mb-3 w-16 h-16 overflow-hidden">
-                    <PlaceholderImage
-                      label={p.name}
-                      aspectRatio="1/1"
-                      src={p.image}
-                      className="w-full h-full"
-                    />
-                  </div>
-                  <h3 className="mt-2 font-display text-2xl text-text-primary">
-                    {p.name}
-                  </h3>
-                  <span className="font-mono text-[10px] tracking-[0.15em] text-mint uppercase">
-                    {p.holiday}
-                  </span>
-                </div>
-                {/* Specs block */}
-                <div className="lg:col-span-3">
-                  <span className="font-mono text-[10px] tracking-[0.15em] text-text-secondary/40 uppercase">
-                    Structure
-                  </span>
-                  <p className="mt-2 font-mono text-xs text-text-primary leading-relaxed">
-                    {p.structure}
-                  </p>
-                  <span className="mt-4 block font-mono text-[10px] tracking-[0.15em] text-text-secondary/40 uppercase">
-                    Finishing
-                  </span>
-                  <p className="mt-2 font-mono text-xs text-text-primary leading-relaxed">
-                    {p.finishing}
-                  </p>
-                  <span className="mt-4 block font-mono text-[10px] tracking-[0.15em] text-text-secondary/40 uppercase">
-                    Material
-                  </span>
-                  <p className="mt-2 font-mono text-xs text-text-primary leading-relaxed">
-                    {p.material}
-                  </p>
-                </div>
-                {/* Description + Image */}
-                <div className="lg:col-span-3">
-                  <p className="font-mono text-xs text-text-secondary leading-relaxed">
-                    {p.holiday} edition. Short-run ready. Available from 500 units.
-                  </p>
-                </div>
-                <div className="lg:col-span-4">
-                  <PlaceholderImage
-                    label={p.imageLabel}
-                    aspectRatio="4/3"
-                    className="w-full"
-                    category={p.category}
-                    variant={i}
-                  />
-                </div>
-              </div>
+      {/* Product Grid */}
+      <section className="bg-warm py-16 lg:py-24">
+        <div className="max-w-6xl mx-auto px-6 lg:px-12">
+          <span className="font-mono text-sm tracking-[0.2em] text-mint uppercase">Products</span>
+          <h2 className="mt-4 font-display text-3xl lg:text-4xl text-text-primary leading-tight">
+            Eight seasonal formats. Ready when you are.
+          </h2>
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {seasonalProducts.map((p) => (
+              <ProductCard key={p.name} p={p} />
             ))}
           </div>
         </div>
       </section>
 
-      {/* Section 3: Key Differentiators */}
-      <section className="bg-charcoal py-24 lg:py-32">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <span className="font-mono text-xs tracking-[0.2em] text-mint uppercase">
-            Why Top Printing
-          </span>
-          <h2 className="mt-6 font-display text-4xl lg:text-5xl text-off-white leading-tight max-w-2xl">
-            Fast, flexible, and festival-ready.
-          </h2>
-          <div className="mt-16 font-mono text-sm text-off-white/70 space-y-2 border-t border-white/10 pt-10 max-w-lg">
-            <p>72H PROTOTYPE → 15D DELIVERY</p>
-            <p>MINIMUM: 500 UNITS PER DESIGN</p>
-            <p>VERSIONS: UNLIMITED (A/B/C TESTING FOR SEASONAL DROPS)</p>
-            <p>PLATE COST: ZERO (DIGITAL PRINTING)</p>
-            <p>FINISHING: FOIL / EMBOSS / SPOT UV / SOFT-TOUCH</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Product Gallery */}
-
-      {/* Section 4: CTA */}
-      <section className="bg-warm py-24 lg:py-32">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 text-center">
-          <h2 className="font-display text-4xl lg:text-5xl text-text-primary leading-tight max-w-xl mx-auto">
+      {/* Bottom CTA */}
+      <section className="bg-charcoal py-16">
+        <div className="max-w-3xl mx-auto px-6 lg:px-12 text-center">
+          <h2 className="font-display text-2xl lg:text-3xl text-off-white leading-tight">
             Ready for your next seasonal drop?
           </h2>
-          <p className="mt-6 text-text-secondary text-sm max-w-lg mx-auto leading-relaxed">
-            Start with a sample kit. See our paper stocks and finishes, then
-            let&apos;s design your seasonal packaging together.
+          <p className="mt-4 text-base leading-relaxed" style={{ color: "rgba(253,252,250,0.5)" }}>
+            Tell us the holiday, quantity, and design direction. We&apos;ll ship prototypes within 72 hours.
           </p>
-          <div className="mt-10">
+          <div className="mt-8">
             <Link
-              href="/sample-kit"
-              className="inline-flex items-center px-10 py-4 border-2 border-text-primary text-text-primary text-sm font-body font-medium tracking-wide hover:bg-text-primary hover:text-warm transition-all duration-300"
+              href="/contact"
+              className="inline-flex items-center px-8 py-3 text-sm font-medium tracking-wide transition-all duration-300"
+              style={{ backgroundColor: "#C9A962", color: "#1A1A1A", borderRadius: "2px" }}
             >
-              Get a Free Sample Kit
+              Request Seasonal Quote
             </Link>
           </div>
         </div>
